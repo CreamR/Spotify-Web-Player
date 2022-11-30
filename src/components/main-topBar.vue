@@ -15,6 +15,11 @@
 				text
 				bg
 			/>
+			<input
+				v-model="keywords"
+				type="text"
+				class="search"
+			/>
 		</div>
 		<div class="right">
 			<el-button
@@ -46,8 +51,8 @@
 </template>
 
 <script setup>
-	import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
-	import { reactive, onMounted } from 'vue'
+	import { ArrowLeftBold, ArrowRightBold, Search } from '@element-plus/icons-vue'
+	import { reactive, ref, onMounted } from 'vue'
 
 	import { getProfile } from '../service/user'
 
@@ -57,6 +62,7 @@
 		userName: '',
 		userPhoto: '',
 	})
+	const keywords = ref()
 	onMounted(() => {
 		init()
 	})
@@ -80,6 +86,23 @@
 				margin-left: 20px;
 				background-color: rgb(18, 18, 18);
 				border: 1px solid rgb(18, 18, 18);
+			}
+			.search {
+				#setWH(400px, 40px);
+				margin-left: 15px;
+				padding: 10px 40px;
+
+				font-size: 15px;
+
+				background-image: url(../assets/search.svg);
+				background-repeat: no-repeat;
+				background-size: 22px, 22px;
+				background-position: 10px;
+
+				outline: none;
+				border: none;
+				border-radius: 30px;
+				border: 1px solid @colorInfo;
 			}
 		}
 		.right {

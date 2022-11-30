@@ -17,13 +17,15 @@
 				width="30"
 				height="30"
 				style="cursor: pointer"
-				v-if="true"
+				@click="islike = true"
+				v-if="!islike"
 			/>
 			<img
 				src="../assets/heartFill.svg"
 				title="取消喜欢"
 				width="30"
 				height="30"
+				@click="islike = false"
 				style="cursor: pointer"
 				v-else
 			/>
@@ -44,12 +46,15 @@
 				<el-icon
 					color="white"
 					size="30"
+					v-if="isPlay"
+					@click="isPlay = false"
 					><VideoPause
 				/></el-icon>
 				<el-icon
 					color="white"
 					size="30"
-					v-if="false"
+					v-else
+					@click="isPlay = true"
 					><VideoPlay
 				/></el-icon>
 
@@ -83,20 +88,23 @@
 			<el-icon
 				color="white"
 				size="30"
+				v-if="volume != 0"
 				><Microphone
 			/></el-icon>
 			<el-icon
 				color="white"
 				size="30"
-				v-if="false"
+				v-else
 				><Mute
 			/></el-icon>
 			<input
 				type="range"
-				name=""
-				id=""
+				v-model="volume"
+				min="0"
+				max="100"
 			/>
 		</div>
+		<audio ref="audio"></audio>
 	</div>
 </template>
 
@@ -112,6 +120,20 @@
 		Mute,
 		Expand,
 	} from '@element-plus/icons-vue'
+	import { ref, onMounted, watch } from 'vue'
+
+	// 操作DOM调节音量
+	const audio = ref()
+	// 数据绑定
+	const volume = ref()
+	const islike = ref(false)
+	const isPlay = ref(false)
+
+	watch(volume, newVal => {
+		// 获取音量 由于audio标签在最值设置为0-1区间内时滑动会跳帧, 所以将最值定位0-100然后将其转换为0-1的小数即可
+		audio.value.volume = newVal / 100
+		console.log(volume)
+	})
 </script>
 
 <style lang="less" scoped>
