@@ -8,14 +8,10 @@
 			@click="$router.push({ name: 'main' })"
 		/>
 		<ul class="fixContent">
-			<li>
-				<el-icon
-					size="28"
-					@click="$router.push({ name: 'main' })"
-					><Cpu /></el-icon
-				>首页
+			<li @click="$router.push({ name: 'main' })">
+				<el-icon size="28"><Cpu /></el-icon>首页
 			</li>
-			<li>
+			<li @click="$router.push({ name: 'collect' })">
 				<el-icon size="28"><Star /></el-icon>我的收藏
 			</li>
 		</ul>
@@ -26,6 +22,7 @@
 				v-for="(item, index) in data.playlist"
 				:key="index"
 				v-if="data.logined"
+				@click="$router.push({ name: 'playlist', params: { id: item.id } })"
 			>
 				{{ item.name }}
 			</li>
@@ -64,7 +61,7 @@
 		if (localStorage.getItem('token')) {
 			const res = await getPlaylist(data.uID)
 			data.playlist = res.playlist
-			// console.log(JSON.parse(JSON.stringify(data.playlist)))
+			console.log(JSON.parse(JSON.stringify(data.playlist)))
 		}
 	}
 </script>
