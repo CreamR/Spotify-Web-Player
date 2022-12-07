@@ -1,3 +1,10 @@
-## Spotify Web Player UI redesign and code rebuild base on Vue3 with composition API
+### Music web project imitate like Spotify UI design
 
-This project is originate from 2022-11-16
+- **included vast of performence improve**
+- **used by Vue3 with composition API**
+- **ES13**
+- **vue-router and Pinia**
+- **explicit standard of code and file**
+- **pure forever**
+
+if you have any question and problem please post issue
