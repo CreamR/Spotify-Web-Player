@@ -7,4 +7,6 @@
 - **explicit standard of code and file**
 - **pure forever**
 
+There is the backend interface support of Spotify-Web-Player - [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+
 if you have any question and problem please post issue
