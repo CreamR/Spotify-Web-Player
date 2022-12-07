@@ -22,7 +22,13 @@
 				v-for="(item, index) in data.playlist"
 				:key="index"
 				v-if="data.logined"
-				@click="$router.push({ name: 'playlist', params: { id: item.id } })"
+				@click="
+					$router.push({
+						name: 'playlist',
+						params: { id: item.id },
+						query: { playlistIMG: item.coverImgUrl },
+					})
+				"
 			>
 				{{ item.name }}
 			</li>
