@@ -26,7 +26,7 @@
 					$router.push({
 						name: 'playlist',
 						params: { id: item.id },
-						query: { playlistIMG: item.coverImgUrl },
+						query: { playlistIMG: item.coverImgUrl, listTitle: item.name },
 					})
 				"
 			>

@@ -1,6 +1,14 @@
 <template>
 	<div class="playlist">
-		<img :src="data.imgURL" />
+		<div class="listInfo">
+			<img
+				:src="data.imgURL"
+				:title="data.listTitle"
+			/>
+			<div class="info">
+				<h1>{{ data.listTitle }}</h1>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -15,18 +23,19 @@
 	const data = reactive({
 		playlist: [],
 		imgURL: '',
+		listTitle: '',
 	})
 	onMounted(() => {
 		init()
 	})
 	const init = async () => {
-		// 若为监听传值则正常刷新，若为路由传值则进行初始化
 		const listID = route.params.id ?? null
 		if (listID) {
 			const res = await getPlaylistDetail(listID)
 			data.playlist = res
-			data.imgURL = route.query.playlistIMG
 
+			data.imgURL = route.query.playlistIMG
+			data.listTitle = route.query.listTitle
 			console.log(res)
 		}
 	}
@@ -39,4 +48,13 @@
 	)
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+	@import url(../base.less);
+	.playlist {
+		img {
+			#setWH(250px, 250px);
+			margin: 30px 35px;
+			box-shadow: @BGShadow;
+		}
+	}
+</style>

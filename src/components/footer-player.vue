@@ -88,12 +88,14 @@
 			<el-icon
 				color="white"
 				size="30"
+				@click="volume = 0"
 				v-if="volume != 0"
 				><Microphone
 			/></el-icon>
 			<el-icon
 				color="white"
 				size="30"
+				@click="volume = 30"
 				v-else
 				><Mute
 			/></el-icon>
