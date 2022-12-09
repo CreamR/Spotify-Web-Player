@@ -26,7 +26,13 @@
 					$router.push({
 						name: 'playlist',
 						params: { id: item.id },
-						query: { playlistIMG: item.coverImgUrl, listTitle: item.name },
+						query: {
+							playlistIMG: item.coverImgUrl,
+							listTitle: item.name,
+							count: item.playCount,
+							view: item.trackCount,
+							creator: item.creator.nickname,
+						},
 					})
 				"
 			>

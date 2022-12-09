@@ -8,7 +8,7 @@
 			<vTopBar class="topBar"></vTopBar>
 			<!-- 解决fix脱标-->
 			<div class="wrap"></div>
-			<router-view></router-view>
+			<router-view class="body"></router-view>
 		</el-main>
 	</el-container>
 
@@ -51,6 +51,12 @@
 			}
 			.wrap {
 				#setWH(calc(100vw - 245px), 65px);
+			}
+			.body {
+				color: white;
+				background-image: linear-gradient(rgb(32, 32, 32), rgb(20, 20, 20));
+				min-height: calc(100vh - 10vh - 65px);
+				padding: 20px 30px;
 			}
 		}
 	}
