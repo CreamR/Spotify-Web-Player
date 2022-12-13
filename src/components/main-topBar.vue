@@ -1,6 +1,6 @@
 <template>
 	<div class="topBar">
-		<div class="left">
+		<section class="left">
 			<el-button
 				:icon="ArrowLeftBold"
 				circle
@@ -20,8 +20,8 @@
 				type="text"
 				class="search"
 			/>
-		</div>
-		<div class="right">
+		</section>
+		<section class="right">
 			<el-button
 				link
 				large
@@ -46,7 +46,7 @@
 				/>
 				<span>{{ data.userName }}</span>
 			</div>
-		</div>
+		</section>
 	</div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="playlist">
-		<div class="listInfo">
+		<section class="listInfo">
 			<img
 				:src="data.imgURL"
 				:title="data.listTitle"
@@ -11,26 +11,41 @@
 				<p>创建者 - {{ data.creator }}</p>
 				<p>歌曲 · {{ data.count }} &nbsp | &nbsp 播放 · {{ data.view }}</p>
 			</div>
-		</div>
-		<div class="controlBar">
-			<el-button
-				type="success"
-				circle
-				:icon="Headset"
-				size="large"
-			></el-button>
-			<img
-				src="../assets/heartFill.svg"
-				title="喜欢"
-				width="35"
-				class="heart"
-			/>
-			<el-icon
-				size="22"
-				color="darkgrey"
-				><QuestionFilled
-			/></el-icon>
-		</div>
+		</section>
+		<section class="controlBar">
+			<div class="left">
+				<el-button
+					type="success"
+					circle
+					:icon="Headset"
+					size="large"
+				></el-button>
+				<img
+					src="../assets/heartFill.svg"
+					title="喜欢"
+					width="35"
+					class="heart"
+				/>
+
+				<el-popover
+					placement="right"
+					:width="315"
+					trigger="hover"
+					effect="dark"
+					content="点击爱心可收藏此歌单, 点击耳机可播放此歌单"
+				>
+					<template #reference>
+						<el-icon
+							size="22"
+							color="darkgrey"
+							><QuestionFilled
+						/></el-icon>
+					</template>
+				</el-popover>
+			</div>
+
+			<div class="right"></div>
+		</section>
 	</div>
 </template>
 
@@ -119,23 +134,26 @@
 			}
 		}
 		.controlBar {
-			#setFlex(flex-start);
-			margin: 30px 15px;
-			.el-button {
-				margin-right: 30px;
-				transform: scale(1.3);
-				font-size: larger;
-			}
-			.heart {
-				margin-right: 20px;
-
-				transition: all 0.2s ease;
-				cursor: pointer;
-				&:hover {
-					transform: scale(1.2);
+			#setFlex(space-between);
+			.left {
+				#setFlex(flex-start);
+				margin: 30px 20px;
+				.el-button {
+					margin-right: 30px;
+					transform: scale(1.3);
+					font-size: larger;
 				}
-				&:active {
-					transform: scale(1);
+				.heart {
+					margin-right: 20px;
+
+					transition: all 0.15s ease;
+					cursor: pointer;
+					&:hover {
+						transform: scale(1.2);
+					}
+					&:active {
+						transform: scale(1);
+					}
 				}
 			}
 		}

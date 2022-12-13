@@ -87,7 +87,6 @@
 			localStorage.setItem('userID', res.account.id)
 
 			router.push({ name: 'main' })
-			// TEST console.log(res)
 		}
 	}
 </script>

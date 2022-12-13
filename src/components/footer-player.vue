@@ -1,6 +1,6 @@
 <template>
 	<div class="player">
-		<div class="left">
+		<section class="left">
 			<img
 				src="../assets/test/img.svg"
 				:title="ss"
@@ -29,8 +29,8 @@
 				style="cursor: pointer"
 				v-else
 			/>
-		</div>
-		<div class="middle">
+		</section>
+		<section class="middle">
 			<div class="controls">
 				<el-icon
 					color="white"
@@ -78,8 +78,8 @@
 				/>
 				<span></span>
 			</div>
-		</div>
-		<div class="right">
+		</section>
+		<section class="right">
 			<el-icon
 				color="white"
 				size="30"
@@ -105,7 +105,7 @@
 				min="0"
 				max="100"
 			/>
-		</div>
+		</section>
 		<audio ref="audio"></audio>
 	</div>
 </template>
