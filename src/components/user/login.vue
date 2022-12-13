@@ -1,7 +1,7 @@
 <template>
 	<div class="login">
 		<h1>spotify - 用户登录</h1>
-		<circle></circle>
+		<article></article>
 		<el-input
 			v-model="verifyData.phone"
 			placeholder="请输入手机号"
@@ -100,7 +100,7 @@
 		color: whitesmoke;
 		background-image: linear-gradient(rgb(32, 32, 32), rgb(20, 20, 20));
 
-		circle {
+		article {
 			display: block;
 			width: 300px;
 			margin: 50px auto;

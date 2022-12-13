@@ -44,7 +44,13 @@
 				</el-popover>
 			</div>
 
-			<div class="right"></div>
+			<div class="right">
+				<el-button
+					type="danger"
+					:icon="Delete"
+					circle
+				/>
+			</div>
 		</section>
 	</div>
 </template>
