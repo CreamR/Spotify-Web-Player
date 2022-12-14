@@ -13,7 +13,7 @@
 			</div>
 		</section>
 		<section class="controlBar">
-			<div class="left">
+			<section class="left">
 				<el-button
 					type="success"
 					circle
@@ -26,10 +26,18 @@
 					width="35"
 					class="heart"
 				/>
+				<el-icon
+					size="22"
+					color="darkgrey"
+					class="delete"
+					><Delete
+				/></el-icon>
+			</section>
 
+			<section class="right">
 				<el-popover
-					placement="right"
-					:width="315"
+					placement="left"
+					:width="350"
 					trigger="hover"
 					effect="dark"
 					content="点击爱心可收藏此歌单, 点击耳机可播放此歌单"
@@ -42,24 +50,27 @@
 						/></el-icon>
 					</template>
 				</el-popover>
-			</div>
-
-			<div class="right">
-				<el-button
-					type="danger"
-					:icon="Delete"
-					circle
+				<input
+					type="text"
+					class="search"
+					ref="inputing"
+					@focus="isExpand(true)"
+					@blur="isExpand(false)"
 				/>
-			</div>
+			</section>
+		</section>
+		<section class="tableList">
+			<vTable></vTable>
 		</section>
 	</div>
 </template>
 
 <script setup>
-	import { Headset, QuestionFilled } from '@element-plus/icons-vue'
-	import { onMounted, reactive, watch } from 'vue'
+	import { Headset, QuestionFilled, Delete } from '@element-plus/icons-vue'
+	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import { getPlaylistDetail } from '../service/playlist'
+	import vTable from './table.vue'
 
 	const router = useRouter()
 	const route = useRoute()
@@ -97,6 +108,12 @@
 			init()
 		}
 	)
+
+	const inputing = ref()
+	const isExpand = isFocus => {
+		if (isFocus) inputing.value.style.width = '300px'
+		else inputing.value.style.width = '180px'
+	}
 </script>
 
 <style lang="less" scoped>
@@ -160,6 +177,41 @@
 					&:active {
 						transform: scale(1);
 					}
+				}
+				.delete {
+					cursor: pointer;
+					transition: all 0.2s ease;
+					&:hover {
+						color: @colorDanger;
+					}
+					&:active {
+						color: @colorInfo;
+					}
+				}
+			}
+			.right {
+				.el-icon {
+					vertical-align: middle;
+				}
+				.search {
+					width: 180px;
+					margin-left: 15px;
+					padding: 8px 35px;
+
+					font-size: 12px;
+
+					background-image: url(../assets/searchWhite.svg);
+					background-repeat: no-repeat;
+					background-size: 22px, 22px;
+					background-position: 3px;
+					background-color: rgb(28, 28, 28);
+					color: @colorSuccess;
+
+					outline: none;
+					border: none;
+					border-bottom: 1px solid @colorInfo;
+
+					transition: all 0.3s ease;
 				}
 			}
 		}

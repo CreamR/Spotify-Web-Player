@@ -29,8 +29,8 @@
 						query: {
 							playlistIMG: item.coverImgUrl,
 							listTitle: item.name,
-							count: item.playCount,
-							view: item.trackCount,
+							count: item.trackCount,
+							view: item.playCount,
 							creator: item.creator.nickname,
 						},
 					})
