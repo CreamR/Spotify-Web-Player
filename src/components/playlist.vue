@@ -37,10 +37,10 @@
 			<section class="right">
 				<el-popover
 					placement="left"
-					:width="350"
+					:width="310"
 					trigger="hover"
 					effect="dark"
-					content="点击爱心可收藏此歌单, 点击耳机可播放此歌单"
+					content="此项功能将消耗客户机性能"
 				>
 					<template #reference>
 						<el-icon
@@ -54,13 +54,14 @@
 					type="text"
 					class="search"
 					ref="inputing"
+					placeholder="点此搜索歌单内歌曲"
 					@focus="isExpand(true)"
 					@blur="isExpand(false)"
 				/>
 			</section>
 		</section>
 		<section class="tableList">
-			<vTable></vTable>
+			<vTable :listID="data.listID"></vTable>
 		</section>
 	</div>
 </template>
@@ -76,29 +77,25 @@
 	const route = useRoute()
 
 	const data = reactive({
-		playlist: [],
+		listID: null,
 		imgURL: '',
 		listTitle: '',
 		count: 0,
 		view: 0,
 		creator: '',
 	})
+
 	onMounted(() => {
 		init()
 	})
 	const init = async () => {
-		const listID = route.params.id ?? null
-		if (listID) {
-			const res = await getPlaylistDetail(listID)
-
-			data.playlist = res
+		data.listID = route.params.id ?? null
+		if (data.listID) {
 			data.imgURL = route.query.playlistIMG
 			data.listTitle = route.query.listTitle
 			data.count = route.query.count
 			data.view = route.query.view
 			data.creator = route.query.creator
-
-			console.log(res)
 		}
 	}
 

@@ -66,6 +66,7 @@
 		playlist: [],
 		logined: localStorage.getItem('token') ? true : false,
 	})
+
 	onMounted(() => {
 		init()
 	})
