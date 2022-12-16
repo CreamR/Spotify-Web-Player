@@ -1,27 +1,35 @@
 <template>
 	<div class="table">
-		<ul>
-			<li>{{ props.listID }}</li>
+		<ul
+			v-for="(item, index) in data.playlist"
+			:key="index"
+		>
+			<li>testdata:{{ item }}</li>
 		</ul>
 	</div>
 </template>
 
 <script setup>
-	import { onBeforeUpdate, onMounted, reactive } from 'vue'
+	import { onUpdated, onMounted, watch, reactive, onBeforeUpdate } from 'vue'
 	import { getPlaylistDetail } from '../service/playlist'
 
 	const props = defineProps({
-		listID: Number | String,
+		listID: Number,
 	})
 	const data = reactive({ playlist: [] })
 
-	onBeforeUpdate(() => {
+	onMounted(() => {
 		init()
 	})
 	const init = async () => {
-		const res = await getPlaylistDetail(props.listID)
-		data.playlist = res.songs
-		console.log(res)
+		// 由于父组件playlist加载时，props并未传入，所以这里需要延迟加载并判断传来的props是否有效
+		setTimeout(async () => {
+			if (props.listID) {
+				const res = await getPlaylistDetail(props.listID)
+				data.playlist = res.songs
+				console.log(res)
+			}
+		}, 1024)
 	}
 </script>
 
