@@ -4,13 +4,13 @@
 			v-for="(item, index) in data.playlist"
 			:key="index"
 		>
-			<li>testdata:{{ item }}</li>
+			<li></li>
 		</ul>
 	</div>
 </template>
 
 <script setup>
-	import { onUpdated, onMounted, watch, reactive, onBeforeUpdate } from 'vue'
+	import { onMounted, reactive } from 'vue'
 	import { getPlaylistDetail } from '../service/playlist'
 
 	const props = defineProps({

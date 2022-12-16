@@ -24,13 +24,8 @@
 		</ul>
 
 		<h1>为你推荐</h1>
-		<ul
-			class="greatPlaylist"
-			v-loading="data.loading"
-			element-loading-text="正在吐血加载中..."
-			element-loading-background="rgb(25,25,25)"
-		>
-			<li v-show="!data.loading && data.logined">
+		<ul class="greatPlaylist">
+			<li v-show="data.logined">
 				<img
 					src="../assets/dailyLike.svg"
 					title="每日推荐"
@@ -58,7 +53,6 @@
 
 	const data = reactive({
 		greatPlaylist: [],
-		loading: true,
 		logined: localStorage.getItem('token') ? true : false,
 	})
 
@@ -70,9 +64,6 @@
 		const cookie = localStorage.getItem('cookie') ?? ''
 		const resPlaylist = await getGreatPlaylist(token, cookie)
 
-		setTimeout(() => {
-			data.loading = false
-		}, 2000)
 		data.greatPlaylist = resPlaylist.recommend
 		console.log(resPlaylist)
 	}
