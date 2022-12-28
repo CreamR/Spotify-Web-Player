@@ -22,13 +22,12 @@
 	const data = reactive({ playlist: [] })
 
 	onMounted(() => {
-		setTimeout(() => {
-			init(props.listID)
-		}, 1024)
+		// setTimeout(() => {
+		init(props.listID)
+		// }, 1024)
 	})
 	const init = async id => {
 		// 由于父组件playlist加载时，props并未传入，所以这里需要延迟加载并判断传来的props是否有效
-
 		console.log(id)
 		if (id) {
 			const res = await getPlaylistDetail(id)
