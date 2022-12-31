@@ -1,4 +1,3 @@
-// import when needed for element-plus and basic vue configration
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import AutoImport from 'unplugin-auto-import/vite'

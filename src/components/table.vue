@@ -1,12 +1,20 @@
 <template>
 	<div class="table">
-		<article></article>
 		<ul>
+			<li></li>
 			<li
 				v-for="(item, index) in data.playlist"
 				:key="index"
 			>
-				{{ item }}
+				<span>{{ index }}</span>
+				<img
+					:src="item.al.picUrl"
+					:title="item.name"
+				/>
+				<div class="songDetails">
+					<h4>{{ item.name }}</h4>
+					<p v-for="artist in item.ar">{{ artist.name }}</p>
+				</div>
 			</li>
 		</ul>
 	</div>
@@ -22,13 +30,9 @@
 	const data = reactive({ playlist: [] })
 
 	onMounted(() => {
-		// setTimeout(() => {
 		init(props.listID)
-		// }, 1024)
 	})
 	const init = async id => {
-		// 由于父组件playlist加载时，props并未传入，所以这里需要延迟加载并判断传来的props是否有效
-		console.log(id)
 		if (id) {
 			const res = await getPlaylistDetail(id)
 			data.playlist = res.songs
@@ -43,4 +47,19 @@
 	)
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+	@import url(../base.less);
+	.songDetails {
+		#setWH(110px, 55px);
+		font-size: medium;
+		margin: 25px 5px 10px 10px;
+
+		overflow: hidden;
+		white-space: nowrap;
+		p {
+			margin-top: 3px;
+			font-size: small;
+			opacity: 0.3;
+		}
+	}
+</style>
