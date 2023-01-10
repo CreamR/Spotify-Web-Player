@@ -10,6 +10,7 @@
 				<img
 					:src="item.al.picUrl"
 					:title="item.name"
+					width="50"
 				/>
 				<div class="songDetails">
 					<h4>{{ item.name }}</h4>
