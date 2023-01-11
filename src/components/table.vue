@@ -1,20 +1,69 @@
 <template>
 	<div class="table">
 		<ul>
-			<li></li>
+			<li class="tag">
+				<span>#</span>
+				<span>标题</span>
+				<span>专辑</span>
+				<span>操作</span>
+				<el-icon><Clock /></el-icon>
+			</li>
 			<li
 				v-for="(item, index) in data.playlist"
 				:key="index"
+				class="songContent"
 			>
-				<span>{{ index }}</span>
-				<img
-					:src="item.al.picUrl"
-					:title="item.name"
-					width="50"
-				/>
-				<div class="songDetails">
-					<h4>{{ item.name }}</h4>
-					<p v-for="artist in item.ar">{{ artist.name }}</p>
+				<span class="indexNum">{{ index }}</span>
+
+				<div class="songIntro">
+					<img
+						:src="item.al.picUrl"
+						:title="item.name"
+						width="50"
+					/>
+					<div class="songDetails">
+						<h4>{{ item.name }}</h4>
+						<span v-for="artist in item.ar">{{ artist.name }}</span>
+					</div>
+				</div>
+
+				<div class="album">
+					{{ item.al.name }}
+				</div>
+
+				<div class="operate">
+					<p>nothing</p>
+				</div>
+
+				<div class="time">
+					<!-- time resolver -->
+					<!-- 将ms转换为min并转换为标准时间格式 -->
+					{{
+						Math.floor((item.dt / (1000 * 60)) % 60) >= 10
+							? Math.floor((item.dt / (1000 * 60)) % 60)
+							: '0' + Math.floor((item.dt / (1000 * 60)) % 60)
+					}}
+					:
+					{{
+						Math.floor(
+							(((item.dt / (1000 * 60)) % 60) - Math.floor((item.dt / (1000 * 60)) % 60)).toFixed(
+								2
+							) * 60
+						) >= 10
+							? Math.floor(
+									(
+										((item.dt / (1000 * 60)) % 60) -
+										Math.floor((item.dt / (1000 * 60)) % 60)
+									).toFixed(2) * 60
+							  )
+							: '0' +
+							  Math.floor(
+									(
+										((item.dt / (1000 * 60)) % 60) -
+										Math.floor((item.dt / (1000 * 60)) % 60)
+									).toFixed(2) * 60
+							  )
+					}}
 				</div>
 			</li>
 		</ul>
@@ -23,6 +72,7 @@
 
 <script setup>
 	import { onMounted, reactive, watch } from 'vue'
+	import { Clock } from '@element-plus/icons-vue'
 	import { getPlaylistDetail } from '../service/playlist'
 
 	const props = defineProps({
@@ -50,17 +100,31 @@
 
 <style lang="less" scoped>
 	@import url(../base.less);
-	.songDetails {
-		#setWH(110px, 55px);
-		font-size: medium;
-		margin: 25px 5px 10px 10px;
-
-		overflow: hidden;
-		white-space: nowrap;
-		p {
-			margin-top: 3px;
-			font-size: small;
-			opacity: 0.3;
+	.table {
+		ul {
+			li {
+			}
+			.tag {
+			}
+			.songContent {
+				.indexNum {
+					color: @colorInfo;
+				}
+				.songIntro {
+					display: inline-block;
+					.songDetails {
+					}
+				}
+				.album {
+					display: inline-block;
+				}
+				.operate {
+					display: inline-block;
+				}
+				.time {
+					display: inline-block;
+				}
+			}
 		}
 	}
 </style>
