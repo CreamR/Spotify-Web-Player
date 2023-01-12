@@ -5,8 +5,11 @@
 				<span>#</span>
 				<span>标题</span>
 				<span>专辑</span>
-				<span>操作</span>
-				<el-icon><Clock /></el-icon>
+				<el-icon
+					color="darkgrey"
+					size="22"
+					><Clock
+				/></el-icon>
 			</li>
 			<li
 				v-for="(item, index) in data.playlist"
@@ -30,11 +33,7 @@
 					{{ item.al.name }}
 				</div>
 
-				<div class="operate">
-					<p>nothing</p>
-				</div>
-
-				<div class="time">
+				<div class="time&operate">
 					<!-- time resolver -->
 					<!-- 将ms转换为min并转换为标准时间格式 -->
 					{{
@@ -103,11 +102,18 @@
 		padding: 10px 20px;
 		ul {
 			li {
+				padding: 12px;
+				&:hover {
+					background-color: @colorInfo;
+				}
 			}
 			.tag {
+				#setFlex(space-between);
+				position: relative;
 			}
 			.songContent {
 				#setFlex(space-between);
+				position: relative;
 				.songIntro {
 					display: inline-flex;
 					align-items: center;
@@ -125,11 +131,12 @@
 				}
 				.album {
 					display: inline-block;
+					position: absolute;
+					left: 40vw;
+					// top: 20px;
 				}
-				.operate {
-					display: inline-block;
-				}
-				.time {
+
+				.time&operate {
 					display: inline-block;
 				}
 			}
