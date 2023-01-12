@@ -13,9 +13,8 @@
 				:key="index"
 				class="songContent"
 			>
-				<span class="indexNum">{{ index }}</span>
-
 				<div class="songIntro">
+					<span class="indexNum">{{ index + 1 >= 10 ? index + 1 : '0' + (index + 1) }}</span>
 					<img
 						:src="item.al.picUrl"
 						:title="item.name"
@@ -101,18 +100,27 @@
 <style lang="less" scoped>
 	@import url(../base.less);
 	.table {
+		padding: 10px 20px;
 		ul {
 			li {
 			}
 			.tag {
 			}
 			.songContent {
-				.indexNum {
-					color: @colorInfo;
-				}
+				#setFlex(space-between);
 				.songIntro {
-					display: inline-block;
+					display: inline-flex;
+					align-items: center;
+
+					vertical-align: middle;
+					.indexNum {
+						color: @colorInfo;
+						margin-right: 24px;
+
+						text-align: center;
+					}
 					.songDetails {
+						margin-left: 22px;
 					}
 				}
 				.album {

@@ -155,9 +155,9 @@
 		}
 		.controlBar {
 			#setFlex(space-between);
+			margin: 30px 20px;
 			.left {
 				#setFlex(flex-start);
-				margin: 30px 20px;
 				.el-button {
 					margin-right: 30px;
 					transform: scale(1.3);
