@@ -1,6 +1,20 @@
 <template>
 	<div class="login">
-		<h1>spotify - 用户登录</h1>
+		<div class="logo">
+			<img
+				src="../../../public/logo.svg"
+				title="Spotify"
+				width="77"
+				class="spotify"
+			/>
+			<el-icon><CloseBold /></el-icon>
+			<img
+				src="../../../public/cloud-music.svg"
+				title="Could-Music"
+				width="88"
+				class="cloudmusic"
+			/>
+		</div>
 		<article></article>
 		<el-input
 			v-model="verifyData.phone"
@@ -31,6 +45,7 @@
 <script setup>
 	import { reactive, ref } from 'vue'
 	import { useRouter } from 'vue-router'
+	import { CloseBold } from '@element-plus/icons-vue'
 	import { login, getCode } from '../../service/user'
 
 	const router = useRouter()
@@ -92,34 +107,41 @@
 </script>
 
 <style lang="less" scoped>
+	@import url(../../base.less);
 	.login {
 		text-align: center;
 		padding: 100px;
 		min-height: calc(100vh - 10vh - 65px);
 
-		color: whitesmoke;
-		background-image: linear-gradient(rgb(32, 32, 32), rgb(20, 20, 20));
+		color: white;
 
+		.logo {
+			margin-top: 6.6vw;
+			.spotify {
+				vertical-align: middle;
+				margin-right: 22px;
+			}
+			.cloudmusic {
+				vertical-align: middle;
+				margin-left: 15px;
+			}
+		}
 		article {
 			display: block;
 			width: 300px;
-			margin: 50px auto;
+			margin: 45px auto;
 
-			border-bottom: 1px solid whitesmoke;
+			border-bottom: 1px solid @colorInfo;
 		}
 		.el-input {
 			display: flex;
 			width: 30vw;
-			margin-bottom: 50px;
-			text-align: center;
-			margin-left: 50%;
-			transform: translateX(-50%);
+			margin: 50px auto;
 		}
 		.el-button {
 			display: block;
-			width: 30vw;
-			height: 45px;
-			margin: 15px auto;
+			#setWH(30vw, 45px);
+			margin: 20px auto;
 		}
 	}
 </style>
