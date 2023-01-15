@@ -70,7 +70,6 @@
 	import { Headset, QuestionFilled, Delete } from '@element-plus/icons-vue'
 	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import { getPlaylistDetail } from '../service/playlist'
 	import vTable from './table.vue'
 
 	const router = useRouter()
@@ -86,10 +85,10 @@
 	})
 
 	onMounted(() => {
-		init()
+		init(data.listID)
 	})
-	const init = async () => {
-		data.listID = route.params.id ?? null
+	const init = async newVal => {
+		data.listID = newVal ?? null
 		if (data.listID) {
 			data.imgURL = route.query.playlistIMG
 			data.listTitle = route.query.listTitle
@@ -101,8 +100,8 @@
 
 	watch(
 		() => route.params.id,
-		async () => {
-			init()
+		newVal => {
+			init(newVal)
 		}
 	)
 

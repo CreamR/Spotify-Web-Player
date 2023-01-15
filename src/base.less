@@ -1,4 +1,4 @@
-// variable
+// 变量
 @colorSuccess: #67c23a;
 @colorWarning: #e6a23c;
 @colorDanger: #f56c6c;
@@ -21,4 +21,13 @@
 	display: flex;
 	justify-content: @centerMode;
 	align-items: center;
+}
+#easeTrs(@hovbgc, @actbgc) {
+	transition: all @span ease;
+	&:hover {
+		background-color: @hovbgc;
+	}
+	&:active {
+		background-color: @actbgc;
+	}
 }

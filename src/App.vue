@@ -1,23 +1,10 @@
 <template>
-	<router-view :key="logined"></router-view>
+	<router-view></router-view>
 </template>
 
-<script setup>
-	import { ref, onMounted } from 'vue'
-
-	const logined = ref(0)
-	onMounted(() => {
-		const timer = setInterval(() => {
-			if (localStorage.getItem('token')) {
-				logined.value++
-				clearInterval(timer)
-			}
-		}, 1111)
-	})
-</script>
+<script setup></script>
 
 <style lang="less">
-	// base CSS configration
 	* {
 		margin: 0;
 		padding: 0;

@@ -24,8 +24,7 @@
 				v-if="data.logined"
 				@click="
 					$router.push({
-						name: 'playlist',
-						params: { id: item.id },
+						path: `/playlist/${item.id}`,
 						query: {
 							playlistIMG: item.coverImgUrl,
 							listTitle: item.name,
@@ -58,7 +57,7 @@
 
 <script setup>
 	import { Cpu, Star } from '@element-plus/icons-vue'
-	import { reactive, onMounted } from 'vue'
+	import { reactive, onMounted, watch } from 'vue'
 	import { getPlaylist } from '../service/playlist'
 
 	const data = reactive({
@@ -68,15 +67,25 @@
 	})
 
 	onMounted(() => {
-		init()
+		init(data.uID)
 	})
-	const init = async () => {
-		if (localStorage.getItem('token')) {
-			const res = await getPlaylist(data.uID)
+	const init = async uID => {
+		if (data.logined) {
+			const res = await getPlaylist(uID)
 			data.playlist = res.playlist
 			console.log(JSON.parse(JSON.stringify(data.playlist)))
 		}
 	}
+
+	watch(
+		() => data.logined,
+		() => {
+			init(data.uID)
+		}
+	)
+	watch(localStorage.getItem('token'), newVal => {
+		data.logined = newVal
+	})
 </script>
 
 <style lang="less" scoped>

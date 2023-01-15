@@ -33,7 +33,7 @@
 				round
 				size="large"
 				@click="$router.push({ name: 'login' })"
-				v-if="!data.login"
+				v-if="!data.logined"
 				>登录</el-button
 			>
 			<div
@@ -51,29 +51,39 @@
 </template>
 
 <script setup>
-	import { ArrowLeftBold, ArrowRightBold, Search } from '@element-plus/icons-vue'
-	import { reactive, ref, onMounted } from 'vue'
+	import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
+	import { reactive, ref, onMounted, watch } from 'vue'
 
 	import { getProfile } from '../service/user'
 
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,
-		login: localStorage.getItem('token') ? true : false,
+		logined: localStorage.getItem('token') ? true : false,
 		userName: '',
 		userPhoto: '',
 	})
 	const keywords = ref()
 
 	onMounted(() => {
-		init()
+		init(data.uID)
 	})
-	const init = async () => {
-		if (data.login) {
-			const res = await getProfile(data.uID)
+	const init = async uID => {
+		if (data.logined) {
+			const res = await getProfile(uID)
 			data.userName = res.profile.nickname
 			data.userPhoto = res.profile.avatarUrl
 		}
 	}
+
+	watch(
+		() => data.logined,
+		() => {
+			init(data.uID)
+		}
+	)
+	watch(localStorage.getItem('token'), newVal => {
+		data.logined = newVal
+	})
 </script>
 
 <style lang="less" scoped>
