@@ -25,7 +25,7 @@
 					/>
 					<div class="songDetails">
 						<h4>{{ item.name }}</h4>
-						<span v-for="artist in item.ar">{{ artist.name }}</span>
+						<span v-for="artist in item.ar">{{ artist.name }} &ThinSpace;&ThinSpace;</span>
 					</div>
 				</div>
 
@@ -69,7 +69,7 @@
 </template>
 
 <script setup>
-	import { onMounted, reactive, watch } from 'vue'
+	import { onMounted, reactive, watch, ref } from 'vue'
 	import { Clock } from '@element-plus/icons-vue'
 	import { getPlaylistDetail } from '../service/playlist'
 
@@ -103,9 +103,6 @@
 		ul {
 			li {
 				padding: 12px;
-				&:hover {
-					background-color: @colorInfo;
-				}
 			}
 			.tag {
 				#setFlex(space-between);
@@ -133,12 +130,12 @@
 					display: inline-block;
 					position: absolute;
 					left: 40vw;
-					// top: 20px;
 				}
 
 				.time&operate {
 					display: inline-block;
 				}
+				#trs-bgc(rgb(44, 44, 44), rgb(66, 66, 66));
 			}
 		}
 	}
