@@ -79,7 +79,7 @@
 	const data = reactive({ playlist: [] })
 
 	onMounted(() => {
-		init(props.listID)
+		init(data.listID)
 	})
 	const init = async id => {
 		if (id) {

@@ -85,10 +85,10 @@
 	})
 
 	onMounted(() => {
-		init(data.listID)
+		init(route.params.id)
 	})
-	const init = async newVal => {
-		data.listID = newVal ?? null
+	const init = async id => {
+		data.listID = id ?? null
 		if (data.listID) {
 			data.imgURL = route.query.playlistIMG
 			data.listTitle = route.query.listTitle
