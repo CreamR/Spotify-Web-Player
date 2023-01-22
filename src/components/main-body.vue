@@ -82,18 +82,19 @@
 			margin-bottom: 20px;
 			li {
 				#setWH(15vw, 8vw);
+				border-radius: 30px;
+
 				position: relative;
 				margin-right: 20px;
 
-				border-radius: 30px;
 				cursor: pointer;
-
-				transition: all 0.2s ease;
+				transition: all 150ms ease;
 				&:hover {
 					transform: rotate(-3deg);
 				}
 				i {
 					font-size: xx-large;
+
 					position: absolute;
 					bottom: 1.5vw;
 					right: 2vw;
@@ -120,28 +121,22 @@
 			#setFlex(flex-start);
 			flex-wrap: wrap;
 			li {
-				padding: 1.1vw;
-				margin: 1.1vw;
 				border-radius: 10px;
-				margin-right: 15px;
-				margin-left: 15px;
+
+				padding: 1.1vw;
+				margin: 1.1vw 15px;
 
 				cursor: pointer;
-				transition: all 0.2s ease;
-				&:hover {
-					background-color: rgb(40, 40, 40);
-				}
-				&:active {
-					background-color: rgb(30, 30, 30);
-				}
+				#trs-bgc(rgb(40, 40, 40), rgb(30, 30, 30));
 				img {
 					#setWH(10vw, 10vw);
 					border-radius: 10px;
 				}
 				p {
 					display: -webkit-box;
-					font-size: normal;
 					#setWH(10vw, 40px);
+					font-size: normal;
+
 					margin-bottom: 10px;
 					padding: 1px 10px;
 

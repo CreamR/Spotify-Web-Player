@@ -109,12 +109,11 @@
 <style lang="less" scoped>
 	@import url(../../base.less);
 	.login {
-		text-align: center;
-		padding: 100px;
+		color: white;
 		min-height: calc(100vh - 10vh - 65px);
 
-		color: white;
-
+		padding: 100px;
+		text-align: center;
 		.logo {
 			margin-top: 6.6vw;
 			.spotify {
@@ -129,18 +128,20 @@
 		article {
 			display: block;
 			width: 300px;
-			margin: 45px auto;
-
 			border-bottom: 1px solid @colorInfo;
+
+			margin: 45px auto;
 		}
 		.el-input {
 			display: flex;
 			width: 30vw;
+
 			margin: 50px auto;
 		}
 		.el-button {
 			display: block;
 			#setWH(30vw, 45px);
+
 			margin: 20px auto;
 		}
 	}

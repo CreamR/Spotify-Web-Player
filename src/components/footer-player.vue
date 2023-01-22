@@ -142,21 +142,24 @@
 	@import url(../base.less);
 	.player {
 		#setFlex(space-between);
-		padding: 16px 24px;
 		background-color: rgb(24, 24, 24);
+
+		padding: 16px 24px;
 		.left {
 			color: whitesmoke;
 			#setFlex(space-between);
 			.songDetails {
 				#setWH(110px, 55px);
 				font-size: medium;
+
 				margin: 25px 5px 10px 10px;
 
 				overflow: hidden;
 				white-space: nowrap;
 				p {
-					margin-top: 3px;
 					font-size: small;
+
+					margin-top: 3px;
 					opacity: 0.3;
 				}
 			}
@@ -166,9 +169,11 @@
 			.controls {
 				#setFlex(center);
 				.el-icon {
-					margin: 0 6px 10px;
 					cursor: pointer;
-					transition: all 0.2s ease;
+
+					margin: 0 6px 10px;
+
+					transition: all 150ms ease;
 					&:hover {
 						transform: translateY(-2px);
 					}

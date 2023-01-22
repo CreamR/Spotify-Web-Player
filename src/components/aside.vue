@@ -89,6 +89,7 @@
 </script>
 
 <style lang="less" scoped>
+	@import url(../base.less);
 	.aside {
 		color: white;
 		font-weight: bold;
@@ -101,23 +102,18 @@
 		.content {
 			padding: 3px;
 			li {
+				border-radius: 10px;
+
 				padding: 10px;
 				padding-left: 30px;
 				margin-bottom: 10px;
 
-				border-radius: 10px;
-				transition: all 0.2s ease;
-				cursor: pointer;
-
 				overflow: hidden;
 				text-overflow: ellipsis;
 				white-space: nowrap;
-				&:hover {
-					background-color: #2c2c2c;
-				}
-				&:active {
-					background-color: #3c3c3c;
-				}
+
+				cursor: pointer;
+				#trs-bgc(#2c2c2c, #3c3c3c);
 				.el-icon {
 					vertical-align: middle;
 					margin-right: 10px;
@@ -127,27 +123,29 @@
 		circle {
 			display: block;
 			width: 80%;
-			margin: 0 auto;
 			border-bottom: 1px solid #383838;
+
+			margin: 0 auto;
 		}
 		.content {
 			margin-top: 10px;
 			.title {
-				padding: 10px;
-				padding-left: 30px;
-
 				color: #666666;
 				font-weight: normal;
 				font-size: medium;
+
+				padding: 10px;
+				padding-left: 30px;
 			}
 			.unlogined {
 				text-align: center;
 				margin-top: 30%;
 				circle {
 					width: 150px;
+					border-bottom: 1px solid darkgrey;
+
 					padding-bottom: 15px;
 					margin-bottom: 15px;
-					border-bottom: 1px solid darkgrey;
 				}
 			}
 		}

@@ -22,12 +22,21 @@
 	justify-content: @centerMode;
 	align-items: center;
 }
-#easeTrs(@hovbgc, @actbgc) {
-	transition: all @span ease;
+#trs-bgc(@hovbgc, @actbgc) {
+	transition: all 150ms ease;
 	&:hover {
 		background-color: @hovbgc;
 	}
 	&:active {
 		background-color: @actbgc;
+	}
+}
+#trs-color (@hovColor, @actColor) {
+	transition: all 180ms ease;
+	&:hover {
+		color: @hovColor;
+	}
+	&:active {
+		color: @actColor;
 	}
 }

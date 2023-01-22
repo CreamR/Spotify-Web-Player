@@ -120,6 +120,7 @@
 			img {
 				#setWH(220px, 220px);
 				margin: 10px 15px;
+
 				box-shadow: @BGShadow;
 			}
 			.info {
@@ -137,14 +138,8 @@
 					font-size: 16px;
 					color: @colorInfo;
 
-					transition: all 0.2s ease;
 					cursor: pointer;
-					&:hover {
-						color: @colorSuccess;
-					}
-					&:active {
-						color: @colorInfo;
-					}
+					#trs-color(@colorSuccess, @colorInfo);
 				}
 				p:nth-child(4) {
 					font-size: 15px;
@@ -158,15 +153,16 @@
 			.left {
 				#setFlex(flex-start);
 				.el-button {
-					margin-right: 30px;
-					transform: scale(1.3);
 					font-size: larger;
+
+					margin-right: 30px;
+					transform: scale(1.2);
 				}
 				.heart {
 					margin-right: 20px;
 
-					transition: all 0.15s ease;
 					cursor: pointer;
+					transition: all 150ms ease;
 					&:hover {
 						transform: scale(1.2);
 					}
@@ -176,13 +172,7 @@
 				}
 				.delete {
 					cursor: pointer;
-					transition: all 0.2s ease;
-					&:hover {
-						color: @colorDanger;
-					}
-					&:active {
-						color: @colorInfo;
-					}
+					#trs-color(@colorDanger, @colorInfo);
 				}
 			}
 			.right {
@@ -191,23 +181,23 @@
 				}
 				.search {
 					width: 180px;
-					margin-left: 15px;
-					padding: 8px 35px;
+					border: none;
+					border-bottom: 1px solid @colorInfo;
 
 					font-size: 12px;
+					color: @colorSuccess;
+
+					margin-left: 15px;
+					padding: 8px 35px;
 
 					background-image: url(../assets/searchWhite.svg);
 					background-repeat: no-repeat;
 					background-size: 22px, 22px;
 					background-position: 3px;
 					background-color: rgb(28, 28, 28);
-					color: @colorSuccess;
 
 					outline: none;
-					border: none;
-					border-bottom: 1px solid @colorInfo;
-
-					transition: all 0.3s ease;
+					transition: all 250ms ease;
 				}
 			}
 		}

@@ -94,54 +94,52 @@
 		background-color: rgb(8, 8, 8);
 		.left {
 			.el-button {
-				margin-left: 20px;
 				background-color: rgb(18, 18, 18);
 				border: 1px solid rgb(18, 18, 18);
+
+				margin-left: 20px;
 			}
 			.search {
 				#setWH(400px, 40px);
-				margin-left: 15px;
-				padding: 10px 40px;
-
 				font-size: 15px;
-
-				background-image: url(../assets/search.svg);
-				background-repeat: no-repeat;
-				background-size: 22px, 22px;
-				background-position: 10px;
 
 				outline: none;
 				border: none;
 				border-radius: 30px;
 				border: 1px solid @colorInfo;
+
+				margin-left: 15px;
+				padding: 10px 40px;
+
+				background-image: url(../assets/search.svg);
+				background-repeat: no-repeat;
+				background-size: 22px, 22px;
+				background-position: 10px;
 			}
 		}
 		.right {
 			.el-button {
-				margin-right: 1.3vw;
 				font-weight: bold;
+				margin-right: 1.3vw;
 			}
 			.userInfo {
 				display: inline-block;
-				vertical-align: middle;
-
-				padding: 6px 10px;
-				margin-right: 20px;
-
 				border-radius: 50px;
 				background-color: #2d3136;
 
-				transition: all 0.2s ease;
+				padding: 6px 10px;
+				margin-right: 20px;
+				vertical-align: middle;
+
 				cursor: pointer;
-				&:hover {
-					background-color: black;
-				}
+
+				#trs-bgc(black, black);
 				.el-avatar {
-					vertical-align: middle;
 					margin-right: 6px;
+					vertical-align: middle;
 				}
 				span {
-					color: whitesmoke;
+					color: white;
 					font-size: 13px;
 				}
 			}
