@@ -3,8 +3,8 @@
 		<ul>
 			<li class="tag">
 				<span>#</span>
-				<span>标题</span>
-				<span>专辑</span>
+				<span class="name">标题</span>
+				<span class="album">专辑</span>
 				<el-icon
 					color="darkgrey"
 					size="22"
@@ -25,11 +25,19 @@
 					/>
 					<div class="songDetails">
 						<h4>{{ item.name }}</h4>
-						<span v-for="artist in item.ar">{{ artist.name }} &ThinSpace;&ThinSpace;</span>
+						<span
+							v-for="artist in item.ar"
+							@click.prevent=""
+							>{{ artist.name }} &ThinSpace;&ThinSpace;</span
+						>
 					</div>
 				</div>
 
-				<div class="album">
+				<!-- prevent防止DOM冒泡 -->
+				<div
+					class="album"
+					@click.prevent=""
+				>
 					{{ item.al.name }}
 				</div>
 
@@ -102,40 +110,68 @@
 		padding: 10px 20px;
 		ul {
 			li {
+				color: #b1b3b8;
 				padding: 12px;
+				font-size: small;
+
+				// tag和songsDetail都添加flex布局与定位
+				#setFlex(space-between);
+				position: relative;
 			}
 			.tag {
-				#setFlex(space-between);
-				position: relative;
+				color: @colorInfo;
+				.name {
+					position: absolute;
+					left: 50px;
+				}
+				.album {
+					display: inline-block;
+					position: absolute;
+					left: 36vw;
+				}
 			}
 			.songContent {
-				#setFlex(space-between);
-				position: relative;
 				.songIntro {
 					display: inline-flex;
 					align-items: center;
 
 					vertical-align: middle;
 					.indexNum {
-						color: @colorInfo;
 						margin-right: 24px;
 
 						text-align: center;
 					}
 					.songDetails {
+						color: white;
 						margin-left: 22px;
+
+						#wordSeal(250px);
+						h4 {
+							font-size: 15px;
+						}
+						span {
+							color: @colorInfo;
+							font-size: small;
+
+							cursor: pointer;
+							#trs-color(@colorSuccess, @colorInfo);
+						}
 					}
 				}
 				.album {
 					display: inline-block;
 					position: absolute;
-					left: 40vw;
+					left: 36vw;
+
+					cursor: pointer;
+					#trs-color(@colorSuccess, @colorInfo);
+					#wordSeal(230px);
 				}
 
 				.time&operate {
 					display: inline-block;
 				}
-				#trs-bgc(rgb(44, 44, 44), rgb(66, 66, 66));
+				#trs-bgc(rgb(44, 44, 44), rgb(55, 55, 55));
 			}
 		}
 	}

@@ -7,10 +7,10 @@
 @BGShadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 @SMShadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
-// mixin
-#setBG(@url) {
-	background-size: contain;
+// 函数
+#setBG(@url, @type) {
 	background-image: url(@url);
+	background-size: @type;
 	background-repeat: no-repeat;
 }
 #setWH(@width, @height) {
@@ -22,6 +22,8 @@
 	justify-content: @centerMode;
 	align-items: center;
 }
+
+// 过渡
 #trs-bgc(@hovbgc, @actbgc) {
 	transition: all 100ms ease;
 	&:hover {
@@ -39,4 +41,12 @@
 	&:active {
 		color: @actColor;
 	}
+}
+
+// 文字超出隐藏
+#wordSeal (@width) {
+	width: @width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }

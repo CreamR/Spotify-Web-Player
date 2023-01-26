@@ -133,13 +133,14 @@
 					border-radius: 10px;
 				}
 				p {
-					display: -webkit-box;
 					#setWH(10vw, 40px);
 					font-size: normal;
 
 					margin-bottom: 10px;
 					padding: 1px 10px;
 
+					// 超出两行隐藏文字
+					display: -webkit-box;
 					overflow: hidden;
 					text-overflow: ellipsis;
 					-webkit-line-clamp: 2;

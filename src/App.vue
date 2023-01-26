@@ -25,13 +25,13 @@
 
 	::-webkit-scrollbar {
 		//滚动条整体部分
-		width: 3px;
+		width: 5px;
 		background-color: rgb(30, 30, 30);
 		z-index: 999;
 	}
 	::-webkit-scrollbar-thumb {
 		//滚动条可拖动部分
-		border-radius: 3px;
+		border-radius: 5px;
 		background-color: rgb(100, 100, 100);
 		z-index: 999;
 	}
