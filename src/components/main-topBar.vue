@@ -7,6 +7,7 @@
 				size="large"
 				text
 				bg
+				@click="$router.back"
 			/>
 			<el-button
 				:icon="ArrowRightBold"
@@ -14,11 +15,13 @@
 				size="large"
 				text
 				bg
+				@click="$router.go"
 			/>
 			<input
 				v-model="keywords"
 				type="text"
 				class="search"
+				placeholder="搜索 歌手 专辑 音乐"
 			/>
 		</section>
 		<section class="right">

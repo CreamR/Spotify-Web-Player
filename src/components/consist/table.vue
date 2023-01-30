@@ -79,7 +79,7 @@
 <script setup>
 	import { onMounted, reactive, watch, ref } from 'vue'
 	import { Clock } from '@element-plus/icons-vue'
-	import { getPlaylistDetail } from '../service/playlist'
+	import { getPlaylistDetail } from '../../service/playlist'
 
 	const props = defineProps({
 		listID: Number,
@@ -105,7 +105,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../base.less);
+	@import url(../../base.less);
 	.table {
 		padding: 10px 20px;
 		ul {
@@ -131,6 +131,7 @@
 				}
 			}
 			.songContent {
+				#trs-bgc(rgb(44, 44, 44), rgb(55, 55, 55));
 				.songIntro {
 					display: inline-flex;
 					align-items: center;
@@ -171,7 +172,6 @@
 				.time&operate {
 					display: inline-block;
 				}
-				#trs-bgc(rgb(44, 44, 44), rgb(55, 55, 55));
 			}
 		}
 	}

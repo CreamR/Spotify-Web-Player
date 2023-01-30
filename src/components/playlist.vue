@@ -70,7 +70,7 @@
 	import { Headset, QuestionFilled, Delete } from '@element-plus/icons-vue'
 	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import vTable from './table.vue'
+	import vTable from './consist/table.vue'
 
 	const router = useRouter()
 	const route = useRoute()

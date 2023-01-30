@@ -35,6 +35,18 @@
 			<li
 				v-for="(item, index) in data.greatPlaylist"
 				:key="index"
+				@click="
+					$router.push({
+						path: `/playlist/${item.id}`,
+						query: {
+							playlistIMG: item.picUrl,
+							listTitle: item.name,
+							count: item.trackCount,
+							view: item.playcount,
+							creator: item.creator.nickname,
+						},
+					})
+				"
 			>
 				<img
 					:src="item.picUrl"
@@ -65,6 +77,7 @@
 		const resPlaylist = await getGreatPlaylist(token, cookie)
 
 		data.greatPlaylist = resPlaylist.recommend
+		console.log('greatList')
 		console.log(resPlaylist)
 	}
 	const goPlaylist = type => {}
