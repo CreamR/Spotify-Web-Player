@@ -116,7 +116,7 @@
 
 				background-image: url(../assets/search.svg);
 				background-repeat: no-repeat;
-				background-size: 22px, 22px;
+				background-size: 22px 22px;
 				background-position: 10px;
 			}
 		}

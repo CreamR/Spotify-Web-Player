@@ -190,8 +190,10 @@
 					margin-left: 15px;
 					padding: 8px 35px;
 
-					#setBG('../assets/searchWhite.svg', '22px, 22px');
+					background-image: url(../assets/searchWhite.svg);
+					background-size: 22px 22px;
 					background-position: 3px;
+					background-repeat: no-repeat;
 					background-color: rgb(28, 28, 28);
 
 					outline: none;
