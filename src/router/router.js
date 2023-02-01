@@ -49,16 +49,16 @@ const router = createRouter({
 })
 
 // router.beforeEach((to, from, next) => {
-//   if (to.path == '/home/application') {
-//     if (sessionStorage.getItem('token') == 1) {
-//       next()
-//     } else {
-//     //   nonething
-//       next('/home/login')
-//     }
-//   } else {
-//     next()
-//   }
+// 	if (to.path == '/searchRes') {
+// 		if (sessionStorage.getItem('token') == 1) {
+// 			next()
+// 		} else {
+// 			//   nonething
+// 			next('/home/login')
+// 		}
+// 	} else {
+// 		next()
+// 	}
 // })
 
 export default router

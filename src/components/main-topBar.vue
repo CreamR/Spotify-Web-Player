@@ -22,6 +22,14 @@
 				type="text"
 				class="search"
 				placeholder="搜索 歌手 专辑 音乐"
+				@input="
+					$router.push({
+						path: '/searchRes',
+						query: {
+							keywords: keywords,
+						},
+					})
+				"
 			/>
 		</section>
 		<section class="right">
