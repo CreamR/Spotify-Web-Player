@@ -13,7 +13,8 @@
 	const route = useRoute()
 
 	const data = reactive({
-		list: [],
+		songsList: [],
+		artistList: [],
 	})
 
 	onMounted(() => {
@@ -21,7 +22,7 @@
 	})
 	const init = async key => {
 		const res = await search(key)
-		// data.list = res
+		data.songsList = res.result
 		console.log(res)
 	}
 
