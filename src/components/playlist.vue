@@ -1,6 +1,6 @@
 <template>
 	<div class="playlist">
-		<section class="listInfo">
+		<div class="listInfo">
 			<img
 				:src="data.imgURL"
 				:title="data.listTitle"
@@ -11,9 +11,9 @@
 				<p>创建者 - {{ data.creator }}</p>
 				<p>歌曲 · {{ data.count }} &nbsp | &nbsp 播放 · {{ data.view }}</p>
 			</div>
-		</section>
-		<section class="controlBar">
-			<section class="left">
+		</div>
+		<div class="controlBar">
+			<div class="left">
 				<el-button
 					type="success"
 					circle
@@ -32,9 +32,9 @@
 					class="delete"
 					><Delete
 				/></el-icon>
-			</section>
+			</div>
 
-			<section class="right">
+			<div class="right">
 				<el-popover
 					placement="left"
 					:width="310"
@@ -58,11 +58,11 @@
 					@focus="isExpand(true)"
 					@blur="isExpand(false)"
 				/>
-			</section>
-		</section>
-		<section class="tableList">
+			</div>
+		</div>
+		<div class="tableList">
 			<vTable :listID="data.listID"></vTable>
-		</section>
+		</div>
 	</div>
 </template>
 

@@ -1,6 +1,16 @@
 <template>
 	<div class="searchRes">
-		<h1>TESTING</h1>
+		<section
+			class="empty"
+			v-if="data.isEmpty"
+		>
+			<h1>未找到 {{ $route.query.keywords }} 的搜索结果</h1>
+			<p>请确保您的关键字拼写正确，或者尝试使用其他关键字</p>
+		</section>
+
+		<div class="content">
+			<h1>There is content</h1>
+		</div>
 	</div>
 </template>
 
@@ -15,6 +25,7 @@
 	const data = reactive({
 		songsList: [],
 		artistList: [],
+		isEmpty: true,
 	})
 
 	onMounted(() => {
@@ -22,8 +33,14 @@
 	})
 	const init = async key => {
 		const res = await search(key)
-		data.songsList = res.result
-		console.log(res)
+
+		// 判断返回对象是否空
+		if (Object.keys(res.result).length != 0) {
+			data.songsList = res.result
+			console.log(res.result)
+		} else {
+			console.log('obj empty')
+		}
 	}
 
 	watch(
@@ -34,4 +51,11 @@
 	)
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+	.searchRes {
+		.empty {
+			text-align: center;
+			margin-top: 18vw;
+		}
+	}
+</style>
