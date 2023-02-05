@@ -5,10 +5,14 @@
 			v-if="data.isEmpty"
 		>
 			<h1>未找到 {{ $route.query.keywords }} 的搜索结果</h1>
+			<br />
 			<p>请确保您的关键字拼写正确，或者尝试使用其他关键字</p>
 		</section>
 
-		<div class="content">
+		<div
+			class="content"
+			v-else
+		>
 			<h1>There is content</h1>
 		</div>
 	</div>

@@ -131,7 +131,9 @@
 				}
 			}
 			.songContent {
-				#trs-bgc(rgb(44, 44, 44), rgb(55, 55, 55));
+				&:hover {
+					background-color: rgb(44, 44, 44);
+				}
 				.songIntro {
 					display: inline-flex;
 					align-items: center;
