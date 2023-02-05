@@ -29,7 +29,7 @@
 	const data = reactive({
 		songsList: [],
 		artistList: [],
-		isEmpty: true,
+		isEmpty: false,
 	})
 
 	onMounted(() => {
@@ -41,9 +41,10 @@
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
 			data.songsList = res.result
+			data.isEmpty = true
 			console.log(res.result)
 		} else {
-			console.log('obj empty')
+			data.isEmpty = true
 		}
 	}
 
