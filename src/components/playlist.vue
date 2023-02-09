@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<div class="tableList">
-			<vTable :listID="data.listID"></vTable>
+			<vTable :songsList="data.songsList"></vTable>
 		</div>
 	</div>
 </template>
@@ -71,12 +71,13 @@
 	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import vTable from './consist/table.vue'
+	import { getPlaylistDetail } from '../service/playlist'
 
 	const router = useRouter()
 	const route = useRoute()
 
 	const data = reactive({
-		listID: null,
+		songsList: null,
 		imgURL: '',
 		listTitle: '',
 		count: 0,
@@ -88,8 +89,10 @@
 		init(route.params.id)
 	})
 	const init = async id => {
-		data.listID = id ?? null
-		if (data.listID) {
+		const res = await getPlaylistDetail(id)
+		data.songsList = res.songs
+
+		if (id) {
 			data.imgURL = route.query.playlistIMG
 			data.listTitle = route.query.listTitle
 			data.count = route.query.count
@@ -98,18 +101,18 @@
 		}
 	}
 
+	const inputing = ref()
+	const isExpand = isFocus => {
+		if (isFocus) inputing.value.style.width = '300px'
+		else inputing.value.style.width = '180px'
+	}
+
 	watch(
 		() => route.params.id,
 		newVal => {
 			init(newVal)
 		}
 	)
-
-	const inputing = ref()
-	const isExpand = isFocus => {
-		if (isFocus) inputing.value.style.width = '300px'
-		else inputing.value.style.width = '180px'
-	}
 </script>
 
 <style lang="less" scoped>

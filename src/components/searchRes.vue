@@ -13,7 +13,34 @@
 			class="content"
 			v-else
 		>
-			<h1>There is content</h1>
+			<div class="searchNavbar">
+				<el-button
+					round
+					color="rgb(44,44,44)"
+					>歌曲</el-button
+				>
+				<el-button
+					round
+					color="rgb(44,44,44)"
+					>艺人</el-button
+				><el-button
+					round
+					color="rgb(44,44,44)"
+					>歌单</el-button
+				>
+				<el-button
+					round
+					color="rgb(44,44,44)"
+					>专辑</el-button
+				>
+				<el-button
+					round
+					color="rgb(44,44,44)"
+					>用户</el-button
+				>
+			</div>
+
+			<vSearchResTable :songsList="data.searchResList"></vSearchResTable>
 		</div>
 	</div>
 </template>
@@ -22,27 +49,30 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import { search } from '../service/search'
+	import vSearchResTable from './consist/searchResTable.vue'
 
 	const router = useRouter()
 	const route = useRoute()
 
 	const data = reactive({
-		songsList: [],
-		artistList: [],
+		searchResList: [],
 		isEmpty: false,
 	})
 
 	onMounted(() => {
 		init(route.query.keywords)
 	})
+	// 默认搜索建议包含歌曲，歌手，歌单等
 	const init = async key => {
 		const res = await search(key)
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
-			data.songsList = res.result
-			data.isEmpty = true
-			console.log(res.result)
+			data.searchResList = res.result.songs
+			data.isEmpty = false
+
+			console.log('fuckfuck')
+			console.log(res.result.songs)
 		} else {
 			data.isEmpty = true
 		}
