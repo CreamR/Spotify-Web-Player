@@ -92,7 +92,7 @@
 	.body {
 		.newSongsCategory {
 			#setFlex(space-around);
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 			li {
 				#setWH(15vw, 8vw);
 				border-radius: 30px;
@@ -133,11 +133,12 @@
 		.greatPlaylist {
 			#setFlex(flex-start);
 			flex-wrap: wrap;
+			margin-bottom: 30px;
 			li {
 				border-radius: 10px;
 
-				padding: 1.1vw;
-				margin: 1.1vw 15px;
+				padding: 1vw;
+				margin: 1vw 15px;
 
 				cursor: pointer;
 				#trs-bgc(rgb(40, 40, 40), rgb(30, 30, 30));

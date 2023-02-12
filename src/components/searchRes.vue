@@ -16,25 +16,35 @@
 			<div class="searchNavbar">
 				<el-button
 					round
+					:class="{ active: data.isActive == 1 }"
+					@click="data.isActive = 1"
 					color="rgb(44,44,44)"
 					>歌曲</el-button
 				>
 				<el-button
 					round
+					:class="{ active: data.isActive == 2 }"
+					@click="data.isActive = 2"
 					color="rgb(44,44,44)"
 					>艺人</el-button
 				><el-button
 					round
+					:class="{ active: data.isActive == 3 }"
+					@click="data.isActive = 3"
 					color="rgb(44,44,44)"
 					>歌单</el-button
 				>
 				<el-button
 					round
+					:class="{ active: data.isActive == 4 }"
+					@click="data.isActive = 4"
 					color="rgb(44,44,44)"
 					>专辑</el-button
 				>
 				<el-button
 					round
+					:class="{ active: data.isActive == 5 }"
+					@click="data.isActive = 5"
 					color="rgb(44,44,44)"
 					>用户</el-button
 				>
@@ -57,6 +67,8 @@
 	const data = reactive({
 		searchResList: [],
 		isEmpty: false,
+		// 控制类别按钮点击后变色
+		isActive: 1,
 	})
 
 	onMounted(() => {
@@ -87,10 +99,28 @@
 </script>
 
 <style lang="less" scoped>
+	@import url(../base.less);
+	.active {
+		color: black;
+		background-color: white;
+	}
+
 	.searchRes {
+		// 无搜索结果时的样式
 		.empty {
 			text-align: center;
 			margin-top: 18vw;
+		}
+		// 有搜索结果时的样式
+		.content {
+			.searchNavbar {
+				position: sticky;
+				margin-bottom: 10px;
+				.el-button {
+					transition: all 200ms ease;
+					margin-right: 10px;
+				}
+			}
 		}
 	}
 </style>

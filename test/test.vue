@@ -25,7 +25,10 @@
 			.then(data => console.log(data))
 	}
 	const test = async () => {
-		const res = await getSearchSuggest('海阔天空')
+		const res = await fetch('http://127.0.0.1:3000/artist/top/song?id=6452').then(data =>
+			data.json()
+		)
+		console.log('ssssss')
 		console.log(res)
 	}
 </script>

@@ -18,15 +18,15 @@
 			>
 				<div class="songIntro">
 					<span class="indexNum">{{ index + 1 >= 10 ? index + 1 : '0' + (index + 1) }}</span>
-					<!-- <img
+					<img
 						:src="item.al.picUrl"
 						:title="item.name"
 						width="50"
-					/> -->
+					/>
 					<div class="songDetails">
 						<h4>{{ item.name }}</h4>
 						<span
-							v-for="artist in item.artists"
+							v-for="artist in item.ar"
 							@click.prevent=""
 							>{{ artist.name }} &ThinSpace;&ThinSpace;</span
 						>
@@ -38,13 +38,13 @@
 					class="album"
 					@click.prevent=""
 				>
-					{{ item.album.name }}
+					{{ item.al.name }}
 				</div>
 
 				<div class="time&operate">
 					<!-- time handler -->
 					<!-- 将ms转换为min并转换为标准时间格式 -->
-					{{ timeSwtich(item.duration) }}
+					{{ timeSwtich(item.dt) }}
 				</div>
 			</li>
 		</ul>
@@ -96,7 +96,7 @@
 				color: @colorInfo;
 				.name {
 					position: absolute;
-					left: 60px;
+					left: 50px;
 				}
 				.album {
 					display: inline-block;
@@ -120,7 +120,7 @@
 					}
 					.songDetails {
 						color: white;
-						margin-left: 10px;
+						margin-left: 22px;
 
 						#wordSeal(250px);
 						h4 {
