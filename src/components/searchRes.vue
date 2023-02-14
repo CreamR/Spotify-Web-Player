@@ -51,6 +51,7 @@
 			</div>
 
 			<vSearchResTable :songsList="data.searchResList"></vSearchResTable>
+			<component :is=""></component>
 		</div>
 	</div>
 </template>
@@ -74,9 +75,24 @@
 	onMounted(() => {
 		init(route.query.keywords)
 	})
-	// 默认搜索建议包含歌曲，歌手，歌单等
+	// 默认搜索单曲
 	const init = async key => {
-		const res = await search(key)
+		const res = await search(key, 1)
+
+		// 判断返回对象是否空
+		if (Object.keys(res.result).length != 0) {
+			data.searchResList = res.result.songs
+			data.isEmpty = false
+
+			console.log('fuckfuck')
+			console.log(res.result.songs)
+		} else {
+			data.isEmpty = true
+		}
+	}
+
+	const searchArtist = async key => {
+		const res = await search(key, 100)
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
@@ -93,6 +109,15 @@
 	watch(
 		() => route.query.keywords,
 		newVal => {
+			switch (data.isActive) {
+				case 1:
+					init(newVal)
+					break
+				case 2:
+
+				default:
+					break
+			}
 			init(newVal)
 		}
 	)

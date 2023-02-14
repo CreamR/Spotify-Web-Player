@@ -10,7 +10,7 @@ export const getSearchSuggest = (keywords: number | string) =>
 	)
 
 // 搜索
-export const search = (keywords: number | string, type?: number) =>
-	fetch(`${baseURL}/search?keywords=${keywords}&token=${token}&cookie=${cookie}`).then(data =>
-		data.json()
+export const search = (keywords: number | string, type: number) =>
+	fetch(`${baseURL}/search?keywords=${keywords}&type=${type}&token=${token}&cookie=${cookie}`).then(
+		data => data.json()
 	)

@@ -18,11 +18,7 @@
 			>
 				<div class="songIntro">
 					<span class="indexNum">{{ index + 1 >= 10 ? index + 1 : '0' + (index + 1) }}</span>
-					<!-- <img
-						:src="item.al.picUrl"
-						:title="item.name"
-						width="50"
-					/> -->
+
 					<div class="songDetails">
 						<h4>{{ item.name }}</h4>
 						<span

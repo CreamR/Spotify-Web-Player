@@ -169,13 +169,11 @@
 			.controls {
 				#setFlex(center);
 				.el-icon {
-					cursor: pointer;
-
 					margin: 0 6px 10px;
-
+					cursor: pointer;
 					transition: all 150ms ease;
 					&:hover {
-						transform: translateY(-2px);
+						transform: translateY(-1px);
 					}
 				}
 			}

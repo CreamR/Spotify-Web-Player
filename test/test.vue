@@ -16,7 +16,7 @@
 
 <script setup>
 	import { onMounted } from 'vue'
-	import { getSearchSuggest } from '../src/service/search'
+	import { search } from '../src/service/search'
 	import skeleton from '../src/components/feedback/skeleton.vue'
 
 	const inlogout = () => {
@@ -25,10 +25,8 @@
 			.then(data => console.log(data))
 	}
 	const test = async () => {
-		const res = await fetch('http://127.0.0.1:3000/artist/top/song?id=6452').then(data =>
-			data.json()
-		)
-		console.log('ssssss')
+		const res = await search('海阔天空')
+		console.log('歌手搜索')
 		console.log(res)
 	}
 </script>
