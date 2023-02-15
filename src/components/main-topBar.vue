@@ -49,6 +49,7 @@
 			>
 			<div
 				class="userInfo"
+				@click="$router.push({ name: 'profile' })"
 				v-else
 			>
 				<el-avatar

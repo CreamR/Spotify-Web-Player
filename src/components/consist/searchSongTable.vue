@@ -12,7 +12,7 @@
 				/></el-icon>
 			</li>
 			<li
-				v-for="(item, index) in data.playlist"
+				v-for="(item, index) in props.songsList"
 				:key="index"
 				class="songContent"
 			>
@@ -55,23 +55,23 @@
 	const props = defineProps({
 		songsList: [],
 	})
-	const data = reactive({
-		playlist: [],
-	})
+	// const data = reactive({
+	// 	dataList: [],
+	// })
 
-	onMounted(() => {
-		init(data.listID)
-	})
-	const init = async () => {
-		data.playlist = props.songsList
-	}
+	// onMounted(() => {
+	// 	init(data.listID)
+	// })
+	// const init = async () => {
+	// 	data.dataList = props.songsList
+	// }
 
-	watch(
-		() => props.songsList,
-		newVal => {
-			data.playlist = newVal
-		}
-	)
+	// watch(
+	// 	() => props.songsList,
+	// 	newVal => {
+	// 		data.dataList = newVal
+	// 	}
+	// )
 </script>
 
 <style lang="less" scoped>

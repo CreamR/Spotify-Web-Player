@@ -50,8 +50,8 @@
 				>
 			</div>
 
-			<vSearchResTable :songsList="data.searchResList"></vSearchResTable>
-			<component :is=""></component>
+			<vSearchSongTable :songsList="data.searchResList.songs"></vSearchSongTable>
+			<vSearchArtistTable></vSearchArtistTable>
 		</div>
 	</div>
 </template>
@@ -60,7 +60,8 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import { search } from '../service/search'
-	import vSearchResTable from './consist/searchResTable.vue'
+	import vSearchSongTable from './consist/searchSongTable.vue'
+	import vSearchArtistTable from './consist/searchArtistTable.vue'
 
 	const router = useRouter()
 	const route = useRoute()
@@ -75,28 +76,13 @@
 	onMounted(() => {
 		init(route.query.keywords)
 	})
-	// 默认搜索单曲
-	const init = async key => {
-		const res = await search(key, 1)
+	// 根据传入的type搜索指定类型的结果
+	const init = async (key, type) => {
+		const res = await search(key, type)
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
-			data.searchResList = res.result.songs
-			data.isEmpty = false
-
-			console.log('fuckfuck')
-			console.log(res.result.songs)
-		} else {
-			data.isEmpty = true
-		}
-	}
-
-	const searchArtist = async key => {
-		const res = await search(key, 100)
-
-		// 判断返回对象是否空
-		if (Object.keys(res.result).length != 0) {
-			data.searchResList = res.result.songs
+			data.searchResList = res.result
 			data.isEmpty = false
 
 			console.log('fuckfuck')
@@ -107,18 +93,28 @@
 	}
 
 	watch(
-		() => route.query.keywords,
+		() => route.query.keywords || data.isActive,
 		newVal => {
 			switch (data.isActive) {
 				case 1:
-					init(newVal)
+					init(newVal, 1)
 					break
 				case 2:
-
+					init(newVal, 100)
+					break
+				case 3:
+					init(newVal, 1000)
+					break
+				case 4:
+					init(newVal, 10)
+					break
+				case 5:
+					init(newVal, 1002)
+					break
 				default:
+					// 后续跳转至error页面
 					break
 			}
-			init(newVal)
 		}
 	)
 </script>

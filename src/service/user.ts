@@ -13,9 +13,7 @@ export const login = (phone: number, verifyCode: number) =>
 
 // 登出
 export const logout = (): void => {
-	fetch(`${baseURL}/logout?token=${token}&cookie=${cookie}`)
-		.then(data => data.json())
-		.then(data => console.log(data))
+	fetch(`${baseURL}/logout?token=${token}&cookie=${cookie}`).then(data => data.json())
 }
 
 // 获取用户资料

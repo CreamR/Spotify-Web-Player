@@ -5,7 +5,7 @@
 		<span>uID: {{ data.userID }}</span>
 		<el-button
 			type="danger"
-			@click="tologout"
+			@click="gologout"
 			>登出</el-button
 		>
 	</div>
@@ -15,8 +15,9 @@
 	import { reactive } from 'vue'
 	import { logout } from '../../service/user'
 
-	const tologout = () => {
-		logout()
+	const gologout = async () => {
+		const res = await logout()
+		console.log(res)
 	}
 </script>
 
