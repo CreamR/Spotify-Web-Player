@@ -12,7 +12,7 @@
 				/></el-icon>
 			</li>
 			<li
-				v-for="(item, index) in props.songsList.songs"
+				v-for="(item, index) in props.dataList.songs"
 				:key="index"
 				class="songContent"
 			>
@@ -53,7 +53,7 @@
 	import { timeSwtich } from '../../function/timeSwtich'
 
 	const props = defineProps({
-		songsList: [],
+		dataList: [],
 	})
 </script>
 

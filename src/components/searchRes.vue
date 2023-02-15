@@ -50,8 +50,10 @@
 				>
 			</div>
 
-			<vSearchSongTable :songsList="data.searchResList"></vSearchSongTable>
-			<vSearchArtistTable :artistList="data.searchResList"></vSearchArtistTable>
+			<!-- <vSearchSongTable :songsList="data.searchResList"></vSearchSongTable> -->
+			<!-- <vSearchArtistTable :artistList="data.searchResList"></vSearchArtistTable> -->
+			<!-- new write method -->
+			<router-view :dataList="data.searchResList"></router-view>
 		</div>
 	</div>
 </template>

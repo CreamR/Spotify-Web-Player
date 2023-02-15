@@ -32,6 +32,37 @@ const router = createRouter({
 					name: 'searchRes',
 					path: '/searchRes',
 					component: () => import('../components/searchRes.vue'),
+					children: [
+						{
+							path: '/searchRes',
+							redirect: '/searchRes/song',
+						},
+						{
+							name: 'searchResSong',
+							path: '/searchRes/song',
+							component: () => import('../components/consist/searchSongTable.vue'),
+						},
+						{
+							name: 'searchResArtist',
+							path: '/searchRes/artist',
+							component: () => import('../components/consist/searchArtistTable.vue'),
+						},
+						{
+							name: 'searchResPlaylist',
+							path: '/searchRes/playlist',
+							component: () => import('../components/consist/searchPlaylistTable.vue'),
+						},
+						{
+							name: 'searchResAlbum',
+							path: '/searchRes/album',
+							component: () => import('../components/consist/searchAlbumTable.vue'),
+						},
+						{
+							name: 'searchResUser',
+							path: '/searchRes/user',
+							component: () => import('../components/consist/searchUserTable.vue'),
+						},
+					],
 				},
 				{
 					name: 'collect',
