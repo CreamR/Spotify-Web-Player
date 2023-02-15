@@ -12,23 +12,7 @@
 	const props = defineProps({
 		artistList: [],
 	})
-	const data = reactive({
-		playlist: [],
-	})
-
-	onMounted(() => {
-		init(data.listID)
-	})
-	const init = async () => {
-		data.playlist = props.songsList
-	}
-
-	watch(
-		() => props.songsList,
-		newVal => {
-			data.playlist = newVal
-		}
-	)
+	console.log(props.artistList)
 </script>
 
 <style lang="less" scoped>

@@ -50,8 +50,8 @@
 				>
 			</div>
 
-			<vSearchSongTable :songsList="data.searchResList.songs"></vSearchSongTable>
-			<vSearchArtistTable></vSearchArtistTable>
+			<vSearchSongTable :songsList="data.searchResList"></vSearchSongTable>
+			<vSearchArtistTable :artistList="data.searchResList"></vSearchArtistTable>
 		</div>
 	</div>
 </template>
