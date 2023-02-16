@@ -1,7 +1,17 @@
 <template>
 	<div class="table">
 		<el-row>
-			<el-col :span="6"> </el-col>
+			<el-col
+				:span="6"
+				v-for="(item, index) in props.dataList.artists"
+				:key="index"
+			>
+				<img
+					:src="item.img1v1Url"
+					width="200"
+					height="200"
+				/>
+			</el-col>
 		</el-row>
 	</div>
 </template>
@@ -10,9 +20,10 @@
 	import { onMounted, reactive, watch } from 'vue'
 
 	const props = defineProps({
-		artistList: [],
+		dataList: [],
 	})
-	console.log(props.artistList)
+	console.log('props data')
+	console.log(props.datatList)
 </script>
 
 <style lang="less" scoped>

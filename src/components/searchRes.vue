@@ -96,22 +96,27 @@
 
 	watch(
 		() => route.query.keywords || data.isActive,
-		newVal => {
+		async newVal => {
 			switch (data.isActive) {
 				case 1:
-					init(newVal, 1)
+					await init(newVal, 1)
+					router.push({ name: 'searchResSong' })
 					break
 				case 2:
-					init(newVal, 100)
+					await init(newVal, 100)
+					router.push({ name: 'searchResArtist' })
 					break
 				case 3:
-					init(newVal, 1000)
+					await init(newVal, 1000)
+					router.push({ name: 'searchResPlaylist' })
 					break
 				case 4:
-					init(newVal, 10)
+					await init(newVal, 10)
+					router.push({ name: 'searchResAlbum' })
 					break
 				case 5:
-					init(newVal, 1002)
+					await init(newVal, 1002)
+					router.push({ name: 'searchResUser' })
 					break
 				default:
 					// 后续跳转至error页面
