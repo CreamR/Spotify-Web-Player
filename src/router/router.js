@@ -29,6 +29,16 @@ const router = createRouter({
 					component: () => import('../components/playlist.vue'),
 				},
 				{
+					name: 'collect',
+					path: '/collect',
+					component: () => import('../components/collect.vue'),
+				},
+				{
+					name: 'profile',
+					path: '/profile',
+					component: () => import('../components/user/profile.vue'),
+				},
+				{
 					name: 'searchRes',
 					path: '/searchRes',
 					component: () => import('../components/searchRes.vue'),
@@ -63,11 +73,6 @@ const router = createRouter({
 							component: () => import('../components/consist/searchUserTable.vue'),
 						},
 					],
-				},
-				{
-					name: 'collect',
-					path: '/collect',
-					component: () => import('../components/collect.vue'),
 				},
 			],
 		},
