@@ -84,12 +84,13 @@ const router = createRouter({
 	],
 })
 
-router.beforeEach((to, from, next) => {
-	if (localStorage.getItem('token')) {
-		next()
-	} else {
-		next('/login')
-	}
+router.beforeEach(to => {
+	if (
+		!localStorage.getItem('token') &&
+		// 避免无限redirect
+		to.name != 'login'
+	)
+		return { name: 'login' }
 })
 
 export default router

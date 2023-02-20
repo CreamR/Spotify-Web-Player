@@ -72,8 +72,8 @@
 		init()
 	})
 	const init = async () => {
-		const token = localStorage.getItem('token') ?? ''
-		const cookie = localStorage.getItem('cookie') ?? ''
+		const token = localStorage.getItem('token') ?? null
+		const cookie = localStorage.getItem('cookie') ?? null
 		const resPlaylist = await getGreatPlaylist(token, cookie)
 
 		data.greatPlaylist = resPlaylist.recommend
