@@ -17,11 +17,11 @@
 			>
 		</el-radio-group>
 
-		<el-button
+		<!-- <el-button
 			type="danger"
 			@click="gologout"
 			>登出</el-button
-		>
+		> -->
 	</div>
 </template>
 
@@ -76,6 +76,12 @@
 
 <style lang="less" scoped>
 	.profile {
+		color: white;
+		text-align: center;
+
+		.title {
+			margin-top: 100px;
+		}
 		.el-button {
 			margin-top: 200px;
 			display: block;

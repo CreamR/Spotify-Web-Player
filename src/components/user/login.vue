@@ -110,12 +110,9 @@
 	@import url(../../base.less);
 	.login {
 		color: white;
-		min-height: calc(100vh - 10vh - 65px);
-
-		padding: 100px;
 		text-align: center;
 		.logo {
-			margin-top: 6.6vw;
+			margin-top: 100px;
 			.spotify {
 				vertical-align: middle;
 				margin-right: 22px;

@@ -81,16 +81,21 @@ const router = createRouter({
 			path: '/test',
 			component: () => import('../../test/test.vue'),
 		},
+		{
+			name: 'testPage',
+			path: '/testPage',
+			component: () => import('../../test/layoutTest.vue'),
+		},
 	],
 })
 
-router.beforeEach(to => {
-	if (
-		!localStorage.getItem('token') &&
-		// 避免无限redirect
-		to.name != 'login'
-	)
-		return { name: 'login' }
-})
+// router.beforeEach(to => {
+// 	if (
+// 		!localStorage.getItem('token') &&
+// 		// 避免无限redirect
+// 		to.name != 'login'
+// 	)
+// 		return { name: 'login' }
+// })
 
 export default router
