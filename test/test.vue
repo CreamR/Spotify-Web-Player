@@ -17,7 +17,9 @@
 
 <script setup>
 	import { onMounted, reactive } from 'vue'
+	import { isDeviceType } from '../src/function/isDeviceType'
 	import { search } from '../src/service/search'
+	import { login } from '../src/service/user'
 	import { getGreatPlaylist } from '../src/service/playlist'
 	import skeleton from '../src/components/feedback/skeleton.vue'
 
@@ -39,12 +41,23 @@
 		// console.log('专辑搜索')
 		// console.log(res4)
 
-		const res = await fetch(`http://127.0.0.1:3000/recommend/resource?token=1&cookie=33`)
-			.then(data => data.json())
-			.catch(err => console.log(err))
+		const res = await fetch(`http://127.0.0.1:3000/user/detail?uid=32953014`).then(data =>
+			data.json()
+		)
 		console.log('res log')
 		console.log(res)
+		console.log('device')
+		console.log(isDeviceType())
 	}
+	// const getNow = async () => {
+	// 	const res = await fetch('http://127.0.0.1:3000/login/qr/key').then(data => data.json())
+	// 	const res2 = await fetch(`http://127.0.0.1:3000/login/qr/create?key=${res.data.unikey}`)
+	// 	console.log('res log')
+	// 	console.log(res)
+	// 	console.log(`res2 log`)
+	// 	console.log(res2)
+	// }
+	// getNow()
 </script>
 
 <style lang="less" scoped></style>

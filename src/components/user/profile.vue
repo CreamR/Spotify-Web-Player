@@ -1,27 +1,19 @@
 <template>
 	<div class="profile">
-		<h1 class="title">用户资料</h1>
-		<p>昵称: {{ data.userData.name }}</p>
-		<p>听过歌曲数量: {{ data.userData.listenSongs }}</p>
-		性别：
-		<el-radio-group v-model="data.userData.gender">
-			<el-radio
-				:label="1"
-				size="large"
-				>男</el-radio
-			>
-			<el-radio
-				:label="0"
-				size="large"
-				>女</el-radio
-			>
-		</el-radio-group>
+		<h1 class="title">用户个人信息</h1>
 
-		<!-- <el-button
-			type="danger"
-			@click="gologout"
-			>登出</el-button
-		> -->
+		<el-avatar
+			:size="100"
+			fit="cover"
+			src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+		/>
+		<h3 class="userName">{{ data.userData.name }}呆小呆的小呆</h3>
+		<p class="signature">{{ data.userData.signature }}爱听歌的小伙一枚~</p>
+
+		<div class="userInfo">
+			<p>性别：{{ data.userData.gender }}</p>
+			<p>听过歌曲数量: {{ data.userData.listenSongs }}</p>
+		</div>
 	</div>
 </template>
 
@@ -38,7 +30,7 @@
 		userData: {
 			name: '',
 			signature: '',
-			gender: 1,
+			gender: '',
 			listenSongs: 0,
 			photoUrl: '',
 		},
@@ -50,10 +42,11 @@
 
 	const init = async uID => {
 		const res = await getProfile(uID)
+		console.log(res)
 
 		data.userData.name = res.profile.nickname
 		data.userData.signature = res.profile.signature
-		data.userData.gender = res.profile.gender
+		data.userData.gender = res.profile.gender == 1 ? 男 : 女
 		data.userData.listenSongs = res.listenSongs
 		data.userData.photoUrl = res.profile.avatarUrl
 	}
@@ -75,16 +68,27 @@
 </script>
 
 <style lang="less" scoped>
+	@import url(../../base.less);
 	.profile {
 		color: white;
 		text-align: center;
-
 		.title {
 			margin-top: 100px;
 		}
-		.el-button {
-			margin-top: 200px;
-			display: block;
+
+		.el-avatar {
+			margin-top: 30px;
+			border: 1px solid rgb(88, 88, 88);
+		}
+		.userName {
+			margin-top: 30px;
+		}
+		.signature {
+			margin-top: 3px;
+			color: @colorInfo;
+		}
+		.userInfo {
+			font-weight: bold;
 		}
 	}
 </style>

@@ -1,12 +1,12 @@
 <template>
 	<div class="player">
 		<div class="left">
-			<img
+			<!-- <img
 				src="../assets/test/img.svg"
 				:title="ss"
 				width="55"
 				height="55"
-			/>
+			/> -->
 			<div class="songDetails">
 				<h4>测试歌曲</h4>
 				<p>这是个小测试</p>
