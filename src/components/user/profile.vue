@@ -11,8 +11,18 @@
 		<p class="signature">{{ data.userData.signature }}爱听歌的小伙一枚~</p>
 
 		<div class="userInfo">
-			<p>性别：{{ data.userData.gender }}</p>
-			<p>听过歌曲数量: {{ data.userData.listenSongs }}</p>
+			<div class="wrap">
+				<p class="index">{{ data.userData.level }}8</p>
+				<p class="desc">等级</p>
+			</div>
+			<div class="wrap">
+				<p class="index">{{ data.userData.listenSongs }}151</p>
+				<p class="desc">听过歌曲</p>
+			</div>
+			<div class="wrap clear">
+				<p class="index">{{ data.userData.OS }} IOS</p>
+				<p class="desc">OS版本</p>
+			</div>
 		</div>
 	</div>
 </template>
@@ -21,6 +31,7 @@
 	import { reactive, onMounted } from 'vue'
 	import { useRouter } from 'vue-router'
 	import { logout, getProfile } from '../../service/user'
+	import { isDeviceType } from '../../function/isDeviceType'
 
 	const router = useRouter()
 
@@ -30,8 +41,9 @@
 		userData: {
 			name: '',
 			signature: '',
-			gender: '',
-			listenSongs: 0,
+			level: '',
+			listenSongs: '',
+			OS: '',
 			photoUrl: '',
 		},
 	})
@@ -42,13 +54,14 @@
 
 	const init = async uID => {
 		const res = await getProfile(uID)
-		console.log(res)
 
+		data.userData.photoUrl = res.profile.avatarUrl
 		data.userData.name = res.profile.nickname
 		data.userData.signature = res.profile.signature
-		data.userData.gender = res.profile.gender == 1 ? 男 : 女
+		data.userData.level = res.level
 		data.userData.listenSongs = res.listenSongs
-		data.userData.photoUrl = res.profile.avatarUrl
+
+		data.userData.OS = isDeviceType()
 	}
 
 	// 退出登录
@@ -89,6 +102,21 @@
 		}
 		.userInfo {
 			font-weight: bold;
+
+			.wrap {
+				display: inline-block;
+				margin-top: 20px;
+				padding: 0 30px;
+				border-right: 1px solid @colorInfo;
+				.index {
+				}
+				.desc {
+					color: @colorInfo;
+				}
+			}
+			.clear {
+				border: none;
+			}
 		}
 	}
 </style>
