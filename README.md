@@ -16,6 +16,7 @@
   <p align="center">
     以 Spotify 为UI层开发的在线音乐APP，此项目为前端部分。
     <br />
+    <br />
     <a href="https://github.com/othneildrew/Best-README-Template">简体中文</a>
      · 
     <a href="https://github.com/othneildrew/Best-README-Template">繁体中文</a>
@@ -27,27 +28,21 @@
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>目录</summary>
-  <ol>
+  <ul>
     <li>
-      <a href="#项目介绍">项目介绍</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      <a href="#项目介绍">项目介绍</a> 
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <a href="#技术栈">技术栈</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+    <li>
+    <a href="#环境要求">环境要求</a>
+    </li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#运行">运行</a></li>
+    <li><a href="#贡献者">贡献者</a></li>
+    <li><a href="#开源协议">开源协议</a></li>
+  </ul>
 </details>
 
 <!-- ABOUT THE PROJECT -->
