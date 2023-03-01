@@ -238,14 +238,12 @@ Use this space to list resources you find helpful and would like to give credit 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[stars-shield]: https://github.com/CreamR/Spotify-Web-Player/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/creamR/Spotify-Web-Player?style=for-the-badge
 [stars-url]: https://github.com/CreamR/Spotify-Web-Player/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/hexpm/l/apa?style=flat-square
+[license-shield]: https://img.shields.io/hexpm/l/apa?style=for-the-badge
 [license-url]: https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
+[release-shield]: https://img.shields.io/github/v/release/creamR/Spotify-Web-Player/?style=for-the-badge
+[release-url]: https://github.com/CreamR/Spotify-Web-Player/releases/tag
 [product-screenshot]: images/screenshot.png
 [next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [next-url]: https://nextjs.org/
@@ -263,5 +261,3 @@ Use this space to list resources you find helpful and would like to give credit 
 [bootstrap-url]: https://getbootstrap.com
 [jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [jquery-url]: https://jquery.com
-[release-shield]: https://img.shields.io/github/v/release/creamR/Spotify-Web-Player
-[release-url]: https://github.com/CreamR/Spotify-Web-Player/releases/tag
