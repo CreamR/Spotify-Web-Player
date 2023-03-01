@@ -33,8 +33,9 @@ There is the backend interface support of Spotify-Web-Player - [NeteaseCloudMusi
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![Apache2.0 License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Release][release-shield]][release-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -242,7 +243,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 [license-shield]: https://img.shields.io/hexpm/l/apa?style=flat-square
-[license-url]: https://github.com/CreamR/Spotify-Web-Player/bold/master/LICENSE
+[license-url]: https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: images/screenshot.png
@@ -262,3 +263,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [bootstrap-url]: https://getbootstrap.com
 [jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [jquery-url]: https://jquery.com
+[release-shield]: https://img.shields.io/github/v/release/creamR/Spotify-Web-Player
+[release-url]: https://github.com/CreamR/Spotify-Web-Player/releases/tag
