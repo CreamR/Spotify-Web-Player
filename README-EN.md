@@ -14,7 +14,7 @@
   <h3 align="center">Spotify - Web Player</h3>
 
   <p align="center">
-    🎧 以 Spotify 为UI层开发的在线音乐APP 🎧
+    🎵 Online music platform developed base on Spotify UI 🎵
     <br />
     <br />
     <a href="https://github.com/CreamR/Spotify-Web-Player/blob/master/README.md">简体中文</a>
@@ -25,35 +25,36 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open>
-  <summary>目录</summary>
+  <summary>Directory</summary>
   <ul>
     <li>
-      <a href="#项目介绍">项目介绍</a> 
+      <a href="#Introduction of Project">Introduction of Project</a> 
     </li>
     <li>
-      <a href="#技术栈">技术栈</a>
+      <a href="#Build With">Build With</a>
     </li>
     <li>
-    <a href="#环境要求">环境要求</a>
+    <a href="#Environment Requirement">Environment Requirement</a>
     </li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#运行">运行</a></li>
-    <li><a href="#贡献者">贡献者</a></li>
-    <li><a href="#开源协议">开源协议</a></li>
+    <li><a href="#Installation">Installation</a></li>
+    <li><a href="#Usage">Usage</a></li>
+    <li><a href="#Contributor">Contributor</a></li>
+    <li><a href="#LICENSE">LICENSE</a></li>
   </ul>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 
-## 项目介绍
+## Introduction of Project
 
 <!-- 项目图片部分 -->
 
-Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 API + Element Plus，后端使用网易云音乐的数据，相比于网易云音乐去掉了冗余的模块，仅保留基本功能目前还在开发中
+Spotify - Web Player is a Online music platform developed base on Spotify UI, developed used by Vue3 with composition API usage and Element-Plus.
+BackEnd section depend on CloudMusic(Chinese Version)，Contrast by CloudMusic drop out the useless and complicated modules to improve performance.
 
-<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### 技术栈
+### Build With
 
 - Vue3 with composition API
 - Vue-router
@@ -64,17 +65,17 @@ Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 A
 - ES6+
 - Fetch
 
-<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-### 环境要求
+### Environment Requirement
 
 - NodeJS 16+
-- Chrome67+ / Edge79+ / Safari12+
-- 目前仅适配 PC 端
+- Chrome67+ / Edge79+ / Safari12+, or equivalent version of browser base on Webkit API
+- Just suit for PC page
 
-### 安装
+### Installation
 
 ```sh
 $ git clone https://github.com/Binaryify/NeteaseCloudMusicApi.git
@@ -82,7 +83,7 @@ $ cd NeteaseCloudMusicApi
 $ npm install
 ```
 
-### 运行
+### Usage
 
 ```sh
 $ node app.js
@@ -90,21 +91,21 @@ $ # new terminal
 $ npm run dev
 ```
 
-## 贡献者
+## Contributor
 
-此项目由 Gmz@creamR 开发，后端接口支持为 - [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+The project developed by Gmz@creamR，There is the backEnd section support - [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
-<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
-## 开源协议
+## LICENSE
 
 [Apache License 2.0](https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE)
 
 CreamR/Spotify-Web-Player is licensed under the Apache License 2.0. A permissive license whose main conditions require preservation of copyright and license notices. Contributors provide an express grant of patent rights. Licensed works, modifications, and larger works may be distributed under different terms and without source code.
 
-<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [stars-shield]: https://img.shields.io/github/stars/creamR/Spotify-Web-Player?style=for-the-badge
 [stars-url]: https://github.com/CreamR/Spotify-Web-Player/stargazers
