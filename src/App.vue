@@ -5,9 +5,7 @@
 <script setup>
 	const userType = navigator.userAgent
 	if (userType.includes('MSIE'))
-		alert(
-			'不支持IE, 此项目需要至少 Chrome 67 / Edge 79 / FireFox 78 / Safari 12 以上版本可以保证大部分组件的运行, 但想要获取全部功能的最佳体验需要Chrome80+'
-		)
+		alert('不支持IE, 此项目需要至少 Chrome 67 / Edge 79 / Safari 12 以上版本')
 </script>
 
 <style lang="less">

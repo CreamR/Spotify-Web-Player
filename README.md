@@ -49,7 +49,7 @@
 
 <!-- 项目图片部分 -->
 
-Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 API + Element Plus，后端使用网易云音乐的数据，相比于网易云音乐去掉了冗余的模块，仅保留基本功能目前还在开发中
+Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 API + Element Plus，后端使用网易云音乐的数据，相比于网易云音乐去掉了冗余的模块，仅保留基本功能, 目前还在开发中。
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
