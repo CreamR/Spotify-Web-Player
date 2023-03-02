@@ -50,7 +50,7 @@
 <!-- 项目图片部分 -->
 
 Spotify - Web Player is a Online music platform developed base on Spotify UI, developed used by Vue3 with composition API usage and Element-Plus.
-BackEnd section depend on CloudMusic(Chinese Version)，Contrast by CloudMusic drop out the useless and complicated modules to improve performance.
+BackEnd section depended on CloudMusic(Chinese Version)，Contrast by CloudMusic , Spotify - Web Player drop out the useless and complicated modules to improve performance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
