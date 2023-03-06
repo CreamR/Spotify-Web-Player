@@ -98,20 +98,25 @@
 		}
 		.signature {
 			margin-top: 3px;
+
 			color: @colorInfo;
+			font-size: small;
 		}
 		.userInfo {
 			font-weight: bold;
 
 			.wrap {
 				display: inline-block;
-				margin-top: 20px;
-				padding: 0 30px;
+				margin-top: 30px;
+				padding: 10px 50px;
 				border-right: 1px solid @colorInfo;
 				.index {
+					margin-bottom: 10px;
+					font-size: larger;
 				}
 				.desc {
 					color: @colorInfo;
+					font-size: medium;
 				}
 			}
 			.clear {

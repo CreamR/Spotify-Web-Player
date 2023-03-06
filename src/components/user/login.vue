@@ -2,14 +2,14 @@
 	<div class="login">
 		<div class="logo">
 			<img
-				src="../../../public/logo.svg"
+				src="../../../logo.svg"
 				title="Spotify"
 				width="77"
 				class="spotify"
 			/>
 			<el-icon><CloseBold /></el-icon>
 			<img
-				src="../../../public/cloud-music.svg"
+				src="../../../cloud-music.svg"
 				title="Could-Music"
 				width="88"
 				class="cloudmusic"
@@ -58,6 +58,7 @@
 
 	const useGetCode = () => {
 		const regrex = new RegExp('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$')
+
 		if (regrex.test(verifyData.phone)) {
 			getCode(verifyData.phone)
 			ElNotification({
@@ -89,6 +90,7 @@
 	}
 	const useLogin = async () => {
 		const res = await login(verifyData.phone, verifyData.verifyCode)
+		console.log(res)
 		const temp = res.code == 200 ?? false
 		ElNotification({
 			title: temp ? '登录成功' : '登录失败',

@@ -1,4 +1,4 @@
-const baseURL: string = 'http://127.0.0.1:3000'
+const baseURL: string = 'http://localhost:3000'
 
 const token = localStorage.getItem('token') ?? null
 const cookie = localStorage.getItem('cookie') ?? null
@@ -7,9 +7,11 @@ const cookie = localStorage.getItem('cookie') ?? null
 export const getCode = (phone: number) =>
 	fetch(`${baseURL}/captcha/sent?phone=${phone}`).then(data => data.json())
 
-// 登录
+// 验证码登录
 export const login = (phone: number, verifyCode: number) =>
-	fetch(`${baseURL}/login/cellphone?phone=${phone}&captcha=${verifyCode}`).then(data => data.json())
+	fetch(`${baseURL}/captcha/verify?phone=${phone}&captcha=${verifyCode}`).then(data => data.json())
+
+// 二维码登录
 
 // 登出
 export const logout = (): void => {
