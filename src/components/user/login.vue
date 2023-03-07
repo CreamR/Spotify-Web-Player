@@ -39,6 +39,11 @@
 			@click="useLogin"
 			>点击此处登录</el-button
 		>
+		<router-link
+			to="/loginQRcode"
+			class="tips"
+			>验证码登录现在无法使用，请使用二维码登录</router-link
+		>
 	</div>
 </template>
 
@@ -142,6 +147,12 @@
 			#setWH(30vw, 45px);
 
 			margin: 20px auto;
+		}
+		.tips {
+			color: @colorDanger;
+			font-size: small;
+			cursor: pointer;
+			#trs-color(@colorSuccess, @colorInfo);
 		}
 	}
 </style>

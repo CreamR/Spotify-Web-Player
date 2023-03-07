@@ -5,7 +5,7 @@
 		</h1>
 
 		<el-button
-			@click="test"
+			@click="t"
 			style="margin: 100px auto; text-align: center; margin-left: 45vw"
 			>testBtn</el-button
 		>
@@ -23,10 +23,12 @@
 	import { getGreatPlaylist } from '../src/service/playlist'
 	import skeleton from '../src/components/feedback/skeleton.vue'
 
+	import { test } from '/test/service'
+
 	import vSearchArtistTable from '../src/components/consist/searchArtistTable.vue'
 
 	const obj = reactive({ datalist: [] })
-	const test = async () => {
+	const tt = async () => {
 		// const res = await search('海阔天空', 1)
 		// const res2 = await search('海阔天空', 100)
 		// obj.datalist = res2.result
@@ -58,6 +60,10 @@
 	// 	console.log(res2)
 	// }
 	// getNow()
+
+	const t = () => {
+		test()
+	}
 </script>
 
 <style lang="less" scoped></style>

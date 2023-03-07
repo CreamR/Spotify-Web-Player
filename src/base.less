@@ -1,4 +1,3 @@
-// 变量
 @colorSuccess: #67c23a;
 @colorWarning: #e6a23c;
 @colorDanger: #f56c6c;
@@ -7,7 +6,7 @@
 @BGShadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 @SMShadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
-// 函数
+// mixin
 #setWH(@width, @height) {
 	width: @width;
 	height: @height;
@@ -18,7 +17,7 @@
 	align-items: center;
 }
 
-// 过渡
+// transition
 #trs-bgc(@hovbgc, @actbgc) {
 	transition: all 100ms ease;
 	&:hover {
@@ -38,7 +37,7 @@
 	}
 }
 
-// 文字超出隐藏
+// word wrap
 #wordSeal (@width) {
 	width: @width;
 	overflow: hidden;

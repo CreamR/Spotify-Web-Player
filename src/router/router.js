@@ -19,6 +19,11 @@ const router = createRouter({
 					component: () => import('../components/user/login.vue'),
 				},
 				{
+					name: 'loginQRcode',
+					path: '/loginQRcode',
+					component: () => import('../components/user/loginQRcode.vue'),
+				},
+				{
 					name: 'main',
 					path: '/main',
 					component: () => import('../components/main-body.vue'),
