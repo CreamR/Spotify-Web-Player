@@ -23,12 +23,6 @@
 			height="200"
 			class="QRcode"
 		/>
-
-		<el-button
-			@click="init"
-			class="refresh"
-			>刷新二维码</el-button
-		>
 	</div>
 </template>
 
