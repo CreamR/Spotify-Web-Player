@@ -19,7 +19,7 @@
 	import { onMounted, reactive } from 'vue'
 	import { isDeviceType } from '../src/function/isDeviceType'
 	import { search } from '../src/service/search'
-	import { login } from '../src/service/user'
+	import { login } from '../src/service/login'
 	import { getGreatPlaylist } from '../src/service/playlist'
 	import skeleton from '../src/components/feedback/skeleton.vue'
 

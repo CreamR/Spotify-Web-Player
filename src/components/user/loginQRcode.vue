@@ -52,6 +52,15 @@
 	import { onMounted, reactive } from 'vue'
 	// import {} from '@src'
 	import QRCodeVue3 from 'qrcode-vue3'
+	import { getKey } from '../../service/login'
+
+	onMounted(() => {
+		init()
+	})
+	const init = async () => {
+		const res = await getKey(Date.now())
+		console.log(res)
+	}
 </script>
 
 <style lang="less" scoped>
