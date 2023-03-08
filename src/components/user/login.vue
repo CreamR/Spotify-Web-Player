@@ -61,11 +61,12 @@
 	let btnText = ref('点击获取验证码')
 	let btnDisabled = ref(false)
 
-	const useGetCode = () => {
+	const useGetCode = async () => {
 		const regrex = new RegExp('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$')
 
 		if (regrex.test(verifyData.phone)) {
-			getCode(verifyData.phone)
+			const res = await getCode(verifyData.phone, Date.now())
+			console.log(res)
 			ElNotification({
 				title: '成功',
 				message: '验证码已成功发送！',
@@ -94,7 +95,7 @@
 		}
 	}
 	const useLogin = async () => {
-		const res = await login(verifyData.phone, verifyData.verifyCode)
+		const res = await login(verifyData.phone, verifyData.verifyCode, Date.now())
 		console.log(res)
 		const temp = res.code == 200 ?? false
 		ElNotification({

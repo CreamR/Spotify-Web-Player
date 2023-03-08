@@ -12,7 +12,7 @@ export const getCode = (phone: number | string, timeStamp: string | number) =>
 			timestamp: timeStamp,
 		}),
 		headers: {
-			'Content-Type': 'application/jspn',
+			'Content-Type': 'application/json',
 		},
 	}).then(data => data.json())
 
@@ -30,7 +30,7 @@ export const login = (
 			timestamp: timeStamp,
 		}),
 		headers: {
-			'Content-Type': 'application/jspn',
+			'Content-Type': 'application/json',
 		},
 	}).then(data => data.json())
 
@@ -42,7 +42,7 @@ export const getKey = (timeStamp: string | number) =>
 			timestamp: timeStamp,
 		}),
 		headers: {
-			'Content-Type': 'application/jspn',
+			'Content-Type': 'application/json',
 		},
 	}).then(data => data.json())
 
@@ -52,10 +52,11 @@ export const getQRcode = (key: string | number, timeStamp: string | number) =>
 		method: 'post',
 		body: JSON.stringify({
 			key: key,
+			qrimg: true,
 			timestamp: timeStamp,
 		}),
 		headers: {
-			'Content-Type': 'application/jspn',
+			'Content-Type': 'application/json',
 		},
 	}).then(data => data.json())
 
@@ -68,7 +69,7 @@ export const check = (key: string | number, timeStamp: string | number) =>
 			timestamp: timeStamp,
 		}),
 		headers: {
-			'Content-Type': 'application/jspn',
+			'Content-Type': 'application/json',
 		},
 	}).then(data => data.json())
 
@@ -81,6 +82,6 @@ export const logout = () =>
 			cookie: cookie,
 		}),
 		headers: {
-			'Content-Type': 'application/jspn',
+			'Content-Type': 'application/json',
 		},
 	}).then(data => data.json())
