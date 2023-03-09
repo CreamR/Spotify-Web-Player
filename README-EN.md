@@ -75,21 +75,23 @@ BackEnd section depended on CloudMusic(Chinese Version)，Contrast by CloudMusic
 - Chrome67+ / Edge79+ / Safari12+, or equivalent version of browser base on Webkit API
 - Just suit for PC page
 
-### Installation
+### Installation and Usage - Server
 
 ```sh
+$ # clone the project
 $ git clone https://github.com/Binaryify/NeteaseCloudMusicApi.git
 $ cd NeteaseCloudMusicApi
-$ npm install
+$ node app.js
 ```
 
-### Usage
+### Installation and Usage - Frontend
 
 ```sh
-$ node app.js
-$ # new terminal
-$ npm run dev
-```
+$ # clone the project
+$ git clone https://github.com/CreamR/Spotify-Web-Player.git
+$ # install dependencies and run it
+$ pnpm install
+$ pnpm run dev
 
 ## Contributor
 
@@ -113,3 +115,4 @@ CreamR/Spotify-Web-Player is licensed under the Apache License 2.0. A permissive
 [license-url]: https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE
 [release-shield]: https://img.shields.io/github/v/release/creamR/spotify-web-player?style=for-the-badge
 [release-url]: https://github.com/CreamR/Spotify-Web-Player/releases/tag
+```

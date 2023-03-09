@@ -74,20 +74,23 @@ Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 A
 - Chrome67+ / Edge79+ / Safari12+
 - 目前仅适配 PC 端
 
-### 安装
+### 安装与运行 - 服务器
 
 ```sh
+$ # clone the project
 $ git clone https://github.com/Binaryify/NeteaseCloudMusicApi.git
 $ cd NeteaseCloudMusicApi
-$ npm install
+$ node app.js
 ```
 
-### 运行
+### 安装与运行 - 前端
 
 ```sh
-$ node app.js
-$ # new terminal
-$ npm run dev
+$ # clone the project
+$ git clone https://github.com/CreamR/Spotify-Web-Player.git
+$ # install dependencies and run it
+$ pnpm install
+$ pnpm run dev
 ```
 
 ## 贡献者

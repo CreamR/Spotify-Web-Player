@@ -93,7 +93,7 @@
 			init(data.uID)
 		}
 	)
-	watch(localStorage.getItem('token'), newVal => {
+	watch(localStorage.getItem('cookie'), newVal => {
 		data.logined = newVal
 	})
 </script>
