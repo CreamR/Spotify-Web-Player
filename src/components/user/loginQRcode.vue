@@ -23,22 +23,34 @@
 			height="200"
 			class="QRcode"
 		/>
+		<p>{{ data.tipText }}</p>
+		<p class="tips">由于登录过程调用了加密算法，响应较慢请耐心等待</p>
 	</div>
 </template>
 
 <script setup>
 	import { onMounted, reactive, watch } from 'vue'
+	import { useRouter } from 'vue-router'
 	// import {} from '@src'
 	import { getUrl } from '../../function/base64toBolb'
 	import { getKey, getQRcode, check } from '../../service/login'
+	import { getUserInfo } from '../../service/user'
+
+	const router = useRouter()
 
 	const data = reactive({
-		key: '',
+		key: null,
 		QRcodeUrl: '',
+		loading: true,
+		tipText: '扫描二维码登录',
 	})
 
 	onMounted(() => {
 		init()
+
+		setInterval(() => {
+			if (data.key) checkStatus(data.key)
+		}, 1000)
 	})
 	const timeStamp = Date.now()
 	const init = async () => {
@@ -57,20 +69,28 @@
 
 	const checkStatus = async key => {
 		const res = await check(key, timeStamp)
+		console.log(res)
 		switch (res.code) {
 			case 800:
 				// 二维码过期
+				data.tipText = '二维码已过期'
 				break
 			case 802:
 				// 待确认
+				data.tipText = '二维码待确认'
 				break
 			case 803:
 				// 登录成功
+				data.tipText = '登录成功'
+
+				// init userInfo
+				localStorage.setItem('cookie', res.cookie)
+				const res = await getUserInfo(res.cookie)
+				localStorage.setItem('userID', res.account.id)
+
+				router.push({ name: main })
 				break
-			default:
-			// 登录失败
 		}
-		console.log(res)
 	}
 
 	watch(
@@ -107,9 +127,11 @@
 		.QRcode {
 			border-radius: 10%;
 		}
-		.refresh {
-			display: block;
-			text-align: center;
+		.tips {
+			margin: 10px;
+
+			color: @colorInfo;
+			font-size: small;
 		}
 	}
 </style>
