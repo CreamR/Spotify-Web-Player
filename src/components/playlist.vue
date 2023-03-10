@@ -55,6 +55,8 @@
 					class="search"
 					ref="inputing"
 					placeholder="点此搜索歌单内歌曲"
+					v-model="keywords"
+					@input="filterSong"
 					@focus="isExpand(true)"
 					@blur="isExpand(false)"
 				/>
@@ -77,7 +79,7 @@
 	const route = useRoute()
 
 	const data = reactive({
-		songsList: null,
+		songsList: [],
 		imgURL: '',
 		listTitle: '',
 		count: 0,
@@ -102,6 +104,10 @@
 	}
 
 	const inputing = ref()
+	const keywords = ref('')
+	const filterSong = () => {
+		data.songsList = data.songsList.filter(item => item.name == keywords.value)
+	}
 	const isExpand = isFocus => {
 		if (isFocus) inputing.value.style.width = '300px'
 		else inputing.value.style.width = '180px'
