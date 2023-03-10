@@ -81,6 +81,7 @@
 	// 根据传入的type搜索指定类型的结果
 	const init = async (key, type) => {
 		const res = await search(key, type)
+		console.log(res)
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
@@ -94,31 +95,31 @@
 		}
 	}
 
-	watch([() => route.query.keywords, () => data.isActive], async ([newVal, newType]) => {
-		switch (newType) {
+	watch([() => route.query.keywords, () => data.isActive], async ([newVal]) => {
+		switch (data.isActive) {
 			case 1:
 				await init(newVal, 1)
-				router.push({ name: 'searchResSong' })
+				if (route.name != 'searchResSong') router.push({ name: 'searchResSong' })
 				break
 			case 2:
 				await init(newVal, 100)
-				router.push({ name: 'searchResArtist' })
+				if (route.name != 'searchResArtist') router.push({ name: 'searchResArtist' })
 				break
 			case 3:
 				await init(newVal, 1000)
-				router.push({ name: 'searchResPlaylist' })
+				if (route.name != 'searchResPlaylist') router.push({ name: 'searchResPlaylist' })
 				break
 			case 4:
 				await init(newVal, 10)
-				router.push({ name: 'searchResAlbum' })
+				if (route.name != 'searchResAlbum') router.push({ name: 'searchResAlbum' })
 				break
 			case 5:
 				await init(newVal, 1002)
-				router.push({ name: 'searchResUser' })
+				if (route.name != 'searchResUser') router.push({ name: 'searchResUser' })
 				break
 			default:
 				// 后续跳转至error页面
-				break
+				router.push({ name: 'error' })
 		}
 	})
 </script>

@@ -86,6 +86,11 @@ const router = createRouter({
 			],
 		},
 		{
+			name: 'error',
+			path: '/error',
+			component: () => import('../components/feedback/error.vue'),
+		},
+		{
 			name: 'test',
 			path: '/test',
 			component: () => import('../../test/test.vue'),
