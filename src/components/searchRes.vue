@@ -94,36 +94,33 @@
 		}
 	}
 
-	watch(
-		() => route.query.keywords || data.isActive,
-		async newVal => {
-			switch (data.isActive) {
-				case 1:
-					await init(newVal, 1)
-					router.push({ name: 'searchResSong' })
-					break
-				case 2:
-					await init(newVal, 100)
-					router.push({ name: 'searchResArtist' })
-					break
-				case 3:
-					await init(newVal, 1000)
-					router.push({ name: 'searchResPlaylist' })
-					break
-				case 4:
-					await init(newVal, 10)
-					router.push({ name: 'searchResAlbum' })
-					break
-				case 5:
-					await init(newVal, 1002)
-					router.push({ name: 'searchResUser' })
-					break
-				default:
-					// 后续跳转至error页面
-					break
-			}
+	watch([() => route.query.keywords, () => data.isActive], async ([newVal, newType]) => {
+		switch (newType) {
+			case 1:
+				await init(newVal, 1)
+				router.push({ name: 'searchResSong' })
+				break
+			case 2:
+				await init(newVal, 100)
+				router.push({ name: 'searchResArtist' })
+				break
+			case 3:
+				await init(newVal, 1000)
+				router.push({ name: 'searchResPlaylist' })
+				break
+			case 4:
+				await init(newVal, 10)
+				router.push({ name: 'searchResAlbum' })
+				break
+			case 5:
+				await init(newVal, 1002)
+				router.push({ name: 'searchResUser' })
+				break
+			default:
+				// 后续跳转至error页面
+				break
 		}
-	)
+	})
 </script>
 
 <style lang="less" scoped>

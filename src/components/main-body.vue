@@ -65,7 +65,7 @@
 
 	const data = reactive({
 		greatPlaylist: [],
-		logined: localStorage.getItem('token') ? true : false,
+		logined: localStorage.getItem('cookie') ? true : false,
 	})
 
 	onMounted(() => {
