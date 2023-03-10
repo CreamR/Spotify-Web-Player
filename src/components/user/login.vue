@@ -28,7 +28,7 @@
 		/>
 		<el-button
 			round
-			text
+			link
 			@click="useGetCode"
 			:disabled="btnDisabled"
 			>{{ btnText }}</el-button

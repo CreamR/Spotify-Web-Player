@@ -70,7 +70,7 @@
 
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,
-		logined: localStorage.getItem('token') ? true : false,
+		logined: localStorage.getItem('cookie') ? true : false,
 		userName: '',
 		userPhoto: '',
 	})

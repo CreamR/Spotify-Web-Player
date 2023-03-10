@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { ElNotification } from 'element-plus'
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -37,6 +38,9 @@ const router = createRouter({
 					name: 'collect',
 					path: '/collect',
 					component: () => import('../components/collect.vue'),
+					meta: {
+						needLogin: true,
+					},
 				},
 				{
 					name: 'profile',
@@ -94,13 +98,16 @@ const router = createRouter({
 	],
 })
 
-// router.beforeEach(to => {
-// 	if (
-// 		!localStorage.getItem('token') &&
-// 		// 避免无限redirect
-// 		to.name != 'login'
-// 	)
-// 		return { name: 'login' }
-// })
+router.beforeEach(to => {
+	if (to.meta.needLogin && !localStorage.getItem('cookie')) {
+		if (to.name != 'login') {
+			ElNotification({
+				title: '需要登录',
+				type: 'error',
+			})
+			return { name: 'login' }
+		}
+	}
+})
 
 export default router

@@ -63,7 +63,7 @@
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,
 		playlist: [],
-		logined: localStorage.getItem('token') ? true : false,
+		logined: localStorage.getItem('cookie') ? true : false,
 	})
 
 	onMounted(() => {
@@ -83,7 +83,7 @@
 			init(data.uID)
 		}
 	)
-	watch(localStorage.getItem('token'), newVal => {
+	watch(localStorage.getItem('cookie'), newVal => {
 		data.logined = newVal
 	})
 </script>

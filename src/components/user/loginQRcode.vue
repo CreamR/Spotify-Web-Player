@@ -50,7 +50,7 @@
 
 		setInterval(() => {
 			if (data.key) checkStatus(data.key)
-		}, 1000)
+		}, 2000)
 	})
 	const timeStamp = Date.now()
 	const init = async () => {
@@ -85,8 +85,8 @@
 
 				// init userInfo
 				localStorage.setItem('cookie', res.cookie)
-				const res = await getUserInfo(res.cookie)
-				localStorage.setItem('userID', res.account.id)
+				const res2 = await getUserInfo(res.cookie)
+				localStorage.setItem('userID', res2.account.id)
 
 				router.push({ name: main })
 				break
