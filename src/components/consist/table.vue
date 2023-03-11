@@ -1,6 +1,7 @@
 <template>
 	<div class="table">
-		<ul>
+		<h1 v-if="props.songsList.length == 0">无搜索结果</h1>
+		<ul v-else>
 			<li class="tag">
 				<span>#</span>
 				<span class="name">标题</span>
@@ -12,7 +13,7 @@
 				/></el-icon>
 			</li>
 			<li
-				v-for="(item, index) in data.playlist"
+				v-for="(item, index) in props.songsList"
 				:key="index"
 				class="songContent"
 			>
@@ -59,23 +60,6 @@
 	const props = defineProps({
 		songsList: [],
 	})
-	const data = reactive({
-		playlist: [],
-	})
-
-	onMounted(() => {
-		init(data.listID)
-	})
-	const init = async () => {
-		data.playlist = props.songsList
-	}
-
-	watch(
-		() => props.songsList,
-		newVal => {
-			data.playlist = newVal
-		}
-	)
 </script>
 
 <style lang="less" scoped>

@@ -55,7 +55,7 @@
 					class="search"
 					ref="inputing"
 					placeholder="点此搜索歌单内歌曲"
-					v-model="keywords"
+					v-model="data.keywords"
 					@input="filterSong"
 					@focus="isExpand(true)"
 					@blur="isExpand(false)"
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<div class="tableList">
-			<vTable :songsList="data.songsList"></vTable>
+			<vTable :songsList="data.keywords.length == 0 ? data.songsList : data.searchRes"></vTable>
 		</div>
 	</div>
 </template>
@@ -80,11 +80,13 @@
 
 	const data = reactive({
 		songsList: [],
+		searchRes: [],
 		imgURL: '',
 		listTitle: '',
 		count: 0,
 		view: 0,
 		creator: '',
+		keywords: '',
 	})
 
 	onMounted(() => {
@@ -103,11 +105,10 @@
 		}
 	}
 
-	const inputing = ref()
-	const keywords = ref('')
 	const filterSong = () => {
-		data.songsList = data.songsList.filter(item => item.name == keywords.value)
+		data.searchRes = data.songsList.filter(item => item.name.includes(data.keywords))
 	}
+	const inputing = ref()
 	const isExpand = isFocus => {
 		if (isFocus) inputing.value.style.width = '300px'
 		else inputing.value.style.width = '180px'
