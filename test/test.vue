@@ -15,58 +15,6 @@
 	</div>
 </template>
 
-<script setup>
-	import { onMounted, reactive } from 'vue'
-	import { isDeviceType } from '../src/function/isDeviceType'
-	import { search } from '../src/service/search'
-	import { login } from '../src/service/login'
-	import { getUserInfo } from '../src/service/user'
-	import { getGreatPlaylist, getPlaylist } from '../src/service/playlist'
-	import skeleton from '../src/components/feedback/skeleton.vue'
-
-	import { test } from '/test/service'
-	import { getUrl } from '../src/function/base64toBolb'
-
-	import vSearchArtistTable from '../src/components/consist/searchArtistTable.vue'
-
-	const obj = reactive({ datalist: [] })
-	const tt = async () => {
-		// const res = await search('海阔天空', 1)
-		// const res2 = await search('海阔天空', 100)
-		// obj.datalist = res2.result
-		// const res3 = await search('海阔天空', 1000)
-		// const res4 = await search('海阔天空', 10)
-		// console.log('单曲搜索')
-		// console.log(res)
-		// console.log('歌手搜索')
-		// console.log(res2.result)
-		// console.log('歌单搜索')
-		// console.log(res3)
-		// console.log('专辑搜索')
-		// console.log(res4)
-
-		const res = await fetch(`http://127.0.0.1:3000/user/detail?uid=32953014`).then(data =>
-			data.json()
-		)
-		console.log('res log')
-		console.log(res)
-		console.log('device')
-		console.log(isDeviceType())
-	}
-	// const getNow = async () => {
-	// 	const res = await fetch('http://127.0.0.1:3000/login/qr/key').then(data => data.json())
-	// 	const res2 = await fetch(`http://127.0.0.1:3000/login/qr/create?key=${res.data.unikey}`)
-	// 	console.log('res log')
-	// 	console.log(res)
-	// 	console.log(`res2 log`)
-	// 	console.log(res2)
-	// }
-	// getNow()
-
-	const s = async () => {
-		const res = await getUserInfo(localStorage.getItem('cookie'))
-		console.log(res)
-	}
-</script>
+<script setup></script>
 
 <style lang="less" scoped></style>
