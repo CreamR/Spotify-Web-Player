@@ -115,7 +115,6 @@
 				if (route.name != 'searchResUser') router.push({ name: 'searchResUser' })
 				break
 			default:
-				// 后续跳转至error页面
 				router.push({ name: 'error' })
 		}
 	})
