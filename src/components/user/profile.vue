@@ -5,22 +5,22 @@
 		<el-avatar
 			:size="100"
 			fit="cover"
-			src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+			:src="data.userData.photoUrl"
 		/>
-		<h3 class="userName">{{ data.userData.name }}呆小呆的小呆</h3>
-		<p class="signature">{{ data.userData.signature }}爱听歌的小伙一枚~</p>
+		<h3 class="userName">{{ data.userData.name }}</h3>
+		<p class="signature">{{ data.userData.signature }}</p>
 
 		<div class="userInfo">
 			<div class="wrap">
-				<p class="index">{{ data.userData.level }}8</p>
+				<p class="index">{{ data.userData.level }}</p>
 				<p class="desc">等级</p>
 			</div>
 			<div class="wrap">
-				<p class="index">{{ data.userData.listenSongs }}151</p>
+				<p class="index">{{ data.userData.listenSongs }}</p>
 				<p class="desc">听过歌曲</p>
 			</div>
 			<div class="wrap clear">
-				<p class="index">{{ data.userData.OS }} IOS</p>
+				<p class="index">{{ data.userData.OS }}</p>
 				<p class="desc">OS版本</p>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 <script setup>
 	import { reactive, onMounted } from 'vue'
 	import { useRouter } from 'vue-router'
-	import { logout, getProfile } from '../../service/user'
+	import { getProfile } from '../../service/user'
 	import { isDeviceType } from '../../function/isDeviceType'
 
 	const router = useRouter()
@@ -62,21 +62,6 @@
 		data.userData.listenSongs = res.listenSongs
 
 		data.userData.OS = isDeviceType()
-	}
-
-	// 退出登录
-	const gologout = async () => {
-		const res = await logout()
-		if (res.code == 200) {
-			localStorage.clear()
-			router.push({ name: 'login' })
-		} else {
-			ElNotification({
-				title: '错误',
-				message: '退出登录失败',
-				type: 'error',
-			})
-		}
 	}
 </script>
 

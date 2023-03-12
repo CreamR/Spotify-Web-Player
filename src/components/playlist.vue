@@ -106,6 +106,7 @@
 	}
 
 	const filterSong = () => {
+		// 存放搜索结果数组，否则搜索结果数组会覆盖原数组，导致后续无法继续搜索
 		data.searchRes = data.songsList.filter(item => item.name.includes(data.keywords))
 	}
 	const inputing = ref()

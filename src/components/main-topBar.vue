@@ -33,12 +33,12 @@
 			/>
 		</div>
 		<div class="right">
-			<el-button
-				link
-				large
-				type="info"
-				>说明文档</el-button
-			>
+			<el-icon
+				color="red"
+				size="22"
+				@click="gologout"
+				><SwitchButton
+			/></el-icon>
 			<el-button
 				type="success"
 				round
@@ -63,9 +63,9 @@
 </template>
 
 <script setup>
-	import { ArrowLeftBold, ArrowRightBold } from '@element-plus/icons-vue'
+	import { ArrowLeftBold, ArrowRightBold, SwitchButton } from '@element-plus/icons-vue'
 	import { reactive, ref, onMounted, watch } from 'vue'
-
+	import { logout } from '../service/login'
 	import { getProfile } from '../service/user'
 
 	const data = reactive({
@@ -84,6 +84,19 @@
 			const res = await getProfile(uID)
 			data.userName = res.profile.nickname
 			data.userPhoto = res.profile.avatarUrl
+		}
+	}
+
+	const gologout = async () => {
+		const res = await logout()
+		if (res.code == 200) {
+			localStorage.clear()
+			router.push({ name: 'login' })
+		} else {
+			ElNotification({
+				title: '退出登录失败',
+				type: 'error',
+			})
 		}
 	}
 
@@ -130,9 +143,13 @@
 			}
 		}
 		.right {
+			.el-icon {
+				vertical-align: middle;
+				margin-right: 20px;
+			}
 			.el-button {
+				margin-right: 20px;
 				font-weight: bold;
-				margin-right: 1.3vw;
 			}
 			.userInfo {
 				display: inline-block;

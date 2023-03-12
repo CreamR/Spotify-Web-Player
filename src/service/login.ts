@@ -78,7 +78,6 @@ export const logout = () =>
 	fetch(`${baseURL}/logout`, {
 		method: 'post',
 		body: JSON.stringify({
-			token: token,
 			cookie: cookie,
 		}),
 		headers: {

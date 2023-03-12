@@ -87,9 +87,6 @@
 		if (Object.keys(res.result).length != 0) {
 			data.searchResList = res.result
 			data.isEmpty = false
-
-			console.log('fuckfuck')
-			console.log(res.result.songs)
 		} else {
 			data.isEmpty = true
 		}
