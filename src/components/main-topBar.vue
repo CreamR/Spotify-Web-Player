@@ -146,6 +146,7 @@
 			.el-icon {
 				vertical-align: middle;
 				margin-right: 20px;
+				cursor: pointer;
 			}
 			.el-button {
 				margin-right: 20px;

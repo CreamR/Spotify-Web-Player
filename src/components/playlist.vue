@@ -37,10 +37,10 @@
 			<div class="right">
 				<el-popover
 					placement="left"
-					:width="310"
+					:width="335"
 					trigger="hover"
 					effect="dark"
-					content="此项功能将消耗客户机性能"
+					content="此功能消耗客户机性能，注意歌单内数据不要过大"
 				>
 					<template #reference>
 						<el-icon
