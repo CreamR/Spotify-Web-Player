@@ -36,8 +36,9 @@
     <li>
     <a href="#环境要求">环境要求</a>
     </li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#运行">运行</a></li>
+    <li><a href="#安装与运行 - 服务器">安装与运行 - 服务器</a></li>
+    <li><a href="#安装与运行 - 前端">安装与运行 - 前端</a></li>
+    <li><a href="#UI设计参考">UI设计参考</a></li>
     <li><a href="#贡献者">贡献者</a></li>
     <li><a href="#开源协议">开源协议</a></li>
   </ul>
@@ -92,6 +93,13 @@ $ # install dependencies and run it
 $ pnpm install
 $ pnpm run dev
 ```
+
+## UI 设计参考
+
+[YouTube](https://www.youtube.com)
+[Spotify](https://www.spotify.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 贡献者
 
