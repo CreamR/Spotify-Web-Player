@@ -99,7 +99,7 @@ $ pnpm run dev
 [YouTube](https://www.youtube.com)
 [Spotify](https://www.spotify.com/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
 ## 贡献者
 
