@@ -185,6 +185,10 @@
 				background: rgba(141, 103, 171, 1);
 				margin-right: 0;
 			}
+			li:hover {
+				color: black;
+				background-color: @colorSuccess;
+			}
 		}
 		.greatPlaylist {
 			// #setFlex(flex-start);
