@@ -26,13 +26,13 @@
 		<h1>为你推荐</h1>
 		<el-row
 			class="greatPlaylist"
-			justify="center"
-			gutter="30"
+			justify="start"
+			:gutter="50"
 		>
 			<el-col
 				v-show="data.logined"
-				:span="8"
-				:md="6"
+				:span="12"
+				:md="8"
 				:lg="4"
 				class="playlistInfo"
 			>
@@ -48,8 +48,8 @@
 			<el-col
 				v-for="(item, index) in data.greatPlaylist"
 				:key="index"
-				:span="8"
-				:md="6"
+				:span="12"
+				:md="8"
 				:lg="4"
 				class="playlistInfo"
 				@click="
@@ -162,7 +162,7 @@
 					}
 				}
 				i {
-					font-size: x-large;
+					font-size: larger;
 
 					position: absolute;
 					bottom: 1.5vw;
@@ -193,8 +193,8 @@
 			.playlistInfo {
 				border-radius: 10px;
 
-				padding: 15px;
-				margin: 15px;
+				padding: 20px 0px;
+				margin-bottom: 30px;
 
 				cursor: pointer;
 				#trs-bgc(rgb(40, 40, 40), rgb(30, 30, 30));
@@ -206,7 +206,7 @@
 				}
 
 				p {
-					// #setWH(10vw, 40px);
+					height: 40px;
 					font-size: normal;
 
 					margin-bottom: 10px;
