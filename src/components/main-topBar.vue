@@ -125,7 +125,7 @@
 				margin-left: 20px;
 			}
 			.search {
-				#setWH(400px, 40px);
+				#setWH(22vw, 40px);
 				font-size: 15px;
 
 				outline: none;

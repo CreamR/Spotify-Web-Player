@@ -24,7 +24,59 @@
 		</ul>
 
 		<h1>为你推荐</h1>
-		<ul class="greatPlaylist">
+		<el-row
+			class="greatPlaylist"
+			justify="center"
+			gutter="30"
+		>
+			<el-col
+				v-show="data.logined"
+				:span="8"
+				:md="6"
+				:lg="4"
+				class="playlistInfo"
+			>
+				<div class="wrap">
+					<img
+						src="../assets/dailyLike.svg"
+						title="每日推荐"
+					/>
+					<p style="text-align: center">🥰 每日推荐歌曲 🥰</p>
+				</div>
+			</el-col>
+
+			<el-col
+				v-for="(item, index) in data.greatPlaylist"
+				:key="index"
+				:span="8"
+				:md="6"
+				:lg="4"
+				class="playlistInfo"
+				@click="
+					$router.push({
+						path: `/playlist/${item.id}`,
+						query: {
+							playlistIMG: item.picUrl,
+							listTitle: item.name,
+							count: item.trackCount,
+							view: item.playcount,
+							creator: item.creator.nickname,
+						},
+					})
+				"
+			>
+				<div class="wrap">
+					<img
+						:src="item.picUrl"
+						alt="image"
+						:title="item.name"
+					/>
+					<p>{{ item.name }}</p>
+				</div>
+			</el-col>
+		</el-row>
+
+		<!-- <ul class="greatPlaylist">
 			<li v-show="data.logined">
 				<img
 					src="../assets/dailyLike.svg"
@@ -55,7 +107,7 @@
 				/>
 				<p>{{ item.name }}</p>
 			</li>
-		</ul>
+		</ul> -->
 	</div>
 </template>
 
@@ -101,12 +153,16 @@
 				margin-right: 20px;
 
 				cursor: pointer;
-				transition: all 150ms ease;
-				&:hover {
-					transform: rotate(-3deg);
+				transition: all 250ms ease;
+				// responsive compatible function
+				@media screen and (max-width: 992px) {
+					#setWH(85px,160px);
+					&:hover {
+						width: 250px;
+					}
 				}
 				i {
-					font-size: xx-large;
+					font-size: x-large;
 
 					position: absolute;
 					bottom: 1.5vw;
@@ -131,23 +187,26 @@
 			}
 		}
 		.greatPlaylist {
-			#setFlex(flex-start);
-			flex-wrap: wrap;
+			// #setFlex(flex-start);
+			// flex-wrap: wrap;
 			margin-bottom: 30px;
-			li {
+			.playlistInfo {
 				border-radius: 10px;
 
-				padding: 1vw;
-				margin: 1vw 15px;
+				padding: 15px;
+				margin: 15px;
 
 				cursor: pointer;
 				#trs-bgc(rgb(40, 40, 40), rgb(30, 30, 30));
 				img {
-					#setWH(10vw, 10vw);
+					// #setWH(10vw, 10vw);
+					width: 100%;
+					height: 100%;
 					border-radius: 10px;
 				}
+
 				p {
-					#setWH(10vw, 40px);
+					// #setWH(10vw, 40px);
 					font-size: normal;
 
 					margin-bottom: 10px;

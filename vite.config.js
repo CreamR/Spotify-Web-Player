@@ -12,6 +12,13 @@ export default defineConfig({
 		Components({
 			resolvers: [ElementPlusResolver()],
 		}),
-		vue(),
+		vue({
+			template: {
+				compilerOptions: {
+					// 将所有带短横线的标签名都视为自定义元素
+					isCustomElement: tag => tag.includes('media'),
+				},
+			},
+		}),
 	],
 })

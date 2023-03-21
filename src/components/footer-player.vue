@@ -1,12 +1,12 @@
 <template>
 	<div class="player">
 		<div class="left">
-			<!-- <img
-				src="../assets/test/img.svg"
+			<img
+				src="../assets/test/headImg.svg"
 				:title="ss"
 				width="55"
 				height="55"
-			/> -->
+			/>
 			<div class="songDetails">
 				<h4>测试歌曲</h4>
 				<p>这是个小测试</p>
@@ -106,7 +106,10 @@
 				max="100"
 			/>
 		</div>
-		<audio ref="audio"></audio>
+		<audio
+			ref="audio"
+			src="../assets/test/audioTest.mp3"
+		></audio>
 	</div>
 </template>
 
