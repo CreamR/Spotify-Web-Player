@@ -75,39 +75,6 @@
 				</div>
 			</el-col>
 		</el-row>
-
-		<!-- <ul class="greatPlaylist">
-			<li v-show="data.logined">
-				<img
-					src="../assets/dailyLike.svg"
-					title="每日推荐"
-				/>
-				<p style="text-align: center">🥰 每日推荐歌曲 🥰</p>
-			</li>
-			<li
-				v-for="(item, index) in data.greatPlaylist"
-				:key="index"
-				@click="
-					$router.push({
-						path: `/playlist/${item.id}`,
-						query: {
-							playlistIMG: item.picUrl,
-							listTitle: item.name,
-							count: item.trackCount,
-							view: item.playcount,
-							creator: item.creator.nickname,
-						},
-					})
-				"
-			>
-				<img
-					:src="item.picUrl"
-					alt="image"
-					:title="item.name"
-				/>
-				<p>{{ item.name }}</p>
-			</li>
-		</ul> -->
 	</div>
 </template>
 
@@ -191,8 +158,6 @@
 			}
 		}
 		.greatPlaylist {
-			// #setFlex(flex-start);
-			// flex-wrap: wrap;
 			margin-bottom: 30px;
 			.playlistInfo {
 				border-radius: 10px;
@@ -203,7 +168,6 @@
 				cursor: pointer;
 				#trs-bgc(rgb(40, 40, 40), rgb(30, 30, 30));
 				img {
-					// #setWH(10vw, 10vw);
 					width: 100%;
 					height: 100%;
 					border-radius: 10px;
