@@ -20,6 +20,9 @@
 
 <script setup>
 	import 'media-chrome'
+	import { timeSwtich } from '/src/function/timeSwtich'
+
+	console.log(timeSwtich('524531354568'))
 </script>
 
 <style lang="less" scoped>

@@ -35,6 +35,15 @@
 				:md="8"
 				:lg="4"
 				class="playlistInfo"
+				@click="
+					$router.push({
+						path: `/playlist/${item.id}`,
+						query: {
+							playlistIMG: '../assets/dailyLike.svg',
+							listTitle: '每日推荐歌曲',
+						},
+					})
+				"
 			>
 				<div class="wrap">
 					<img
