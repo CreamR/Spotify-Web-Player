@@ -61,9 +61,9 @@
 <script setup>
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import { search } from '../service/search'
-	import vSearchSongTable from './consist/searchSongTable.vue'
-	import vSearchArtistTable from './consist/searchArtistTable.vue'
+	import { search } from '/src/service/search'
+	import vSearchSongTable from '/src/components/consist/searchSongTable.vue'
+	import vSearchArtistTable from '/src/components/consist/searchArtistTable.vue'
 
 	const router = useRouter()
 	const route = useRoute()

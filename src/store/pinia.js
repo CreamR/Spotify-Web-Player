@@ -1,5 +1,5 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { getsongUrl } from '../service/song'
+import { getsongUrl } from '/src/service/song'
 
 export const useSong = defineStore('song', {
 	state: () => {

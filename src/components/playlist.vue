@@ -72,8 +72,8 @@
 	import { Headset, QuestionFilled, Delete } from '@element-plus/icons-vue'
 	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import vTable from './consist/table.vue'
-	import { getPlaylistDetail } from '../service/playlist'
+	import vTable from '/src/components/consist/table.vue'
+	import { getPlaylistDetail } from '/src/service/playlist'
 
 	const router = useRouter()
 	const route = useRoute()

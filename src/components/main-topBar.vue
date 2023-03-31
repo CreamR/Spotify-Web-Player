@@ -65,8 +65,8 @@
 <script setup>
 	import { ArrowLeftBold, ArrowRightBold, SwitchButton } from '@element-plus/icons-vue'
 	import { reactive, ref, onMounted, watch } from 'vue'
-	import { logout } from '../service/login'
-	import { getProfile } from '../service/user'
+	import { logout } from '/src/service/login'
+	import { getProfile } from '/src/service/user'
 
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,

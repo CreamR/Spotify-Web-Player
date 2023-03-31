@@ -12,32 +12,32 @@ const router = createRouter({
 		{
 			name: 'app',
 			path: '/app',
-			component: () => import('../view/app.vue'),
+			component: () => import('/src/view/app.vue'),
 			children: [
 				{
 					name: 'login',
 					path: '/login',
-					component: () => import('../components/user/login.vue'),
+					component: () => import('/src/components/user/login.vue'),
 				},
 				{
 					name: 'loginQRcode',
 					path: '/loginQRcode',
-					component: () => import('../components/user/loginQRcode.vue'),
+					component: () => import('/src/components/user/loginQRcode.vue'),
 				},
 				{
 					name: 'main',
 					path: '/main',
-					component: () => import('../components/main-body.vue'),
+					component: () => import('/src/components/main-body.vue'),
 				},
 				{
 					name: 'playlist',
 					path: '/playlist/:id',
-					component: () => import('../components/playlist.vue'),
+					component: () => import('/src/components/playlist.vue'),
 				},
 				{
 					name: 'collect',
 					path: '/collect',
-					component: () => import('../components/collect.vue'),
+					component: () => import('/src/components/collect.vue'),
 					meta: {
 						needLogin: true,
 					},
@@ -45,12 +45,12 @@ const router = createRouter({
 				{
 					name: 'profile',
 					path: '/profile',
-					component: () => import('../components/user/profile.vue'),
+					component: () => import('/src/components/user/profile.vue'),
 				},
 				{
 					name: 'searchRes',
 					path: '/searchRes',
-					component: () => import('../components/searchRes.vue'),
+					component: () => import('/src/components/searchRes.vue'),
 					children: [
 						{
 							path: '/searchRes',
@@ -59,27 +59,27 @@ const router = createRouter({
 						{
 							name: 'searchResSong',
 							path: '/searchRes/song',
-							component: () => import('../components/consist/searchSongTable.vue'),
+							component: () => import('/src/components/consist/searchSongTable.vue'),
 						},
 						{
 							name: 'searchResArtist',
 							path: '/searchRes/artist',
-							component: () => import('../components/consist/searchArtistTable.vue'),
+							component: () => import('/src/components/consist/searchArtistTable.vue'),
 						},
 						{
 							name: 'searchResPlaylist',
 							path: '/searchRes/playlist',
-							component: () => import('../components/consist/searchPlaylistTable.vue'),
+							component: () => import('/src/components/consist/searchPlaylistTable.vue'),
 						},
 						{
 							name: 'searchResAlbum',
 							path: '/searchRes/album',
-							component: () => import('../components/consist/searchAlbumTable.vue'),
+							component: () => import('/src/components/consist/searchAlbumTable.vue'),
 						},
 						{
 							name: 'searchResUser',
 							path: '/searchRes/user',
-							component: () => import('../components/consist/searchUserTable.vue'),
+							component: () => import('/src/components/consist/searchUserTable.vue'),
 						},
 					],
 				},
@@ -88,17 +88,12 @@ const router = createRouter({
 		{
 			name: 'error',
 			path: '/error',
-			component: () => import('../components/feedback/error.vue'),
+			component: () => import('/src/components/feedback/error.vue'),
 		},
 		{
 			name: 'test',
 			path: '/test',
-			component: () => import('../../test/test.vue'),
-		},
-		{
-			name: 'testPage',
-			path: '/testPage',
-			component: () => import('../../test/layoutTest.vue'),
+			component: () => import('/test/test.vue'),
 		},
 	],
 })

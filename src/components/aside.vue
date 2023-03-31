@@ -58,7 +58,7 @@
 <script setup>
 	import { Cpu, Star } from '@element-plus/icons-vue'
 	import { reactive, onMounted, watch } from 'vue'
-	import { getPlaylist } from '../service/playlist'
+	import { getPlaylist } from '/src/service/playlist'
 
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,

@@ -50,7 +50,7 @@
 <script setup>
 	import { onMounted, reactive, watch, ref } from 'vue'
 	import { Clock } from '@element-plus/icons-vue'
-	import { timeSwtich } from '../../function/timeSwtich'
+	import { timeSwtich } from '/src/function/timeSwtich'
 
 	const props = defineProps({
 		dataList: [],

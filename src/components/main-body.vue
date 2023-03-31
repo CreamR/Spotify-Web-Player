@@ -89,7 +89,7 @@
 
 <script setup>
 	import { onMounted, reactive } from 'vue'
-	import { getGreatPlaylist } from '../service/playlist'
+	import { getGreatPlaylist } from '/src/service/playlist'
 
 	const data = reactive({
 		greatPlaylist: [],
