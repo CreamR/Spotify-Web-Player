@@ -32,9 +32,9 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter } from 'vue-router'
 	// import {} from '@src'
-	import { getUrl } from '../../function/base64toBolb'
-	import { getKey, getQRcode, check } from '../../service/login'
-	import { getUserInfo } from '../../service/user'
+	import { getUrl } from '/src/function/base64toBolb'
+	import { getKey, getQRcode, check } from '/src/service/login'
+	import { getUserInfo } from '/src/service/user'
 
 	const router = useRouter()
 
@@ -102,7 +102,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../../base.less);
+	@import url(/src/base.less);
 	.loginQRcode {
 		color: white;
 		text-align: center;

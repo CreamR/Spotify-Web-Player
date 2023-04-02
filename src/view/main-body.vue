@@ -112,7 +112,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../base.less);
+	@import url(/src/base.less);
 	h1 {
 		font-weight: normal;
 		margin-bottom: 20px;

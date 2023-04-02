@@ -12,32 +12,32 @@ const router = createRouter({
 		{
 			name: 'app',
 			path: '/app',
-			component: () => import('/src/view/app.vue'),
+			component: () => import('/src/root/app.vue'),
 			children: [
 				{
 					name: 'login',
 					path: '/login',
-					component: () => import('/src/components/user/login.vue'),
+					component: () => import('/src/view/user/login.vue'),
 				},
 				{
 					name: 'loginQRcode',
 					path: '/loginQRcode',
-					component: () => import('/src/components/user/loginQRcode.vue'),
+					component: () => import('/src/view/user/loginQRcode.vue'),
 				},
 				{
 					name: 'main',
 					path: '/main',
-					component: () => import('/src/components/main-body.vue'),
+					component: () => import('/src/view/main-body.vue'),
 				},
 				{
 					name: 'playlist',
 					path: '/playlist/:id',
-					component: () => import('/src/components/playlist.vue'),
+					component: () => import('/src/view/playlist.vue'),
 				},
 				{
 					name: 'collect',
 					path: '/collect',
-					component: () => import('/src/components/collect.vue'),
+					component: () => import('/src/view/collect.vue'),
 					meta: {
 						needLogin: true,
 					},
@@ -45,12 +45,12 @@ const router = createRouter({
 				{
 					name: 'profile',
 					path: '/profile',
-					component: () => import('/src/components/user/profile.vue'),
+					component: () => import('/src/view/user/profile.vue'),
 				},
 				{
 					name: 'searchRes',
 					path: '/searchRes',
-					component: () => import('/src/components/searchRes.vue'),
+					component: () => import('/src/view/searchRes.vue'),
 					children: [
 						{
 							path: '/searchRes',
@@ -59,27 +59,27 @@ const router = createRouter({
 						{
 							name: 'searchResSong',
 							path: '/searchRes/song',
-							component: () => import('/src/components/consist/searchSongTable.vue'),
+							component: () => import('/src/components/searchSongTable.vue'),
 						},
 						{
 							name: 'searchResArtist',
 							path: '/searchRes/artist',
-							component: () => import('/src/components/consist/searchArtistTable.vue'),
+							component: () => import('/src/components/searchArtistTable.vue'),
 						},
 						{
 							name: 'searchResPlaylist',
 							path: '/searchRes/playlist',
-							component: () => import('/src/components/consist/searchPlaylistTable.vue'),
+							component: () => import('/src/components/searchPlaylistTable.vue'),
 						},
 						{
 							name: 'searchResAlbum',
 							path: '/searchRes/album',
-							component: () => import('/src/components/consist/searchAlbumTable.vue'),
+							component: () => import('/src/components/searchAlbumTable.vue'),
 						},
 						{
 							name: 'searchResUser',
 							path: '/searchRes/user',
-							component: () => import('/src/components/consist/searchUserTable.vue'),
+							component: () => import('/src/components/searchUserTable.vue'),
 						},
 					],
 				},

@@ -112,7 +112,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../base.less);
+	@import url(/src/base.less);
 	.topBar {
 		#setFlex(space-between);
 

@@ -63,7 +63,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../../base.less);
+	@import url(/src/base.less);
 	.table {
 		padding: 10px 20px;
 		ul {

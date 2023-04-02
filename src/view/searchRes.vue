@@ -121,7 +121,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../base.less);
+	@import url(/src/base.less);
 	.active {
 		color: black;
 		background-color: white;

@@ -30,8 +30,8 @@
 <script setup>
 	import { reactive, onMounted } from 'vue'
 	import { useRouter } from 'vue-router'
-	import { getProfile } from '../../service/user'
-	import { isDeviceType } from '../../function/isDeviceType'
+	import { getProfile } from '/src/service/user'
+	import { isDeviceType } from '/src/function/isDeviceType'
 
 	const router = useRouter()
 
@@ -66,7 +66,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../../base.less);
+	@import url(/src/base.less);
 	.profile {
 		color: white;
 		text-align: center;

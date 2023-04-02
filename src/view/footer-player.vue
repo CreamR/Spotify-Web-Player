@@ -142,7 +142,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(../base.less);
+	@import url(/src/base.less);
 	.player {
 		#setFlex(space-between);
 		background-color: rgb(24, 24, 24);
