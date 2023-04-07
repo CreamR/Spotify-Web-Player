@@ -1,20 +1,6 @@
 <template>
 	<div>
-		<h1 style="margin: 10vw 0 auto; text-align: center">test foundation for test data</h1>
-		<media-controller audio>
-			<audio
-				slot="media"
-				src="https://stream.mux.com/O4h5z00885HEucNNa1rV02wZapcGp01FXXoJd35AHmGX7g/audio.m4a"
-			></audio>
-			<media-control-bar>
-				<media-play-button></media-play-button>
-				<media-time-display show-duration></media-time-display>
-				<media-time-range></media-time-range>
-				<media-playback-rate-button></media-playback-rate-button>
-				<media-mute-button></media-mute-button>
-				<media-volume-range></media-volume-range>
-			</media-control-bar>
-		</media-controller>
+		<h1 style="margin: 10vw 0 auto; text-align: center">test foundation</h1>
 	</div>
 </template>
 
@@ -26,7 +12,12 @@
 </script>
 
 <style lang="less" scoped>
-	.media-controller {
+	.audioPlayer {
 		border-radius: 30% !important;
+		width: 80vw;
+	}
+	.player {
+		margin-top: 3vw;
+		margin-left: 10vw;
 	}
 </style>

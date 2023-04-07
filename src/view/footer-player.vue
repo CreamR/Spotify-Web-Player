@@ -30,7 +30,7 @@
 				v-else
 			/>
 		</div>
-		<div class="middle">
+		<!-- <div class="middle">
 			<div class="controls">
 				<el-icon
 					color="white"
@@ -78,8 +78,8 @@
 				/>
 				<span></span>
 			</div>
-		</div>
-		<div class="right">
+		</div> -->
+		<!-- <div class="right">
 			<el-icon
 				color="white"
 				size="30"
@@ -109,7 +109,51 @@
 		<audio
 			ref="audio"
 			src="../assets/test/audioTest.mp3"
-		></audio>
+		></audio> -->
+		<media-controller
+			audio
+			class="player"
+		>
+			<audio
+				slot="media"
+				ref="audio"
+				src="https://stream.mux.com/O4h5z00885HEucNNa1rV02wZapcGp01FXXoJd35AHmGX7g/audio.m4a"
+			></audio>
+			<media-control-bar class="controlBar">
+				<media-play-button></media-play-button>
+				<media-time-display show-duration></media-time-display>
+				<media-time-range></media-time-range>
+				<media-playback-rate-button></media-playback-rate-button>
+			</media-control-bar>
+		</media-controller>
+
+		<div class="right">
+			<el-icon
+				color="white"
+				size="30"
+				><Expand
+			/></el-icon>
+			<el-icon
+				color="white"
+				size="30"
+				@click="volume = 0"
+				v-if="volume != 0"
+				><Microphone
+			/></el-icon>
+			<el-icon
+				color="white"
+				size="30"
+				@click="volume = 30"
+				v-else
+				><Mute
+			/></el-icon>
+			<input
+				type="range"
+				v-model="volume"
+				min="0"
+				max="100"
+			/>
+		</div>
 	</div>
 </template>
 
@@ -126,6 +170,7 @@
 		Expand,
 	} from '@element-plus/icons-vue'
 	import { ref, onMounted, watch } from 'vue'
+	import 'media-chrome'
 
 	// 操作DOM调节音量
 	const audio = ref()

@@ -88,7 +88,7 @@
 				const res2 = await getUserInfo(res.cookie)
 				localStorage.setItem('userID', res2.account.id)
 
-				router.push({ name: main })
+				router.push({ name: 'main' })
 				break
 		}
 	}
