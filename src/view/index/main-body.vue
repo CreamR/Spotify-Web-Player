@@ -39,7 +39,7 @@
 					$router.push({
 						path: `/playlist/${item.id}`,
 						query: {
-							playlistIMG: '../assets/dailyLike.svg',
+							playlistIMG: '/src/assets/dailyLike.svg',
 							listTitle: '每日推荐歌曲',
 						},
 					})
@@ -47,7 +47,7 @@
 			>
 				<div class="wrap">
 					<img
-						src="../assets/dailyLike.svg"
+						src="/src/assets/dailyLike.svg"
 						title="每日推荐"
 					/>
 					<p style="text-align: center">🥰 每日推荐歌曲 🥰</p>

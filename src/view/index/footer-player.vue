@@ -2,7 +2,7 @@
 	<div class="player">
 		<div class="left">
 			<img
-				src="../assets/test/headImg.svg"
+				src="/src/assets/test/headImg.svg"
 				:title="ss"
 				width="55"
 				height="55"
@@ -12,7 +12,7 @@
 				<p>这是个小测试</p>
 			</div>
 			<img
-				src="../assets/heart.svg"
+				src="/src/assets/heart.svg"
 				title="喜欢"
 				width="30"
 				height="30"
@@ -21,7 +21,7 @@
 				v-if="!islike"
 			/>
 			<img
-				src="../assets/heartFill.svg"
+				src="/src/assets/heartFill.svg"
 				title="取消喜欢"
 				width="30"
 				height="30"
@@ -112,18 +112,21 @@
 		></audio> -->
 		<media-controller
 			audio
-			class="player"
+			class="middle"
 		>
 			<audio
 				slot="media"
 				ref="audio"
 				src="https://stream.mux.com/O4h5z00885HEucNNa1rV02wZapcGp01FXXoJd35AHmGX7g/audio.m4a"
 			></audio>
-			<media-control-bar class="controlBar">
-				<media-play-button></media-play-button>
-				<media-time-display show-duration></media-time-display>
-				<media-time-range></media-time-range>
-				<media-playback-rate-button></media-playback-rate-button>
+			<media-control-bar class="media-player">
+				<media-play-button class="selectAll"></media-play-button>
+				<media-time-display
+					show-duration
+					class="selectAll"
+				></media-time-display>
+				<media-time-range class="selectAll"></media-time-range>
+				<media-playback-rate-button class="selectAll"></media-playback-rate-button>
 			</media-control-bar>
 		</media-controller>
 
@@ -147,12 +150,13 @@
 				v-else
 				><Mute
 			/></el-icon>
-			<input
+			<!-- <input
 				type="range"
 				v-model="volume"
 				min="0"
 				max="100"
-			/>
+			/> -->
+			<media-volume-range style="width: 100px"></media-volume-range>
 		</div>
 	</div>
 </template>
@@ -213,21 +217,15 @@
 			}
 		}
 		.middle {
-			text-align: center;
-			.controls {
-				#setFlex(center);
-				.el-icon {
-					margin: 0 6px 10px;
-					cursor: pointer;
-					transition: all 150ms ease;
+			.media-player {
+				width: 45vw;
+				background-color: rgb(24, 24, 24);
+
+				& > .selectAll {
+					margin-right: 10px;
 					&:hover {
-						transform: translateY(-1px);
+						background-color: rgb(24, 24, 24);
 					}
-				}
-			}
-			.progress {
-				input {
-					width: 35vw;
 				}
 			}
 		}
@@ -237,7 +235,7 @@
 				margin-right: 10px;
 			}
 			input {
-				width: 5vw;
+				width: 80px;
 			}
 		}
 	}

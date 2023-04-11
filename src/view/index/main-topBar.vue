@@ -24,7 +24,7 @@
 				placeholder="搜索 歌手 专辑 音乐"
 				@input="
 					$router.push({
-						path: '/searchRes',
+						path: '/search',
 						query: {
 							keywords: keywords,
 						},
@@ -134,7 +134,7 @@
 				border: 1px solid @colorInfo;
 
 				margin-left: 15px;
-				padding: 10px 40px;
+				padding: 0px 20px;
 
 				background-image: url(../assets/search.svg);
 				background-repeat: no-repeat;

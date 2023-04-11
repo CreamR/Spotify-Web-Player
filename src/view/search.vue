@@ -53,7 +53,7 @@
 			<!-- <vSearchSongTable :songsList="data.searchResList"></vSearchSongTable> -->
 			<!-- <vSearchArtistTable :artistList="data.searchResList"></vSearchArtistTable> -->
 			<!-- new write method -->
-			<router-view :dataList="data.searchResList"></router-view>
+			<router-view :dataList="data.searchList"></router-view>
 		</div>
 	</div>
 </template>
@@ -62,14 +62,14 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import { search } from '/src/service/search'
-	import vSearchSongTable from '/src/components/consist/searchSongTable.vue'
-	import vSearchArtistTable from '/src/components/consist/searchArtistTable.vue'
+	import vSearchSongTable from '/src/components/searchSong.vue'
+	import vSearchArtistTable from '/src/components/searchArtist.vue'
 
 	const router = useRouter()
 	const route = useRoute()
 
 	const data = reactive({
-		searchResList: [],
+		searchList: [],
 		isEmpty: false,
 		// 控制类别按钮点击后变色
 		isActive: 1,
@@ -85,7 +85,7 @@
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
-			data.searchResList = res.result
+			data.searchList = res.result
 			data.isEmpty = false
 		} else {
 			data.isEmpty = true
@@ -96,23 +96,23 @@
 		switch (data.isActive) {
 			case 1:
 				await init(newVal, 1)
-				if (route.name != 'searchResSong') router.push({ name: 'searchResSong' })
+				if (route.name != 'searchSong') router.push({ name: 'searchSong' })
 				break
 			case 2:
 				await init(newVal, 100)
-				if (route.name != 'searchResArtist') router.push({ name: 'searchResArtist' })
+				if (route.name != 'searchArtist') router.push({ name: 'searchArtist' })
 				break
 			case 3:
 				await init(newVal, 1000)
-				if (route.name != 'searchResPlaylist') router.push({ name: 'searchResPlaylist' })
+				if (route.name != 'searchPlaylist') router.push({ name: 'searchPlaylist' })
 				break
 			case 4:
 				await init(newVal, 10)
-				if (route.name != 'searchResAlbum') router.push({ name: 'searchResAlbum' })
+				if (route.name != 'searchAlbum') router.push({ name: 'searchAlbum' })
 				break
 			case 5:
 				await init(newVal, 1002)
-				if (route.name != 'searchResUser') router.push({ name: 'searchResUser' })
+				if (route.name != 'searchUser') router.push({ name: 'searchUser' })
 				break
 			default:
 				router.push({ name: 'error' })

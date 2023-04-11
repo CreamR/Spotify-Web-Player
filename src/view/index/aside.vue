@@ -1,7 +1,7 @@
 <template>
 	<div class="aside">
 		<img
-			src="../assets/logo.svg"
+			src="/src/assets/logo.svg"
 			alt="logo"
 			title="spotify"
 			class="logo"
