@@ -1,5 +1,5 @@
 <template>
-	<div class="searchRes">
+	<div class="search">
 		<section
 			class="empty"
 			v-if="data.isEmpty"
@@ -127,7 +127,7 @@
 		background-color: white;
 	}
 
-	.searchRes {
+	.search {
 		// 无搜索结果时的样式
 		.empty {
 			text-align: center;

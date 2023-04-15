@@ -16,15 +16,9 @@ export const getPlaylistDetail = (listID: number) =>
 	)
 
 // 获取每日推荐歌单
-export const getGreatPlaylist = (token: string, cookie: string) =>
-	fetch(`${baseURL}/recommend/resource?token=${token}&cookie=${cookie}`).then(data => data.json())
-
-// 获取每日推荐歌曲
-export const getGreatSongs = (token: string, cookie: string) =>
-	fetch(`${baseURL}/recommend/songs?token=${token}&cookie=${cookie}`).then(data => data.json())
+export const getGreatPlaylist = () =>
+	fetch(`${baseURL}/recommend/resource?cookie=${cookie}`).then(data => data.json())
 
 // 获取新歌速递歌单
 export const getNewSongs = (type: number) =>
-	fetch(`${baseURL}/top/song?type=${type}&token=${token}&cookie=${cookie}`).then(data =>
-		data.json()
-	)
+	fetch(`${baseURL}/top/song?type=${type}&cookie=${cookie}`).then(data => data.json())

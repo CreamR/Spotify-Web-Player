@@ -37,11 +37,7 @@
 				class="playlistInfo"
 				@click="
 					$router.push({
-						path: `/playlist/${item.id}`,
-						query: {
-							playlistIMG: '/src/assets/dailyLike.svg',
-							listTitle: '每日推荐歌曲',
-						},
+						path: `/recSongs`,
 					})
 				"
 			>
@@ -100,9 +96,7 @@
 		init()
 	})
 	const init = async () => {
-		const token = localStorage.getItem('token') ?? null
-		const cookie = localStorage.getItem('cookie') ?? null
-		const resPlaylist = await getGreatPlaylist(token, cookie)
+		const resPlaylist = await getGreatPlaylist()
 
 		data.greatPlaylist = resPlaylist.recommend
 		console.log('greatList')

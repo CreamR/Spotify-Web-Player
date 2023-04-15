@@ -3,6 +3,10 @@ const baseURL: string = 'http://127.0.0.1:3000'
 const token = localStorage.getItem('token') ?? null
 const cookie = localStorage.getItem('cookie') ?? null
 
+// 获取每日推荐歌曲
+export const getGreatSongs = () =>
+	fetch(`${baseURL}/recommend/songs?&cookie=${cookie}`).then(data => data.json())
+
 // 获取音乐url
 export const getsongUrl = (songID: number) =>
 	fetch(`${baseURL}/song/url/v1?id=${songID}&level=exhigh&token=${token}&cookie=${cookie}`).then(
