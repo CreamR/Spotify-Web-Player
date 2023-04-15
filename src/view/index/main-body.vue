@@ -33,7 +33,8 @@
 				v-show="data.logined"
 				:span="12"
 				:md="8"
-				:lg="4"
+				:lg="6"
+				:xl="4"
 				class="playlistInfo"
 				@click="
 					$router.push({
@@ -55,7 +56,8 @@
 				:key="index"
 				:span="12"
 				:md="8"
-				:lg="4"
+				:lg="6"
+				:xl="4"
 				class="playlistInfo"
 				@click="
 					$router.push({
