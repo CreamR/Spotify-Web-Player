@@ -63,7 +63,16 @@
 			</div>
 		</div>
 		<div class="tableList">
-			<vTable :songsList="data.keywords.length == 0 ? data.songsList : data.searchRes"></vTable>
+			<vTable
+				v-if="data.searchRes.length != 0"
+				:songsList="data.keywords.length == 0 ? data.songsList : data.searchRes"
+			></vTable>
+			<p
+				style="text-align: center; margin-top: 100px"
+				v-else
+			>
+				关键字 <strong>{{ data.keywords }}</strong> 未找到
+			</p>
 		</div>
 	</div>
 </template>
@@ -80,7 +89,9 @@
 
 	const data = reactive({
 		songsList: [],
-		searchRes: [],
+		// 为搜索结果数组填充数据，否则初始时搜索结果数组长度为0，歌单数据无法展示
+		// 当搜索发生时此数组会被覆盖，从而达到若搜索不到关键字时提示关键字未找到的错误信息
+		searchRes: [''],
 		imgURL: '',
 		listTitle: '',
 		count: 0,

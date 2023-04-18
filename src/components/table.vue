@@ -1,7 +1,6 @@
 <template>
 	<div class="table">
-		<h1 v-if="props.songsList.length == 0">无搜索结果</h1>
-		<ul v-else>
+		<ul>
 			<li class="tag">
 				<span>#</span>
 				<span class="name">标题</span>
@@ -85,7 +84,7 @@
 				.album {
 					display: inline-block;
 					position: absolute;
-					left: 36vw;
+					left: 35vw;
 				}
 			}
 			.songContent {
@@ -122,7 +121,7 @@
 				.album {
 					display: inline-block;
 					position: absolute;
-					left: 36vw;
+					left: 35vw;
 
 					cursor: pointer;
 					#trs-color(@colorSuccess, @colorInfo);
