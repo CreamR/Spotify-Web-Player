@@ -81,14 +81,18 @@
 				break
 			case 803:
 				// 登录成功
-				data.tipText = '登录成功'
+				data.tipText = '登录成功, 即将跳转...'
 
 				// init userInfo
-				localStorage.setItem('cookie', res.cookie)
 				const res2 = await getUserInfo(res.cookie)
+				localStorage.setItem('cookie', res.cookie)
 				localStorage.setItem('userID', res2.account.id)
 
-				router.push({ name: 'main' })
+				// 防抖
+				if (localStorage.getItem('cookie'))
+					setTimeout(() => {
+						router.push({ name: 'main' })
+					}, 2000)
 				break
 		}
 	}
