@@ -48,6 +48,11 @@ const router = createRouter({
 					component: () => import('/src/view/user/profile.vue'),
 				},
 				{
+					name: 'recSongs',
+					path: '/recSongs',
+					component: () => import('/src/view/recSongs.vue'),
+				},
+				{
 					name: 'search',
 					path: '/search',
 					component: () => import('/src/view/search.vue'),
