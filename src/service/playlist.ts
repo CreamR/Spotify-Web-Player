@@ -5,15 +5,11 @@ const cookie = localStorage.getItem('cookie') ?? null
 
 // 获取用户歌单
 export const getPlaylist = (uID: number) =>
-	fetch(`${baseURL}/user/playlist?uid=${uID}&token=${token}&cookie=${cookie}`).then(data =>
-		data.json()
-	)
+	fetch(`${baseURL}/user/playlist?uid=${uID}&cookie=${cookie}`).then(data => data.json())
 
 // 获取歌单内容
 export const getPlaylistDetail = (listID: number) =>
-	fetch(`${baseURL}/playlist/track/all?id=${listID}&token=${token}&cookie=${cookie}`).then(data =>
-		data.json()
-	)
+	fetch(`${baseURL}/playlist/track/all?id=${listID}&cookie=${cookie}`).then(data => data.json())
 
 // 获取每日推荐歌单
 export const getGreatPlaylist = () =>
