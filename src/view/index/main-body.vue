@@ -87,7 +87,10 @@
 
 <script setup>
 	import { onMounted, reactive } from 'vue'
+	import { useRouter } from 'vue-router'
 	import { getGreatPlaylist } from '/src/service/playlist'
+
+	const router = useRouter()
 
 	const data = reactive({
 		greatPlaylist: [],
@@ -104,7 +107,9 @@
 		console.log('greatList')
 		console.log(resPlaylist)
 	}
-	const goPlaylist = type => {}
+	const goPlaylist = type => {
+		router.push({ path: `/newSongPlaylist/${type}` })
+	}
 </script>
 
 <style lang="less" scoped>

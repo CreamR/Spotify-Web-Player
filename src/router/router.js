@@ -35,6 +35,11 @@ const router = createRouter({
 					component: () => import('/src/view/playlist.vue'),
 				},
 				{
+					name: 'newSongPlaylist',
+					path: '/newSongPlaylist/:type',
+					component: () => import('/src/view/newSongPlaylist.vue'),
+				},
+				{
 					name: 'collect',
 					path: '/collect',
 					component: () => import('/src/view/collect.vue'),
@@ -64,27 +69,27 @@ const router = createRouter({
 						{
 							name: 'searchSong',
 							path: '/search/song',
-							component: () => import('/src/components/searchSong.vue'),
+							component: () => import('/src/components/search/searchSong.vue'),
 						},
 						{
 							name: 'searchArtist',
 							path: '/search/artist',
-							component: () => import('/src/components/searchArtist.vue'),
+							component: () => import('/src/components/search/searchArtist.vue'),
 						},
 						{
 							name: 'searchPlaylist',
 							path: '/search/playlist',
-							component: () => import('/src/components/searchPlaylist.vue'),
+							component: () => import('/src/components/search/searchPlaylist.vue'),
 						},
 						{
 							name: 'searchAlbum',
 							path: '/search/album',
-							component: () => import('/src/components/searchAlbum.vue'),
+							component: () => import('/src/components/search/searchAlbum.vue'),
 						},
 						{
 							name: 'searchUser',
 							path: '/search/user',
-							component: () => import('/src/components/searchUser.vue'),
+							component: () => import('/src/components/search/searchUser.vue'),
 						},
 					],
 				},
@@ -93,7 +98,7 @@ const router = createRouter({
 		{
 			name: 'error',
 			path: '/error',
-			component: () => import('/src/components/feedback/error.vue'),
+			component: () => import('/src/components/common/error.vue'),
 		},
 		{
 			name: 'test',
