@@ -105,6 +105,14 @@
 	})
 	const init = async id => {
 		const res = await getPlaylistDetail(id)
+
+		// 后端传来的数据与table组件不匹配，导致组件无法复用，此处将后端数据不匹配字段替代之
+		res.songs = res.songs.map(song => ({
+			...song,
+			album: song.al,
+			artists: song.ar,
+			duration: song.dt,
+		}))
 		data.songsList = res.songs
 
 		if (id) {

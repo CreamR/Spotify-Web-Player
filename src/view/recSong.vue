@@ -30,6 +30,14 @@
 	})
 	const init = async () => {
 		const res = await getGreatSongs()
+
+		res.data.dailySongs = res.data.dailySongs.map(song => ({
+			...song,
+			album: song.al,
+			artists: song.ar,
+			duration: song.dt,
+		}))
+
 		console.log(res)
 		data.dataList = res.data.dailySongs
 		data.recReasons = res.data.recommendReasons

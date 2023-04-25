@@ -38,7 +38,7 @@
 				class="playlistInfo"
 				@click="
 					$router.push({
-						path: `/recSongs`,
+						path: `/recSong`,
 					})
 				"
 			>
@@ -108,7 +108,7 @@
 		console.log(resPlaylist)
 	}
 	const goPlaylist = type => {
-		router.push({ path: `/newSongPlaylist/${type}` })
+		router.push({ path: `/newSongExpress/${type}` })
 	}
 </script>
 
