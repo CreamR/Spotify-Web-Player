@@ -35,9 +35,9 @@ const router = createRouter({
 					component: () => import('/src/view/playlist.vue'),
 				},
 				{
-					name: 'newSongPlaylist',
-					path: '/newSongPlaylist/:type',
-					component: () => import('/src/view/newSongPlaylist.vue'),
+					name: 'newSongExpress',
+					path: '/newSongExpress/:type',
+					component: () => import('/src/view/newSongExpress.vue'),
 				},
 				{
 					name: 'collect',
@@ -53,9 +53,9 @@ const router = createRouter({
 					component: () => import('/src/view/user/profile.vue'),
 				},
 				{
-					name: 'recSongs',
-					path: '/recSongs',
-					component: () => import('/src/view/recSongs.vue'),
+					name: 'recSong',
+					path: '/recSong',
+					component: () => import('/src/view/recSong.vue'),
 				},
 				{
 					name: 'search',
