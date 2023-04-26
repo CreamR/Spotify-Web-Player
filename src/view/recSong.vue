@@ -50,13 +50,15 @@
 		.listInfo {
 			display: flex;
 			align-items: center;
+
 			padding: 15px 30px;
 			.info {
 				margin-left: 20px;
 				p {
-					margin-top: 5px;
 					color: @colorInfo;
 					font-size: small;
+
+					margin-top: 5px;
 				}
 			}
 		}

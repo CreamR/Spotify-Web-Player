@@ -17,7 +17,7 @@
 		</ul>
 		<circle></circle>
 		<ul class="content">
-			<h3 class="title">你的歌单</h3>
+			<h5 class="title">你的歌单</h5>
 			<li
 				v-for="(item, index) in data.playlist"
 				:key="index"
@@ -123,7 +123,7 @@
 		circle {
 			display: block;
 			width: 80%;
-			border-bottom: 1px solid #383838;
+			border-bottom: 1px solid #444444;
 
 			margin: 0 auto;
 		}
@@ -131,8 +131,6 @@
 			margin-top: 10px;
 			.title {
 				color: #666666;
-				font-weight: normal;
-				font-size: medium;
 
 				padding: 10px;
 				padding-left: 30px;
