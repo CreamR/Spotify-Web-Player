@@ -13,43 +13,10 @@
 			class="content"
 			v-else
 		>
-			<div class="searchNavbar">
-				<el-button
-					round
-					:class="{ active: data.isActive == 1 }"
-					@click="data.isActive = 1"
-					color="rgb(44,44,44)"
-					>歌曲</el-button
-				>
-				<el-button
-					round
-					:class="{ active: data.isActive == 2 }"
-					@click="data.isActive = 2"
-					color="rgb(44,44,44)"
-					>艺人</el-button
-				><el-button
-					round
-					:class="{ active: data.isActive == 3 }"
-					@click="data.isActive = 3"
-					color="rgb(44,44,44)"
-					>歌单</el-button
-				>
-				<el-button
-					round
-					:class="{ active: data.isActive == 4 }"
-					@click="data.isActive = 4"
-					color="rgb(44,44,44)"
-					>专辑</el-button
-				>
-				<el-button
-					round
-					:class="{ active: data.isActive == 5 }"
-					@click="data.isActive = 5"
-					color="rgb(44,44,44)"
-					>用户</el-button
-				>
-			</div>
-
+			<vCategoryBar
+				:dataList="['歌曲', '艺人', '歌单', '专辑', '用户']"
+				@getIndex="handleIndex"
+			></vCategoryBar>
 			<!-- <vSearchSongTable :songsList="data.searchResList"></vSearchSongTable> -->
 			<!-- <vSearchArtistTable :artistList="data.searchResList"></vSearchArtistTable> -->
 			<!-- new write method -->
@@ -62,6 +29,7 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import { search } from '/src/service/search'
+	import vCategoryBar from '/src/components/categoryBar.vue'
 
 	const router = useRouter()
 	const route = useRoute()
@@ -69,8 +37,8 @@
 	const data = reactive({
 		searchList: [],
 		isEmpty: false,
-		// 控制类别按钮点击后变色
-		isActive: 1,
+		// 默认为0, 即单曲
+		categoryIndex: 0,
 	})
 
 	onMounted(() => {
@@ -90,25 +58,31 @@
 		}
 	}
 
-	watch([() => route.query.keywords, () => data.isActive], async ([newVal]) => {
-		switch (data.isActive) {
-			case 1:
+	// 拿到category子组件传来的index
+	const handleIndex = index => {
+		data.categoryIndex = index
+	}
+
+	watch([() => route.query.keywords, () => data.categoryIndex], async ([newVal]) => {
+		// 跳转前判断，防抖
+		switch (data.categoryIndex) {
+			case 0:
 				await init(newVal, 1)
 				if (route.name != 'searchSong') router.push({ name: 'searchSong' })
 				break
-			case 2:
+			case 1:
 				await init(newVal, 100)
 				if (route.name != 'searchArtist') router.push({ name: 'searchArtist' })
 				break
-			case 3:
+			case 2:
 				await init(newVal, 1000)
 				if (route.name != 'searchPlaylist') router.push({ name: 'searchPlaylist' })
 				break
-			case 4:
+			case 3:
 				await init(newVal, 10)
 				if (route.name != 'searchAlbum') router.push({ name: 'searchAlbum' })
 				break
-			case 5:
+			case 4:
 				await init(newVal, 1002)
 				if (route.name != 'searchUser') router.push({ name: 'searchUser' })
 				break
@@ -120,11 +94,6 @@
 
 <style lang="less" scoped>
 	@import url(/src/base.less);
-	.active {
-		color: black;
-		background-color: white;
-	}
-
 	.search {
 		// 无搜索结果时的样式
 		.empty {
