@@ -1,6 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { ElNotification } from 'element-plus'
 
+import search from '/src/router/search'
+import user from '/src/router/user'
+import common from '/src/router/common'
+
 const router = createRouter({
 	history: createWebHashHistory(),
 
@@ -14,16 +18,7 @@ const router = createRouter({
 			path: '/app',
 			component: () => import('/src/root/app.vue'),
 			children: [
-				{
-					name: 'login',
-					path: '/login',
-					component: () => import('/src/view/user/login.vue'),
-				},
-				{
-					name: 'loginQRcode',
-					path: '/loginQRcode',
-					component: () => import('/src/view/user/loginQRcode.vue'),
-				},
+				...user,
 				{
 					name: 'main',
 					path: '/main',
@@ -48,11 +43,6 @@ const router = createRouter({
 					},
 				},
 				{
-					name: 'profile',
-					path: '/profile',
-					component: () => import('/src/view/user/profile.vue'),
-				},
-				{
 					name: 'recSong',
 					path: '/recSong',
 					component: () => import('/src/view/recSong.vue'),
@@ -61,50 +51,11 @@ const router = createRouter({
 					name: 'search',
 					path: '/search',
 					component: () => import('/src/view/search.vue'),
-					children: [
-						{
-							path: '/search',
-							redirect: '/search/song',
-						},
-						{
-							name: 'searchSong',
-							path: '/search/song',
-							component: () => import('/src/components/search/searchSong.vue'),
-						},
-						{
-							name: 'searchArtist',
-							path: '/search/artist',
-							component: () => import('/src/components/search/searchArtist.vue'),
-						},
-						{
-							name: 'searchPlaylist',
-							path: '/search/playlist',
-							component: () => import('/src/components/search/searchPlaylist.vue'),
-						},
-						{
-							name: 'searchAlbum',
-							path: '/search/album',
-							component: () => import('/src/components/search/searchAlbum.vue'),
-						},
-						{
-							name: 'searchUser',
-							path: '/search/user',
-							component: () => import('/src/components/search/searchUser.vue'),
-						},
-					],
+					children: search,
 				},
 			],
 		},
-		{
-			name: 'error',
-			path: '/error',
-			component: () => import('/src/components/common/error.vue'),
-		},
-		{
-			name: 'test',
-			path: '/test',
-			component: () => import('/test/test.vue'),
-		},
+		...common,
 	],
 })
 
