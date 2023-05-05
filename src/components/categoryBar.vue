@@ -24,6 +24,7 @@
 
 	const clickBtn = index => {
 		isActive.value = index
+		//传给父组件index，用于通过用户点击的种类指数获取数据
 		emit('getIndex', index)
 	}
 </script>
