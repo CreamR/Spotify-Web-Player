@@ -16,7 +16,7 @@ export default defineConfig({
 		vue({
 			template: {
 				compilerOptions: {
-					// 将所有带短横线的标签名都视为自定义元素
+					// 将所有带media的标签名视为自定义元素
 					isCustomElement: tag => tag.includes('media'),
 				},
 			},
