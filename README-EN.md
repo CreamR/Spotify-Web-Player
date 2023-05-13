@@ -93,14 +93,14 @@ $ pnpm run dev
 
 ### Resolve CORS Problem
 
-# As a default, Because the CORS access has been not activate, Probably cannot use this project or there is no data has been be loaded, There is several methods to resolve that problem
+##### As a default, Because the CORS access has been not activate, Probably cannot use this project or there is no data has been be loaded, There is several methods to resolve that problem
 
 - use browser extension
 - set CORS access when send request in front end section
 - set CORS access when code interface in back end section
 - use builder such as webpack/vite etc
 
-# We use the first method as an instance
+##### We use the first method as an instance
 
 Recommend [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) extension, Activate it when the setup done, Of course you can chose another extension or method to resolve that problem
 
