@@ -41,7 +41,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-### 项目介绍
+## 项目介绍
 
 <!-- 项目图片部分 -->
 
@@ -49,7 +49,7 @@ Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 A
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-### 技术栈
+## 技术栈
 
 - Vue3 with composition API
 - Vue-router
@@ -64,13 +64,13 @@ Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 A
 
 <!-- GETTING STARTED -->
 
-### 环境要求
+## 环境要求
 
 - NodeJS 16+
 - Chrome67+ / Edge79+ / Safari12+
 - 适配电脑与平板页面
 
-### 安装与运行 - 服务器
+## 安装与运行 - 服务器
 
 ```sh
 $ # clone the project
@@ -79,7 +79,7 @@ $ cd NeteaseCloudMusicApi
 $ node app.js
 ```
 
-### 安装与运行 - 前端
+## 安装与运行 - 前端
 
 ```sh
 $ # clone the project
@@ -90,7 +90,7 @@ $ pnpm install
 $ pnpm run dev
 ```
 
-### 解决跨域问题
+## 解决跨域问题
 
 ##### 默认情况下, 由于未设置跨域允许，可能会造成无法使用或者白屏问题, 解决此问题可能有以下方法
 
@@ -104,14 +104,15 @@ $ pnpm run dev
 推荐 [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) 插件, 下载安装后在使用此项目时启用它即可, 当然你也可以自行选择其他插件或者其他方法来解决跨域问题
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
-### UI 设计参考
+
+## UI 设计参考
 
 [YouTube](https://www.youtube.com)
 [Spotify](https://www.spotify.com/)
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-### 贡献者
+## 贡献者
 
 此项目由 Gmz@creamR 开发，后端接口支持为 - [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
@@ -119,7 +120,7 @@ $ pnpm run dev
 
 <!-- LICENSE -->
 
-### 开源协议
+## 开源协议
 
 [Apache License 2.0](https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE)
 

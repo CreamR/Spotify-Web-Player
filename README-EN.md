@@ -50,7 +50,7 @@ BackEnd section depended on CloudMusic(Chinese Version)，Contrast by CloudMusic
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Build With
+## Build With
 
 - Vue3 with composition API
 - Vue-router
@@ -65,13 +65,13 @@ BackEnd section depended on CloudMusic(Chinese Version)，Contrast by CloudMusic
 
 <!-- GETTING STARTED -->
 
-### Environment Requirement
+## Environment Requirement
 
 - NodeJS 16+
 - Chrome67+ / Edge79+ / Safari12+, or equivalent version of browser base on Webkit API
 - appropriate for PC or laptop
 
-### Installation and Usage - Server
+## Installation and Usage - Server
 
 ```sh
 $ # clone the project
@@ -80,7 +80,7 @@ $ cd NeteaseCloudMusicApi
 $ node app.js
 ```
 
-### Installation and Usage - Frontend
+## Installation and Usage - Frontend
 
 ```sh
 $ # clone the project
@@ -91,7 +91,7 @@ $ pnpm install
 $ pnpm run dev
 ```
 
-### Resolve CORS Problem
+## Resolve CORS Problem
 
 ##### As a default, Because the CORS access has been not activate, Probably cannot use this project or there is no data has been be loaded, There is several methods to resolve that problem
 
