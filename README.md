@@ -46,7 +46,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## 项目介绍
+### 项目介绍
 
 <!-- 项目图片部分 -->
 
@@ -94,14 +94,19 @@ $ pnpm install
 $ pnpm run dev
 ```
 
-## UI 设计参考
+### 解决跨域问题
+
+默认情况下, 由于此项目并未设置跨域允许，可能会造成无法使用或者白屏问题
+解决此问题需要下载并安装 [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) 谷歌浏览器扩展插件, 然后启用它
+
+### UI 设计参考
 
 [YouTube](https://www.youtube.com)
 [Spotify](https://www.spotify.com/)
 
 <p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 
-## 贡献者
+### 贡献者
 
 此项目由 Gmz@creamR 开发，后端接口支持为 - [NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
 
@@ -109,7 +114,7 @@ $ pnpm run dev
 
 <!-- LICENSE -->
 
-## 开源协议
+### 开源协议
 
 [Apache License 2.0](https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE)
 
