@@ -27,17 +27,12 @@
 <details open>
   <summary>目录</summary>
   <ul>
-    <li>
-      <a href="#项目介绍">项目介绍</a> 
-    </li>
-    <li>
-      <a href="#技术栈">技术栈</a>
-    </li>
-    <li>
-    <a href="#环境要求">环境要求</a>
-    </li>
+    <li><a href="#项目介绍">项目介绍</a> </li>
+    <li><a href="#技术栈">技术栈</a></li>
+    <li><a href="#环境要求">环境要求</a></li>
     <li><a href="#安装与运行 - 服务器">安装与运行 - 服务器</a></li>
     <li><a href="#安装与运行 - 前端">安装与运行 - 前端</a></li>
+    <li><a href="#解决跨域问题">解决跨域问题</a></li>
     <li><a href="#UI设计参考">UI设计参考</a></li>
     <li><a href="#贡献者">贡献者</a></li>
     <li><a href="#开源协议">开源协议</a></li>
@@ -73,7 +68,7 @@ Spotify - Web Player 是一个在线音乐平台项目，基于 Vue3 组合式 A
 
 - NodeJS 16+
 - Chrome67+ / Edge79+ / Safari12+
-- 目前仅适配 PC 端
+- 适配电脑与平板页面
 
 ### 安装与运行 - 服务器
 
@@ -90,15 +85,25 @@ $ node app.js
 $ # clone the project
 $ git clone https://github.com/CreamR/Spotify-Web-Player.git
 $ # install dependencies and run it
+$ # recommend pnpm as a package manager that more faster than npm and the grammar is similar with npm
 $ pnpm install
 $ pnpm run dev
 ```
 
 ### 解决跨域问题
 
-默认情况下, 由于此项目并未设置跨域允许，可能会造成无法使用或者白屏问题
-解决此问题需要下载并安装 [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) 谷歌浏览器扩展插件, 然后启用它
+# 默认情况下, 由于未设置跨域允许，可能会造成无法使用或者白屏问题, 解决此问题可能有以下方法
 
+- 使用浏览器插件将跨域请求改为允许
+- 在前端发送网络请求时设置跨域允许
+- 后端在编写接口时改为跨域允许
+- 使用构建器
+
+# 我们以第一种方法为例
+
+推荐 [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) 插件, 下载安装后在使用此项目时启用它即可, 当然你也可以自行选择其他插件或者其他方法来解决跨域问题
+
+<p align="right">(<a href="#readme-top">返回顶部</a>)</p>
 ### UI 设计参考
 
 [YouTube](https://www.youtube.com)

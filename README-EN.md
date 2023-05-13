@@ -27,19 +27,14 @@
 <details open>
   <summary>Directory</summary>
   <ul>
-    <li>
-      <a href="#Introduction of Project">Introduction of Project</a> 
-    </li>
-    <li>
-      <a href="#Build With">Build With</a>
-    </li>
-    <li>
-    <a href="#Environment Requirement">Environment Requirement</a>
-    </li>
+    <li><a href="#Introduction of Project">Introduction of Project</a> </li>
+    <li><a href="#Build With">Build With</a></li>
+    <li><a href="#Environment Requirement">Environment Requirement</a></li>
     <li><a href="#Installation and Usage - Server">Installation and Usage - Server</a></li>
     <li><a href="#Installation and Usage - Frontend">Installation and Usage - Frontend</a></li>
+    <li><a href="#Resolve CORS Problem">Resolve CORS Problem</a></li>
     <li><a href="#Contributor">Contributor</a></li>
-    <li><a href="#UI design Reference">UI design Reference</a></li>
+    <li><a href="#UI Design Reference">UI design Reference</a></li>
     <li><a href="#LICENSE">LICENSE</a></li>
   </ul>
 </details>
@@ -74,7 +69,7 @@ BackEnd section depended on CloudMusic(Chinese Version)，Contrast by CloudMusic
 
 - NodeJS 16+
 - Chrome67+ / Edge79+ / Safari12+, or equivalent version of browser base on Webkit API
-- Just suit for PC page
+- appropriate for PC or laptop
 
 ### Installation and Usage - Server
 
@@ -91,11 +86,27 @@ $ node app.js
 $ # clone the project
 $ git clone https://github.com/CreamR/Spotify-Web-Player.git
 $ # install dependencies and run it
+$ # recommend pnpm as a package manager that more faster than npm and the grammar is similar with npm
 $ pnpm install
 $ pnpm run dev
 ```
 
-## UI design Reference
+### Resolve CORS Problem
+
+# As a default, Because the CORS access has been not activate, Probably cannot use this project or there is no data has been be loaded, There is several methods to resolve that problem
+
+- use browser extension
+- set CORS access when send request in front end section
+- set CORS access when code interface in back end section
+- use builder such as webpack/vite etc
+
+# We use the first method as an instance
+
+Recommend [Allow CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) extension, Activate it when the setup done, Of course you can chose another extension or method to resolve that problem
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## UI Design Reference
 
 [YouTube](https://www.youtube.com)
 [Spotify](https://www.spotify.com/)
@@ -124,7 +135,3 @@ CreamR/Spotify-Web-Player is licensed under the Apache License 2.0. A permissive
 [license-url]: https://github.com/CreamR/Spotify-Web-Player/blob/master/LICENSE
 [release-shield]: https://img.shields.io/github/v/release/creamR/spotify-web-player?style=for-the-badge
 [release-url]: https://github.com/CreamR/Spotify-Web-Player/releases/tag
-
-```
-
-```
