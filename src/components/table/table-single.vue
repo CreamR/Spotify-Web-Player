@@ -12,15 +12,16 @@
 				/></el-icon>
 			</li>
 			<li
-				v-for="(item, index) in props.songsList"
+				v-for="(item, index) in props.dataList"
 				:key="index"
 				class="songContent"
 			>
 				<div class="songIntro">
 					<span class="indexNum">{{ index + 1 >= 10 ? index + 1 : '0' + (index + 1) }}</span>
+					<!-- 由于search单曲接口传来的数据缺少图片，所以搜索单曲时不会展示图片 -->
 					<img
 						:src="item.album.picUrl"
-						:title="item.name"
+						v-if="typeof item.album.picUrl != 'undefined'"
 						width="50"
 					/>
 					<div class="songDetails">
@@ -57,7 +58,7 @@
 	import { timeSwtich } from '/src/function/timeSwtich'
 
 	const props = defineProps({
-		songsList: [],
+		dataList: [],
 	})
 </script>
 

@@ -19,7 +19,7 @@
 			></vCategoryBar>
 			<!-- <vSearchSongTable :songsList="data.searchResList"></vSearchSongTable> -->
 			<!-- <vSearchArtistTable :artistList="data.searchResList"></vSearchArtistTable> -->
-			<!-- new write method -->
+			<!-- new write with method -->
 			<router-view :dataList="data.searchList"></router-view>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
 	import { search } from '/src/service/search'
-	import vCategoryBar from '/src/components/categoryBar.vue'
+	import vCategoryBar from '/src/components/category-bar.vue'
 
 	const router = useRouter()
 	const route = useRoute()
@@ -51,7 +51,8 @@
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
-			data.searchList = res.result
+			// 由于后端传来的单曲数据多了一个songs字段，为了table的复用性，添加一个判断
+			data.searchList = type == 1 ? res.result.songs : res.result
 			data.isEmpty = false
 		} else {
 			data.isEmpty = true
@@ -65,30 +66,32 @@
 
 	watch([() => route.query.keywords, () => data.categoryIndex], async ([newVal]) => {
 		// 跳转前判断，防抖
-		switch (data.categoryIndex) {
-			case 0:
-				await init(newVal, 1)
-				if (route.name != 'searchSong') router.push({ name: 'searchSong' })
-				break
-			case 1:
-				await init(newVal, 100)
-				if (route.name != 'searchArtist') router.push({ name: 'searchArtist' })
-				break
-			case 2:
-				await init(newVal, 1000)
-				if (route.name != 'searchPlaylist') router.push({ name: 'searchPlaylist' })
-				break
-			case 3:
-				await init(newVal, 10)
-				if (route.name != 'searchAlbum') router.push({ name: 'searchAlbum' })
-				break
-			case 4:
-				await init(newVal, 1002)
-				if (route.name != 'searchUser') router.push({ name: 'searchUser' })
-				break
-			default:
-				router.push({ name: 'error' })
-		}
+		// 若关键字为空，即当用户清空关键字欲重新输入或跳转其他页面时不再请求数据，防止莫名空页面(请求空字符串后拿来的数据为空，展示的数据自然也为空)
+		if (newVal)
+			switch (data.categoryIndex) {
+				case 0:
+					await init(newVal, 1)
+					if (route.name != 'searchSingle') router.push({ name: 'searchSingle' })
+					break
+				case 1:
+					await init(newVal, 100)
+					if (route.name != 'searchArtist') router.push({ name: 'searchArtist' })
+					break
+				case 2:
+					await init(newVal, 1000)
+					if (route.name != 'searchPlaylist') router.push({ name: 'searchPlaylist' })
+					break
+				case 3:
+					await init(newVal, 10)
+					if (route.name != 'searchAlbum') router.push({ name: 'searchAlbum' })
+					break
+				case 4:
+					await init(newVal, 1002)
+					if (route.name != 'searchUser') router.push({ name: 'searchUser' })
+					break
+				default:
+					router.push({ name: 'error' })
+			}
 	})
 </script>
 

@@ -65,7 +65,7 @@
 		<div class="tableList">
 			<vTable
 				v-if="data.searchRes.length != 0"
-				:songsList="data.keywords.length == 0 ? data.songsList : data.searchRes"
+				:dataList="data.keywords.length == 0 ? data.songsList : data.searchRes"
 			></vTable>
 			<p
 				style="text-align: center; margin-top: 100px"
@@ -81,7 +81,7 @@
 	import { Headset, QuestionFilled, Delete } from '@element-plus/icons-vue'
 	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import vTable from '/src/components/table.vue'
+	import vTable from '/src/components/table/table-single.vue'
 	import { getPlaylistDetail } from '/src/service/playlist'
 
 	const router = useRouter()

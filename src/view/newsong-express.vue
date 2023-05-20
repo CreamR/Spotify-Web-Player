@@ -1,7 +1,7 @@
 <template>
 	<div class="newSongPlaylist">
 		<h1>新歌速递 - {{ data.type }}</h1>
-		<vTable :songsList="data.dataList"></vTable>
+		<vTable :dataList="data.dataList"></vTable>
 	</div>
 </template>
 
@@ -9,7 +9,7 @@
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRoute } from 'vue-router'
 	import { getNewSongs } from '/src/service/playlist'
-	import vTable from '/src/components/table.vue'
+	import vTable from '/src/components/table/table-single.vue'
 
 	const route = useRoute()
 

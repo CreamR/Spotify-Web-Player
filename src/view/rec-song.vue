@@ -11,14 +11,14 @@
 			</div>
 		</div>
 
-		<vTable :songsList="data.dataList"></vTable>
+		<vTable :dataList="data.dataList"></vTable>
 	</div>
 </template>
 
 <script setup>
 	import { reactive, onMounted, watch } from 'vue'
 	import { getGreatSongs } from '/src/service/song'
-	import vTable from '/src/components/table.vue'
+	import vTable from '/src/components//table/table-single.vue'
 
 	const data = reactive({
 		dataList: [],

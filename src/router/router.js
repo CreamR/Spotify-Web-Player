@@ -30,9 +30,9 @@ const router = createRouter({
 					component: () => import('/src/view/playlist.vue'),
 				},
 				{
-					name: 'newSongExpress',
-					path: '/newSongExpress/:type',
-					component: () => import('/src/view/newSongExpress.vue'),
+					name: 'newsongExpress',
+					path: '/newsong-express/:type',
+					component: () => import('/src/view/newsong-express.vue'),
 				},
 				{
 					name: 'collect',
@@ -44,8 +44,8 @@ const router = createRouter({
 				},
 				{
 					name: 'recSong',
-					path: '/recSong',
-					component: () => import('/src/view/recSong.vue'),
+					path: '/rec-song',
+					component: () => import('/src/view/rec-song.vue'),
 				},
 				{
 					name: 'search',
@@ -61,6 +61,7 @@ const router = createRouter({
 
 router.beforeEach(to => {
 	if (to.meta.needLogin && !localStorage.getItem('cookie')) {
+		// 防抖
 		if (to.name != 'login') {
 			ElNotification({
 				title: '需要登录',
