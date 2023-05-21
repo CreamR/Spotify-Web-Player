@@ -44,7 +44,7 @@
 			>
 				<div class="wrap">
 					<img
-						src="/src/assets/dailyLike.svg"
+						src="@/assets/dailyLike.svg"
 						title="每日推荐"
 					/>
 					<p style="text-align: center">🥰 每日推荐歌曲 🥰</p>
@@ -88,7 +88,7 @@
 <script setup>
 	import { onMounted, reactive } from 'vue'
 	import { useRouter } from 'vue-router'
-	import { getGreatPlaylist } from '/src/service/playlist'
+	import { getGreatPlaylist } from '@/service/playlist'
 
 	const router = useRouter()
 
@@ -113,7 +113,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	h1 {
 		font-weight: normal;
 		margin-bottom: 20px;

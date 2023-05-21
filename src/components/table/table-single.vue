@@ -55,7 +55,7 @@
 <script setup>
 	import { onMounted, reactive, watch, ref } from 'vue'
 	import { Clock } from '@element-plus/icons-vue'
-	import { timeSwtich } from '/src/function/timeSwtich'
+	import { timeSwtich } from '@/function/timeSwtich'
 
 	const props = defineProps({
 		dataList: [],
@@ -63,7 +63,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.table {
 		padding: 10px 20px;
 		ul {

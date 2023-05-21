@@ -81,8 +81,8 @@
 	import { Headset, QuestionFilled, Delete } from '@element-plus/icons-vue'
 	import { onMounted, reactive, ref, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import vTable from '/src/components/table/table-single.vue'
-	import { getPlaylistDetail } from '/src/service/playlist'
+	import vTable from '@/components/table/table-single.vue'
+	import { getPlaylistDetail } from '@/service/playlist'
 
 	const router = useRouter()
 	const route = useRoute()
@@ -143,7 +143,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.playlist {
 		.listInfo {
 			#setFlex(space-start);

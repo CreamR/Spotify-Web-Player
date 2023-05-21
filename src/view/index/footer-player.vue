@@ -2,7 +2,7 @@
 	<div class="player">
 		<div class="left">
 			<img
-				src="/src/assets/test/headImg.svg"
+				src="@/assets/test/headImg.svg"
 				:title="ss"
 				width="55"
 				height="55"
@@ -12,7 +12,7 @@
 				<p>这是个小测试</p>
 			</div>
 			<img
-				src="/src/assets/heart.svg"
+				src="@/assets/heart.svg"
 				title="喜欢"
 				width="30"
 				height="30"
@@ -21,7 +21,7 @@
 				v-if="!islike"
 			/>
 			<img
-				src="/src/assets/heartFill.svg"
+				src="@/assets/heartFill.svg"
 				title="取消喜欢"
 				width="30"
 				height="30"
@@ -191,7 +191,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.player {
 		#setFlex(space-between);
 		background-color: rgb(24, 24, 24);

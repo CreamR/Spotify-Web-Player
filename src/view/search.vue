@@ -28,8 +28,8 @@
 <script setup>
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRouter, useRoute } from 'vue-router'
-	import { search } from '/src/service/search'
-	import vCategoryBar from '/src/components/category-bar.vue'
+	import { search } from '@/service/search'
+	import vCategoryBar from '@/components/category-bar.vue'
 
 	const router = useRouter()
 	const route = useRoute()
@@ -96,7 +96,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.search {
 		// 无搜索结果时的样式
 		.empty {

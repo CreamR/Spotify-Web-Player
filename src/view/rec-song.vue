@@ -2,7 +2,7 @@
 	<div class="recSongs">
 		<div class="listInfo">
 			<img
-				src="/src/assets/dailyLike.svg"
+				src="@/assets/dailyLike.svg"
 				title="每日推荐"
 			/>
 			<div class="info">
@@ -17,8 +17,8 @@
 
 <script setup>
 	import { reactive, onMounted, watch } from 'vue'
-	import { getGreatSongs } from '/src/service/song'
-	import vTable from '/src/components//table/table-single.vue'
+	import { getGreatSongs } from '@/service/song'
+	import vTable from '@/components//table/table-single.vue'
 
 	const data = reactive({
 		dataList: [],
@@ -45,7 +45,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.recSongs {
 		.listInfo {
 			display: flex;

@@ -8,8 +8,8 @@
 <script setup>
 	import 'media-chrome'
 
-	import { timeSwtich } from '/src/function/timeSwtich'
-	import { collectedArtist } from '/src/service/collect'
+	import { timeSwtich } from '@/function/timeSwtich'
+	import { collectedArtist } from '@/service/collect'
 	console.log(timeSwtich('524531354568'))
 
 	const getIN = async () => {

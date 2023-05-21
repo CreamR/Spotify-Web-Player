@@ -18,9 +18,9 @@
 </template>
 
 <script setup>
-	import vAside from '/src/view/index/aside.vue'
-	import vTopBar from '/src/view/index/main-topBar.vue'
-	import vPlayer from '/src/view/index/footer-player.vue'
+	import vAside from '@/view/index/aside.vue'
+	import vTopBar from '@/view/index/main-topBar.vue'
+	import vPlayer from '@/view/index/footer-player.vue'
 
 	import { onMounted, ref, reactive } from 'vue'
 

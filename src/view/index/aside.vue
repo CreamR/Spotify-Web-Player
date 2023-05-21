@@ -1,7 +1,7 @@
 <template>
 	<div class="aside">
 		<img
-			src="/src/assets/logo.svg"
+			src="@/assets/logo.svg"
 			alt="logo"
 			title="spotify"
 			class="logo"
@@ -58,7 +58,7 @@
 <script setup>
 	import { Cpu, Star } from '@element-plus/icons-vue'
 	import { reactive, onMounted, watch } from 'vue'
-	import { getPlaylist } from '/src/service/playlist'
+	import { getPlaylist } from '@/service/playlist'
 
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,
@@ -89,7 +89,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.aside {
 		color: white;
 		font-weight: bold;

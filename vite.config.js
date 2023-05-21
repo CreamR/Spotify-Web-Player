@@ -22,4 +22,10 @@ export default defineConfig({
 			},
 		}),
 	],
+	// 使用@代替src作为绝对路径
+	resolve: {
+		alias: {
+			'@': '/src',
+		},
+	},
 })

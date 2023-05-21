@@ -8,8 +8,8 @@
 <script setup>
 	import { onMounted, reactive, watch } from 'vue'
 	import { useRoute } from 'vue-router'
-	import { getNewSongs } from '/src/service/playlist'
-	import vTable from '/src/components/table/table-single.vue'
+	import { getNewSongs } from '@/service/playlist'
+	import vTable from '@/components/table/table-single.vue'
 
 	const route = useRoute()
 

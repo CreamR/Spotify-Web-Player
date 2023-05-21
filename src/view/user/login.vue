@@ -51,7 +51,7 @@
 	import { reactive, ref } from 'vue'
 	import { useRouter } from 'vue-router'
 	import { CloseBold } from '@element-plus/icons-vue'
-	import { login, getCode } from '/src/service/login'
+	import { login, getCode } from '@/service/login'
 
 	const router = useRouter()
 	const verifyData = reactive({
@@ -115,7 +115,7 @@
 </script>
 
 <style lang="less" scoped>
-	@import url(/src/base.less);
+	@import url(@/base.less);
 	.login {
 		color: white;
 		text-align: center;
