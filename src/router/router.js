@@ -4,6 +4,7 @@ import { ElNotification } from 'element-plus'
 import search from '/src/router/search'
 import user from '/src/router/user'
 import common from '/src/router/common'
+import collect from '/src/router/collect'
 
 const router = createRouter({
 	history: createWebHashHistory(),
@@ -38,6 +39,7 @@ const router = createRouter({
 					name: 'collect',
 					path: '/collect',
 					component: () => import('/src/view/collect.vue'),
+					children: collect,
 					meta: {
 						needLogin: true,
 					},

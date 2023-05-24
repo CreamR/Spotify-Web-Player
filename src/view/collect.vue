@@ -2,7 +2,7 @@
 	<div class="collect">
 		<vCategoryBar
 			:dataList="['艺人', '专辑', '视频']"
-			:getIndex="handleIndex"
+			@getIndex="handleIndex"
 		></vCategoryBar>
 		<router-view :dataList="data.dataList"></router-view>
 	</div>
@@ -21,12 +21,30 @@
 	})
 
 	onMounted(() => {
-		init()
+		// 默认艺人comp
+		init(0)
 	})
-	const init = async () => {
-		const res = await collectedArtist()
+	const init = async type => {
+		// const res = await collectedArtist()
+		// console.log(res)
 
-		console.log(res)
+		switch (type) {
+			case 0:
+				data.dataList = await collectedArtist()
+				router.push({ name: 'artist' })
+				break
+			case 1:
+				data.dataList = await collectedMV()
+				router.push({ name: 'album' })
+				break
+			case 2:
+				data.dataList = await collectedVideo()
+				router.push({ name: 'video' })
+				break
+			default:
+				console.log('collect初始化传入的数据类型错误')
+				break
+		}
 	}
 
 	const handleIndex = index => {
@@ -36,8 +54,7 @@
 	watch(
 		() => data.categoryIndex,
 		newVal => {
-			switch (newVal) {
-			}
+			init(newVal)
 		}
 	)
 </script>
