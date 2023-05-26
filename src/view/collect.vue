@@ -10,11 +10,12 @@
 
 <script setup>
 	import { onMounted, reactive, watch } from 'vue'
-	import { useRouter } from 'vue-router'
+	import { useRouter, useRoute } from 'vue-router'
 	import { collectedArtist, collectedVideo, collectedMV } from '@/service/collect'
 	import vCategoryBar from '@/components/category-bar.vue'
 
 	const router = useRouter()
+	const route = useRoute()
 	const data = reactive({
 		dataList: [],
 		categoryIndex: '',
@@ -25,21 +26,22 @@
 		init(0)
 	})
 	const init = async type => {
-		// const res = await collectedArtist()
-		// console.log(res)
-
+		let res = []
 		switch (type) {
 			case 0:
-				data.dataList = await collectedArtist()
-				router.push({ name: 'artist' })
+				res = await collectedArtist()
+				data.dataList = res.data
+				if (route.name != 'artist') router.push({ name: 'artist' })
 				break
 			case 1:
-				data.dataList = await collectedMV()
-				router.push({ name: 'album' })
+				res = await collectedMV()
+				data.dataList = res.data
+				if (route.name != 'album') router.push({ name: 'album' })
 				break
 			case 2:
-				data.dataList = await collectedVideo()
-				router.push({ name: 'video' })
+				res = await collectedVideo()
+				data.dataList = res.data
+				if (route.name != 'video') router.push({ name: 'video' })
 				break
 			default:
 				console.log('collect初始化传入的数据类型错误')

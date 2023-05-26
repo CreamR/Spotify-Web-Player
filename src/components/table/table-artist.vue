@@ -5,7 +5,7 @@
 				:span="8"
 				:md="6"
 				:lg="4"
-				v-for="(item, index) in props.dataList.artists"
+				v-for="(item, index) in props.dataList"
 				:key="index"
 			>
 				<img :src="item.img1v1Url" />
@@ -15,13 +15,9 @@
 </template>
 
 <script setup>
-	import { onMounted, reactive, watch } from 'vue'
-
 	const props = defineProps({
 		dataList: [],
 	})
-	console.log('props data')
-	console.log(props.datatList)
 </script>
 
 <style lang="less" scoped>
