@@ -51,8 +51,17 @@
 
 		// 判断返回对象是否空
 		if (Object.keys(res.result).length != 0) {
-			// 由于后端传来的单曲数据多了一个songs字段，为了table的复用性，添加一个判断
-			data.searchList = type == 1 ? res.result.songs : res.result
+			// 由于后端传来的单曲数据多了一个字段，为了table的复用性，添加一个判断
+			switch (type) {
+				case 1:
+					data.searchList = res.result.songs
+					break
+				case 100:
+					data.searchList = res.result.artists
+					break
+				default:
+					data.searchList = res.result
+			}
 			data.isEmpty = false
 		} else {
 			data.isEmpty = true
