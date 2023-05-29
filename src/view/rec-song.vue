@@ -17,7 +17,7 @@
 
 <script setup>
 	import { reactive, onMounted, watch } from 'vue'
-	import { getGreatSongs } from '@/service/song'
+	import { getGreatSingle } from '@/service/single'
 	import vTable from '@/components//table/table-single.vue'
 
 	const data = reactive({
@@ -29,7 +29,7 @@
 		init()
 	})
 	const init = async () => {
-		const res = await getGreatSongs()
+		const res = await getGreatSingle()
 
 		res.data.dailySongs = res.data.dailySongs.map(song => ({
 			...song,
