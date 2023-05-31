@@ -14,14 +14,11 @@
 		padding: 0;
 
 		list-style: none;
-
 		box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
 
 		font-style: normal;
 		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-			Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			Cantarell, 'Open Sans', 'Helvetica Neue';
 	}
 	a {
 		text-decoration: none;
@@ -29,14 +26,12 @@
 
 	::-webkit-scrollbar {
 		//滚动条整体部分
-		width: 5px;
+		width: 6px;
 		background-color: rgb(30, 30, 30);
-		z-index: 999;
 	}
 	::-webkit-scrollbar-thumb {
 		//滚动条可拖动部分
-		border-radius: 5px;
-		background-color: rgb(100, 100, 100);
-		z-index: 999;
+		border-radius: 6px;
+		background-color: rgb(66, 66, 66);
 	}
 </style>
