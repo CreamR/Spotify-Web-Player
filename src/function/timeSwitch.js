@@ -1,4 +1,4 @@
-export const timeSwtich = timeStamp => {
+export const timeSwitch = timeStamp => {
 	const front =
 		Math.floor((timeStamp / (1000 * 60)) % 60) >= 10
 			? Math.floor((timeStamp / (1000 * 60)) % 60)
