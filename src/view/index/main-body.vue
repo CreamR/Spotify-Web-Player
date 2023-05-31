@@ -99,6 +99,14 @@
 
 	onMounted(() => {
 		init()
+		setTimeout(() => {
+			ElNotification({
+				title: 'cookie',
+				message:
+					' 此平台使用cookie通过分析用户习惯实现个性化功能, 此举不会侵犯个人隐私或发送任何相关敏感数据 ',
+				position: 'bottom-right',
+			})
+		}, 1000)
 	})
 	const init = async () => {
 		const resPlaylist = await getGreatPlaylist()
