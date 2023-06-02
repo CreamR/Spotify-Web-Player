@@ -18,8 +18,8 @@ export const useCurSingle = defineStore('curSingle', {
 		async getSingleUrl(songID) {
 			if (this.checkSingle(songID)) {
 				const res = await getSingleUrl(songID)
-				console.log(res)
-				this.singleUrl = res
+				console.log(res.data[0].url)
+				this.singleUrl = res.data[0].url
 			}
 		},
 	},

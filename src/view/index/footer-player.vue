@@ -117,7 +117,7 @@
 			<audio
 				slot="media"
 				ref="audio"
-				src="https://stream.mux.com/O4h5z00885HEucNNa1rV02wZapcGp01FXXoJd35AHmGX7g/audio.m4a"
+				:src="curSingle.singleUrl"
 			></audio>
 			<media-control-bar class="media-player">
 				<media-play-button class="selectAll"></media-play-button>
@@ -174,7 +174,10 @@
 		Expand,
 	} from '@element-plus/icons-vue'
 	import { ref, onMounted, watch } from 'vue'
+	import { useCurSingle } from '@/store/curSingle'
 	import 'media-chrome'
+
+	const curSingle = useCurSingle()
 
 	// 操作DOM调节音量
 	const audio = ref()

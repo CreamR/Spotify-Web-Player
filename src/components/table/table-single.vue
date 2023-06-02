@@ -42,10 +42,17 @@
 					{{ item.album.name }}
 				</div>
 
-				<div class="time&operate">
-					<!-- time handler -->
-					<!-- 将ms转换为min并转换为标准时间格式 -->
-					{{ timeSwtich(item.duration) }}
+				<div class="operate">
+					<img
+						src="@/assets/play.svg"
+						width="28"
+						height="28"
+						@click="playMusic(item.id)"
+					/>
+				</div>
+
+				<div class="time">
+					{{ timeSwitch(item.duration) }}
 				</div>
 			</li>
 		</ul>
@@ -54,12 +61,18 @@
 
 <script setup>
 	import { onMounted, reactive, watch, ref } from 'vue'
+	import { useCurSingle } from '@/store/curSingle'
 	import { Clock } from '@element-plus/icons-vue'
-	import { timeSwtich } from '@/function/timeSwtich'
+	import { timeSwitch } from '@/function/timeSwitch'
 
 	const props = defineProps({
 		dataList: [],
 	})
+
+	const curSingle = useCurSingle()
+	const playMusic = songID => {
+		curSingle.getSingleUrl(songID)
+	}
 </script>
 
 <style lang="less" scoped>
@@ -98,7 +111,7 @@
 
 					vertical-align: middle;
 					.indexNum {
-						margin-right: 24px;
+						margin-right: 22px;
 
 						text-align: center;
 					}
@@ -128,9 +141,8 @@
 					#trs-color(@colorSuccess, @colorInfo);
 					#wordSeal(230px);
 				}
-
-				.time&operate {
-					display: inline-block;
+				.operate {
+					margin-left: 22vw;
 				}
 			}
 		}
