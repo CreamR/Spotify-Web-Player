@@ -88,10 +88,11 @@
 <script setup>
 	import { onMounted, reactive } from 'vue'
 	import { useRouter } from 'vue-router'
+	import { useIsFirstEntry } from '@/store/isFirstEntry'
 	import { getGreatPlaylist } from '@/service/playlist'
 
 	const router = useRouter()
-
+	const isFirstEntry = useIsFirstEntry()
 	const data = reactive({
 		greatPlaylist: [],
 		logined: localStorage.getItem('cookie') ? true : false,
@@ -99,14 +100,18 @@
 
 	onMounted(() => {
 		init()
-		setTimeout(() => {
-			ElNotification({
-				title: 'cookie',
-				message:
-					' 此平台使用cookie通过分析用户习惯实现个性化功能, 此举不会侵犯个人隐私或发送任何相关敏感数据 ',
-				position: 'bottom-right',
-			})
-		}, 1000)
+		if (isFirstEntry.mark) {
+			const timer = setTimeout(() => {
+				ElNotification({
+					title: 'cookie',
+					message:
+						' 此平台使用cookie通过分析用户习惯实现个性化功能, 此举不会侵犯个人隐私或发送任何相关敏感数据 ',
+					position: 'bottom-right',
+				})
+				clearTimeout(timer)
+			}, 1000)
+			isFirstEntry.notFirstEntry()
+		}
 	})
 	const init = async () => {
 		const resPlaylist = await getGreatPlaylist()
