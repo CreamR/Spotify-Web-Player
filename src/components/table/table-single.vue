@@ -47,7 +47,13 @@
 						src="@/assets/play.svg"
 						width="28"
 						height="28"
-						@click="playMusic(item.id)"
+						@click="
+							playMusic(item.id, {
+								imgUrl: item.album.picUrl,
+								title: item.name,
+								artist: item.artists[0].name,
+							})
+						"
 					/>
 				</div>
 
@@ -70,8 +76,10 @@
 	})
 
 	const curSingle = useCurSingle()
-	const playMusic = songID => {
+	const playMusic = (songID, singleDetail) => {
 		curSingle.getSingleUrl(songID)
+		curSingle.setSingleDetail(singleDetail)
+		console.log(singleDetail.artist)
 	}
 </script>
 

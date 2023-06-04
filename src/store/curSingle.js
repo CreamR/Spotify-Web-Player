@@ -5,6 +5,11 @@ export const useCurSingle = defineStore('curSingle', {
 	state: () => {
 		return {
 			singleUrl: '',
+			singleDetail: {
+				imgUrl: '',
+				title: '',
+				artist: '',
+			},
 		}
 	},
 	actions: {
@@ -18,9 +23,19 @@ export const useCurSingle = defineStore('curSingle', {
 		async getSingleUrl(songID) {
 			if (this.checkSingle(songID)) {
 				const res = await getSingleUrl(songID)
-				console.log(res.data[0].url)
 				this.singleUrl = res.data[0].url
+			} else {
+				ElNotification({
+					title: '错误',
+					message: '歌曲路径错误，换首歌试试',
+					position: 'top-right',
+				})
 			}
+		},
+		setSingleDetail(obj) {
+			this.singleDetail.imgUrl = obj.imgUrl
+			this.singleDetail.title = obj.title
+			this.singleDetail.artist = obj.artist
 		},
 	},
 	getters: {},

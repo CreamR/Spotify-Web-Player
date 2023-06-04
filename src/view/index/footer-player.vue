@@ -2,14 +2,14 @@
 	<div class="player">
 		<div class="left">
 			<img
-				src="@/assets/test/headImg.svg"
+				:src="curSingle.singleDetail.imgUrl"
 				:title="ss"
 				width="55"
 				height="55"
 			/>
 			<div class="songDetails">
-				<h4>测试歌曲</h4>
-				<p>这是个小测试</p>
+				<h4>{{ curSingle.singleDetail.title }}</h4>
+				<p>{{ curSingle.singleDetail.artist }}</p>
 			</div>
 			<img
 				src="@/assets/heart.svg"
@@ -30,93 +30,14 @@
 				v-else
 			/>
 		</div>
-		<!-- <div class="middle">
-			<div class="controls">
-				<el-icon
-					color="white"
-					size="20"
-					><Odometer
-				/></el-icon>
-				<el-icon
-					color="white"
-					size="20"
-					><CaretLeft
-				/></el-icon>
 
-				<el-icon
-					color="white"
-					size="30"
-					v-if="isPlay"
-					@click="isPlay = false"
-					><VideoPause
-				/></el-icon>
-				<el-icon
-					color="white"
-					size="30"
-					v-else
-					@click="isPlay = true"
-					><VideoPlay
-				/></el-icon>
-
-				<el-icon
-					color="white"
-					size="20"
-					><CaretRight
-				/></el-icon>
-				<el-icon
-					color="white"
-					size="20"
-					><Operation
-				/></el-icon>
-			</div>
-			<div class="progress">
-				<span></span>
-				<input
-					type="range"
-					name=""
-					id=""
-				/>
-				<span></span>
-			</div>
-		</div> -->
-		<!-- <div class="right">
-			<el-icon
-				color="white"
-				size="30"
-				><Expand
-			/></el-icon>
-			<el-icon
-				color="white"
-				size="30"
-				@click="volume = 0"
-				v-if="volume != 0"
-				><Microphone
-			/></el-icon>
-			<el-icon
-				color="white"
-				size="30"
-				@click="volume = 30"
-				v-else
-				><Mute
-			/></el-icon>
-			<input
-				type="range"
-				v-model="volume"
-				min="0"
-				max="100"
-			/>
-		</div>
-		<audio
-			ref="audio"
-			src="../assets/test/audioTest.mp3"
-		></audio> -->
 		<media-controller
 			audio
 			class="middle"
+			id="myController"
 		>
 			<audio
 				slot="media"
-				ref="audio"
 				:src="curSingle.singleUrl"
 			></audio>
 			<media-control-bar class="media-player">
@@ -126,7 +47,6 @@
 					class="selectAll"
 				></media-time-display>
 				<media-time-range class="selectAll"></media-time-range>
-				<media-playback-rate-button class="selectAll"></media-playback-rate-button>
 			</media-control-bar>
 		</media-controller>
 
@@ -150,13 +70,8 @@
 				v-else
 				><Mute
 			/></el-icon>
-			<!-- <input
-				type="range"
-				v-model="volume"
-				min="0"
-				max="100"
-			/> -->
-			<media-volume-range style="width: 100px"></media-volume-range>
+
+			<media-volume-range mediacontroller="myController"></media-volume-range>
 		</div>
 	</div>
 </template>
