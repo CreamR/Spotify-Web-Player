@@ -65,9 +65,11 @@
 <script setup>
 	import { ArrowLeftBold, ArrowRightBold, SwitchButton } from '@element-plus/icons-vue'
 	import { reactive, ref, onMounted, watch } from 'vue'
+	import { useRouter } from 'vue-router'
 	import { logout } from '@/service/login'
 	import { getProfile } from '@/service/user'
 
+	const router = useRouter()
 	const data = reactive({
 		uID: localStorage.getItem('userID') ?? null,
 		logined: localStorage.getItem('cookie') ? true : false,
@@ -91,7 +93,10 @@
 		const res = await logout()
 		if (res.code == 200) {
 			localStorage.clear()
-			router.push({ name: 'login' })
+			const timer = setTimeout(() => {
+				router.push({ name: 'login' })
+				clearTimeout(timer)
+			}, 1000)
 		} else {
 			ElNotification({
 				title: '退出登录失败',
