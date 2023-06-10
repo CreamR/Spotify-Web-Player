@@ -27,7 +27,6 @@
 		<el-row
 			class="greatPlaylist"
 			justify="start"
-			:gutter="50"
 		>
 			<el-col
 				v-show="data.logined"
@@ -35,20 +34,19 @@
 				:md="8"
 				:lg="6"
 				:xl="4"
-				class="playlistInfo"
 				@click="
 					$router.push({
 						name: 'recSong',
 					})
 				"
 			>
-				<div class="wrap">
-					<img
-						src="@/assets/dailyLike.svg"
-						title="每日推荐"
-					/>
-					<p style="text-align: center">🥰 每日推荐歌曲 🥰</p>
-				</div>
+				<vPlaylistCard
+					:data="{
+						picUrl: 'src/assets/dailyLike.svg',
+						title: '🥰 每日推荐歌曲 🥰',
+						isTextCenter: true,
+					}"
+				></vPlaylistCard>
 			</el-col>
 
 			<el-col
@@ -58,7 +56,6 @@
 				:md="8"
 				:lg="6"
 				:xl="4"
-				class="playlistInfo"
 				@click="
 					$router.push({
 						path: `/playlist/${item.id}`,
@@ -72,14 +69,9 @@
 					})
 				"
 			>
-				<div class="wrap">
-					<img
-						:src="item.picUrl"
-						alt="image"
-						:title="item.name"
-					/>
-					<p>{{ item.name }}</p>
-				</div>
+				<vPlaylistCard
+					:data="{ picUrl: item.picUrl, title: item.name, isTextCenter: false }"
+				></vPlaylistCard>
 			</el-col>
 		</el-row>
 	</div>
@@ -90,6 +82,7 @@
 	import { useRouter } from 'vue-router'
 	import { useIsFirstEntry } from '@/store/isFirstEntry'
 	import { getGreatPlaylist } from '@/service/playlist'
+	import vPlaylistCard from '@/components/playlist-card.vue'
 
 	const router = useRouter()
 	const isFirstEntry = useIsFirstEntry()
@@ -182,35 +175,6 @@
 		}
 		.greatPlaylist {
 			margin-bottom: 30px;
-			.playlistInfo {
-				border-radius: 10px;
-
-				padding: 20px 0px;
-				margin-bottom: 30px;
-
-				cursor: pointer;
-				#trs-bgc(rgb(40, 40, 40), rgb(30, 30, 30));
-				img {
-					width: 100%;
-					height: 100%;
-					border-radius: 10px;
-				}
-
-				p {
-					height: 40px;
-					font-size: normal;
-
-					margin-bottom: 10px;
-					padding: 1px 10px;
-
-					// 超出两行隐藏文字
-					display: -webkit-box;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					-webkit-line-clamp: 2;
-					-webkit-box-orient: vertical;
-				}
-			}
 		}
 	}
 </style>
