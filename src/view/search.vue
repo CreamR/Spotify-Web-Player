@@ -60,7 +60,7 @@
 					data.searchList = res.result.artists
 					break
 				case 1000:
-					data.searchList = data.searchList.map(dataList => ({
+					data.searchList = res.result.playlists.map(dataList => ({
 						...dataList,
 						picUrl: dataList.coverImgUrl,
 					}))
