@@ -1,6 +1,6 @@
 <template>
 	<div class="table">
-		<el-row gutter="30">
+		<el-row>
 			<el-col
 				v-for="(item, index) in props.dataList"
 				:key="index"
@@ -29,8 +29,21 @@
 </template>
 
 <script setup>
+	import { onMounted } from 'vue'
 	import vPlaylistCard from '@/components/playlist-card.vue'
 	const props = defineProps({
 		dataList: [],
 	})
+
+	// onMounted(() => {
+	// 	setTimeout(() => {
+	// 		init()
+	// 	}, 2000)
+	// })
+	// const init = () => {
+	// 	props.dataList = props.dataList.map(dataList => ({
+	// 		...dataList,
+	// 		picUrl: dataList.coverImgUrl,
+	// 	}))
+	// }
 </script>
