@@ -4,8 +4,8 @@
 			<img
 				:src="curSingle.singleDetail.imgUrl"
 				:title="ss"
-				width="55"
-				height="55"
+				width="52"
+				height="52"
 			/>
 			<div class="songDetails">
 				<h4>{{ curSingle.singleDetail.title }}</h4>
@@ -114,7 +114,7 @@
 		#setFlex(space-between);
 		background-color: rgb(24, 24, 24);
 
-		padding: 16px 24px;
+		padding: 22px;
 		.left {
 			color: whitesmoke;
 			#setFlex(space-between);
@@ -122,7 +122,7 @@
 				#setWH(110px, 55px);
 				font-size: medium;
 
-				margin: 25px 5px 10px 10px;
+				// margin: 25px 5px 10px 10px;
 
 				overflow: hidden;
 				white-space: nowrap;
