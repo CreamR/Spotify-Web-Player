@@ -40,6 +40,7 @@ export const getKey = (timeStamp: string | number) =>
 		method: 'post',
 		body: JSON.stringify({
 			timestamp: timeStamp,
+			noCookie: true,
 		}),
 		headers: {
 			'Content-Type': 'application/json',
@@ -54,6 +55,7 @@ export const getQRcode = (key: string | number, timeStamp: string | number) =>
 			key: key,
 			qrimg: true,
 			timestamp: timeStamp,
+			noCookie: true,
 		}),
 		headers: {
 			'Content-Type': 'application/json',
@@ -67,6 +69,7 @@ export const check = (key: string | number, timeStamp: string | number) =>
 		body: JSON.stringify({
 			key: key,
 			timestamp: timeStamp,
+			noCookie: true,
 		}),
 		headers: {
 			'Content-Type': 'application/json',
